@@ -64,6 +64,7 @@ const SailRock = () => {
         marineLifeHighlights={toList(content.marine_life_highlights)}
         divingTips={toList(content.diving_tips)}
         images={toList(content.images)}
+        heroImage="/images/sailrock.webp"
       />
       <DiveSiteBookingCTA siteName="Sail Rock" />
     </>
