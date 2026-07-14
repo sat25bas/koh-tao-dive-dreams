@@ -7,7 +7,6 @@ export default defineConfig(({ mode }) => {
   const apiTarget = process.env.VITE_API_PROXY_TARGET || 'http://localhost:4001';
 
   return {
-  base: '/koh-tao-dive-dreams-freew/',
   server: {
     host: "::",
     port: 3000,
