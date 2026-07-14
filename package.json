@@ -63,7 +63,6 @@
     "@tiptap/starter-kit": "^2.0.0",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "aws-amplify": "^6.16.2",
-    "better-sqlite3": "^12.5.0",
     "body-parser": "^2.2.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -110,6 +109,9 @@
   "engines": {
     "node": ">=18.0.0"
   },
+  "optionalDependencies": {
+    "better-sqlite3": "^12.5.0"
+  },
   "overrides": {
     "handlebars": "4.7.9"
   },
@@ -124,7 +126,6 @@
     "@types/react-dom": "^18.3.0",
     "autoprefixer": "^10.5.2",
     "aws-cdk-lib": "^2.234.1",
-    "better-sqlite3": "^12.5.0",
     "concurrently": "^9.2.1",
     "constructs": "^10.5.1",
     "cors": "^2.8.6",
