@@ -10,7 +10,7 @@ const EFR: React.FC = () => {
   const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-background">
-      <section className="relative h-64 md:h-80 flex items-center" style={{backgroundImage: "linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('/images/efr.jpeg')", backgroundSize: 'cover', backgroundPosition: 'center'}}>
+      <section className="relative h-64 md:h-80 flex items-center" style={{backgroundImage: "linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('https://www.divinginasia.com/images/efr.jpeg')", backgroundSize: 'cover', backgroundPosition: 'center'}}>
         <div className="container mx-auto px-4 text-white z-10">
           <h1 className="text-3xl md:text-4xl font-bold">Emergency First Response (EFR)</h1>
           <p className="mt-3 max-w-2xl">Learn essential first aid, CPR and emergency response skills — a valuable standalone certification and prerequisite for Rescue Diver.</p>

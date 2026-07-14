@@ -4,13 +4,13 @@ const accommodations = [
   {
     name: "Koh Tao Resort",
     location: "Koh Tao",
-    image: "/images/sample-hotel.jpg", // Replace with your image path or Contentful asset URL
+    image: "https://www.divinginasia.com/images/sample-hotel.jpg", // Replace with your image path or Contentful asset URL
     link: "https://www.agoda.com/",
   },
   {
     name: "Coral View Hotel",
     location: "Koh Tao",
-    image: "/images/sample-hotel.jpg",
+    image: "https://www.divinginasia.com/images/sample-hotel.jpg",
     link: "https://www.agoda.com/",
   },
   // Add more accommodation objects here

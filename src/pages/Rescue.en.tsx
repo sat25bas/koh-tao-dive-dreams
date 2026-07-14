@@ -24,7 +24,7 @@ const RescueEn: React.FC = () => {
         faq_1_question: 'Is Rescue difficult?',
         faq_1_answer: 'The course is challenging but instructors support you step-by-step. Good fitness and comfort in the water help.',
       }}
-      heroImage="/images/photo-1613853250147-2f73e55c1561.avif"
+      heroImage="https://www.divinginasia.com/images/photo-1613853250147-2f73e55c1561.avif"
       level="Advanced"
       bookingItemName="PADI Rescue Diver"
     />

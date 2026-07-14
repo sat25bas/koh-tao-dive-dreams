@@ -49,13 +49,13 @@ Karetschildpad|Mooie schildpadden met een kenmerkende snavelvormige bek, bekend 
 09c24450-93be-4c8e-9ffb-f721e9e285ea,south-west-pinnacle,en,quick_facts_location,text,30-40 minutes offshore,,2026-03-27 13:40:10.789117+00,2026-03-31 17:55:41.76794+00
 09d4c8e7-5105-4364-8594-65e2131881b4,home,nl,about_map_alt,text,Map van Koh Tao en duik plekken,contact@prodiving.asia,2026-03-12 10:57:14.010608+00,2026-03-14 18:50:05.442579+00
 0a3d99fc-cda6-415c-80ea-a0a6b6c530a9,contact,en,subject_option_2,text,Dive Trip Booking,contact@prodiving.asia,2026-03-12 14:31:13.936296+00,2026-04-06 04:40:49.337206+00
-0a61f5b1-09d6-45b3-b51c-7a8c8aca35b6,chumphon-pinnacle,nl,images,text,"/images/chumphon-pinnacle-top.webp
-/images/photo-1682686580849-3e7f67df4015.avif
-/images/photo-1613853250147-2f73e55c1561.avif
-/images/photo-1618865181016-a80ad83a06d3.avif
-/images/photo-1647825194145-2d94e259c745.avif
-/images/photo-1659518893171-b15e20a8e201.avif
-/images/photo-1682687982423-295485af248a.avif",,2026-03-27 17:57:19.248922+00,2026-03-28 12:47:09.516174+00
+0a61f5b1-09d6-45b3-b51c-7a8c8aca35b6,chumphon-pinnacle,nl,images,text,"https://www.divinginasia.com/images/chumphon-pinnacle-top.webp
+https://www.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif
+https://www.divinginasia.com/images/photo-1613853250147-2f73e55c1561.avif
+https://www.divinginasia.com/images/photo-1618865181016-a80ad83a06d3.avif
+https://www.divinginasia.com/images/photo-1647825194145-2d94e259c745.avif
+https://www.divinginasia.com/images/photo-1659518893171-b15e20a8e201.avif
+https://www.divinginasia.com/images/photo-1682687982423-295485af248a.avif",,2026-03-27 17:57:19.248922+00,2026-03-28 12:47:09.516174+00
 0a831527-f1b5-465a-a19f-52773961a780,japanese-gardens,en,diving_tips,text,"Best time is November-May for visibility.
 Look for unique triggerfish and octopus.
 Great for underwater photography.",,2026-03-27 13:40:10.789117+00,2026-03-28 12:47:09.516174+00
@@ -72,12 +72,12 @@ Underwater communication and buddy system
 Shallow water exploration and reef appreciation
 Environmental awareness and marine conservation",seed-script,2026-03-28 14:22:36.581793+00,2026-03-28 14:24:15.888987+00
 0c23f552-7ba2-4b97-8286-3c7bab3fef25,shark-island,nl,overview,text,"Shark Island ligt aan de zuidkust van Koh Tao en staat bekend om spectaculaire koraalformaties en hoge biodiversiteit. Je vindt hier prachtige paarse zachte boomkoralen en kleurrijke gorgonen, waaronder grote zeewaaiers en dynamische zweepkoralen die meebewegen met de stroming. Zwartpuntrifhaaien worden hier regelmatig gezien terwijl ze langs het rif trekken - daar dankt de site haar naam aan. Het onderwaterlandschap met met koraal bedekte rotsblokken en zandstroken creëert gevarieerde habitats. Door de kleur en het vaak goede zicht is dit een favoriete plek voor onderwaterfotografie.",,2026-03-27 13:40:10.789117+00,2026-03-28 12:47:09.516174+00
-0cb8a816-042c-478a-bf00-232c78bbb53d,sail-rock,en,images,text,"/images/sailrock.webp
-/images/photo-1613853250147-2f73e55c1561.avif
-/images/photo-1618865181016-a80ad83a06d3.avif
-/images/photo-1647825194145-2d94e259c745.avif
-/images/photo-1682686580849-3e7f67df4015.avif
-/images/photo-1682687982423-295485af248a.avif",,2026-03-27 15:18:53.136052+00,2026-03-28 12:47:09.516174+00
+0cb8a816-042c-478a-bf00-232c78bbb53d,sail-rock,en,images,text,"https://www.divinginasia.com/images/sailrock.webp
+https://www.divinginasia.com/images/photo-1613853250147-2f73e55c1561.avif
+https://www.divinginasia.com/images/photo-1618865181016-a80ad83a06d3.avif
+https://www.divinginasia.com/images/photo-1647825194145-2d94e259c745.avif
+https://www.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif
+https://www.divinginasia.com/images/photo-1682687982423-295485af248a.avif",,2026-03-27 15:18:53.136052+00,2026-03-28 12:47:09.516174+00
 0cbf6ad4-5565-4878-a2a3-b4e81bfe68cc,home,nl,course_rescue_max_depth,text,30m,contact@prodiving.asia,2026-03-12 10:57:14.010608+00,2026-03-14 18:50:05.442579+00
 0cdd9117-30be-41a8-884f-98d33ff644d6,contact,en,location_title,text,Location,contact@prodiving.asia,2026-03-12 14:31:13.936296+00,2026-04-06 04:40:49.337206+00
 0ce02689-d114-42d7-803c-6574437788bb,idc,nl,course_overview,text,"translate Program Overview.The Instructor pathway trains experienced divers to teach and certify new divers. The IDC includes teaching presentations, student evaluations and practical teaching experience with support from experienced staff instructors.
@@ -167,7 +167,7 @@ Naaktslakken en andere ongewervelden",,2026-03-27 13:40:10.789117+00,2026-03-28 
 153d7421-6a50-4ed5-8768-867bb95d4258,dive-sites/south-west-pinnacle,en,what_you_can_see,text,,,2026-03-31 17:55:41.76794+00,2026-03-31 17:55:41.76794+00
 15464b83-a304-420b-802e-ca70a6a5fe4a,marine-life-page,nl,reef_sharks,text,"Zwartpuntrifhaai|Veelvoorkomende rifhaaien met kenmerkende zwarte vinpunten, vaak jagend in ondiep water.|Tot 2m|Koraalriffen|Hele jaar|/marine-life/black-tip-reef-shark
 Grijze rifhaai|Schuwere rifhaaien die dieper water verkiezen en minder vaak worden gezien.|Tot 2,5m|Diepe riffen|Hele jaar|",seed-script,2026-03-28 14:15:08.842017+00,2026-03-28 14:15:08.842017+00
-15879881-e6ad-45aa-810b-846442c1ccc3,mango-bay,en,images,text,/images/mango-bay.webp,,2026-03-27 16:24:21.72643+00,2026-03-28 12:47:09.516174+00
+15879881-e6ad-45aa-810b-846442c1ccc3,mango-bay,en,images,text,https://www.divinginasia.com/images/mango-bay.webp,,2026-03-27 16:24:21.72643+00,2026-03-28 12:47:09.516174+00
 15de0039-4332-4c6a-8e70-e43a7251d8b1,green-sea-turtletest,en,diet,text,"Seagrass, algae, marine plants",seed-script,2026-03-28 14:15:08.09076+00,2026-04-05 08:13:53.01576+00
 15effe06-b46a-4b4d-b50c-28273ecdb988,idc,nl,hero_title,text,Instructor Training,,2026-03-28 13:10:40.754266+00,2026-03-28 13:14:49.524577+00
 1659a08b-6607-4926-8386-008455b30c8e,marine-life-pagetest,en,label_habitat,text,Habitat,seed-script,2026-03-28 14:15:08.526272+00,2026-04-05 08:09:43.889491+00
@@ -234,9 +234,9 @@ Luister goed naar de briefing omdat entry en pickup per dag verschillen",,2026-0
 24dccb6a-d5a4-4c5b-8117-dad62370e6eb,fun-diving,nl,fun_diving_expert_body,text,Our dive team comprises seasoned and highly knowledgeable dive professionals who have immersed themselves in the local reef ecology and dive sites. Their expertise ensures a safe and enriching diving experience for you.,,2026-03-28 13:10:40.754266+00,2026-03-30 11:23:47.936366+00
 24f43f07-3cfc-4482-b658-559437520168,japanese-gardens,nl,overview,text,"Japanese Gardens is een prachtige duiklocatie bij Koh Nang Yuan, bekend om diverse koraalriffen en rijk onderwaterleven. Geschikt voor alle niveaus.",,2026-03-27 13:40:10.789117+00,2026-03-28 12:47:09.516174+00
 24f78bfe-02c8-4a3a-806f-54996eef1794,home,nl,about_headline,text,"Een klein eiland,  21 km², hagelwitte stranden, turquoise baaien en omringd door meer dan 15 duik plekken..",contact@prodiving.asia,2026-03-12 10:57:14.010608+00,2026-03-19 11:20:46.954052+00
-25073ad5-051e-4029-9152-980735a84a91,htms-sattakut,nl,images,text,"/images/htms-sattakut.jpg
-/images/htms-sattakut-wreck.jpg
-/images/wreck.jpeg",,2026-03-27 16:24:21.72643+00,2026-03-28 12:47:09.516174+00
+25073ad5-051e-4029-9152-980735a84a91,htms-sattakut,nl,images,text,"https://www.divinginasia.com/images/htms-sattakut.jpg
+https://www.divinginasia.com/images/htms-sattakut-wreck.jpg
+https://www.divinginasia.com/images/wreck.jpeg",,2026-03-27 16:24:21.72643+00,2026-03-28 12:47:09.516174+00
 250def09-0abf-4d59-a291-d9d1fbddf54a,accommodation,en,bookStay,text,Book Your Stay,,2026-03-27 11:51:48.105016+00,2026-03-28 20:55:30.812602+00
 252b2ad1-da2b-4be2-95e6-dd5bd156a2a9,sail-rock,en,quick_facts_location,text,40 minutes offshore,,2026-03-27 13:40:10.789117+00,2026-03-28 12:47:09.516174+00
 254416e9-c446-4bc2-925a-3e27e79b0e53,msdt-program,nl,enroll_body,text,"Klaar om PADI Master Scuba Diver Trainer te worden? Neem contact op voor cursusdata, prijzen en advies over je specialty-keuzes.",,2026-03-28 13:22:02.219507+00,2026-03-28 13:22:02.219507+00
@@ -259,13 +259,13 @@ Buoyancy World||Concrete blocks and pipes that create new ecosystems for marine 
 29974927-5d07-4a21-9db3-bc86993753ca,contact,nl,opening_hours_line_1,text,Daily: 07:00 - 19:00,contact@prodiving.asia,2026-03-12 10:14:37.06477+00,2026-03-14 18:57:12.645596+00
 299aa0b5-402a-450c-934a-583d5d19dddc,open-water,en,hero_title,text,PADI Open Water Course,contact@prodiving.asia,2026-03-09 17:57:14.068604+00,2026-04-05 09:49:05.165101+00
 29e521f3-ae32-44a6-882e-3cef9c2df14a,discover-scuba-deluxe,en,hero_title,text,Discover Scuba Deluxe Course,,2026-03-19 12:11:37.004243+00,2026-03-27 10:58:34.403207+00
-29e62db7-114f-403d-843b-6442481d3209,dive-sites/chumphon-pinnacle,nl,images,text,"/images/chumphon-pinnacle-top.webp
-/images/photo-1682686580849-3e7f67df4015.avif
-/images/photo-1613853250147-2f73e55c1561.avif
-/images/photo-1618865181016-a80ad83a06d3.avif
-/images/photo-1647825194145-2d94e259c745.avif
-/images/photo-1659518893171-b15e20a8e201.avif
-/images/photo-1682687982423-295485af248a.avif",,2026-03-28 20:47:21.080002+00,2026-03-28 20:47:21.080002+00
+29e62db7-114f-403d-843b-6442481d3209,dive-sites/chumphon-pinnacle,nl,images,text,"https://www.divinginasia.com/images/chumphon-pinnacle-top.webp
+https://www.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif
+https://www.divinginasia.com/images/photo-1613853250147-2f73e55c1561.avif
+https://www.divinginasia.com/images/photo-1618865181016-a80ad83a06d3.avif
+https://www.divinginasia.com/images/photo-1647825194145-2d94e259c745.avif
+https://www.divinginasia.com/images/photo-1659518893171-b15e20a8e201.avif
+https://www.divinginasia.com/images/photo-1682687982423-295485af248a.avif",,2026-03-28 20:47:21.080002+00,2026-03-28 20:47:21.080002+00
 29f1dd30-0bb5-42dd-b2dd-589806a5db4c,specialty/night-diver,nl,price_eur,text,172,,2026-03-28 13:10:40.754266+00,2026-03-28 13:10:40.754266+00
 29fb7603-6087-4447-a71e-8ce852a4b644,home,nl,course_open_water_level,text,Beginner,contact@prodiving.asia,2026-03-12 10:57:14.010608+00,2026-03-14 18:50:05.442579+00
 2a29f380-5860-4dd2-9058-aa5e42cd26e2,hawksbill-sea-turtle,en,habitat,text,"Coral reefs, rocky zones, coastal waters",seed-script,2026-03-28 14:15:08.526272+00,2026-03-28 14:15:08.526272+00
@@ -390,7 +390,7 @@ Spaar energie voor de terugzwem",,2026-03-27 13:40:10.789117+00,2026-03-28 12:47
 Rainy season: November to January, short but heavy showers
 Average temperature: 28-32C
 Sea temperature: 27-30C",,2026-03-28 13:46:34.702478+00,2026-03-28 13:46:34.702478+00
-3c368335-cb4a-44ce-8648-74a35c8fbae2,south-west-pinnacle,nl,images,text,/images/photo-1682686580849-3e7f67df4015.avif,,2026-03-27 16:24:21.72643+00,2026-03-28 12:47:09.516174+00
+3c368335-cb4a-44ce-8648-74a35c8fbae2,south-west-pinnacle,nl,images,text,https://www.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif,,2026-03-27 16:24:21.72643+00,2026-03-28 12:47:09.516174+00
 3cd94a29-0326-4ad9-a4f3-772558b75a65,south-west-pinnacle,en,diving_tips,text,Best suited for advanced divers with deep and drift experience Use delayed SMB and stay with the group during ascent Plan gas carefully due to depth and current exposure Listen closely to briefing because entry and pickup can vary by conditions,,2026-03-27 13:40:10.789117+00,2026-03-31 17:55:41.76794+00
 3d318b4e-85c4-45b4-9ab2-08b4b153e999,marine-life-page,nl,hero_title,text,Marien leven van Koh Tao,seed-script,2026-03-28 14:15:08.842017+00,2026-03-28 14:15:08.842017+00
 3d3b6201-179e-4476-8f25-e5cc1d8e7ab0,viewpoints-koh-tao,en,hiking_tips_title,text,Hiking tips,,2026-03-28 13:42:12.192138+00,2026-03-28 13:46:35.031208+00
@@ -494,7 +494,7 @@ Malabar grouper|Large predatory grouper living in deeper water, known for ambush
 54d53058-35e8-4b28-abc9-2f25ec73b06d,home,en,course_advanced_price,text,"฿9,500",contact@prodiving.asia,2026-03-12 10:01:50.741687+00,2026-03-16 18:01:39.262481+00
 54f57b9c-27aa-47b9-9319-2925812cdfa9,discover-scuba,en,hero_title,text,Discover Scuba Diving (DSD),seed-script,2026-03-27 10:52:08.104218+00,2026-03-28 16:44:59.316524+00
 555f3d22-4341-4e10-8f41-f71dc43ae789,divemaster,en,price_usd,text,1190,contact@prodiving.asia,2026-03-10 05:43:53.838953+00,2026-04-05 06:22:38.909171+00
-559ddef4-1905-49d2-91d0-a1e5c5ac806d,twins-pinnacle,nl,images,text,/images/twins-header.png,,2026-03-27 16:24:21.72643+00,2026-03-28 12:47:09.516174+00
+559ddef4-1905-49d2-91d0-a1e5c5ac806d,twins-pinnacle,nl,images,text,https://www.divinginasia.com/images/twins-header.png,,2026-03-27 16:24:21.72643+00,2026-03-28 12:47:09.516174+00
 55ac80b6-039b-49ce-85fa-015d6cddd006,htms-sattakut,en,what_you_can_see,text,Wreck Exploration Marine Life Swim-throughs Historical Significance,,2026-03-27 13:40:10.789117+00,2026-03-28 20:54:03.477122+00
 55bfc953-b9a5-445f-ac38-f22a0401584a,medical-services,en,care_title,text,Care & emergencies,,2026-03-28 13:46:34.702478+00,2026-03-28 13:46:34.702478+00
 5694c7b8-d8c2-4747-bae6-9c8f32699063,instructor,en,section_inclusions_items,text,"IDC materials and PADI registration
@@ -605,7 +605,7 @@ Reddingsbeademing en slachtofferzorg",seed-script,2026-03-28 14:22:37.579329+00,
 66f9b2d4-2cb9-4668-b883-ba10eaef2fbe,rescue,nl,price_usd,text,290,seed-script,2026-03-14 11:19:45.578131+00,2026-03-28 14:24:16.617176+00
 672450bc-01d1-49d6-a19d-0c50a5fc1089,contact,en,opening_hours_title,text,Opening Hours,contact@prodiving.asia,2026-03-12 14:31:13.936296+00,2026-04-06 04:40:49.337206+00
 672d4557-5720-4516-a5e5-06b127515e52,home,nl,course_rescue_price_eur,text,265,contact@prodiving.asia,2026-03-12 10:57:14.010608+00,2026-03-14 18:50:05.442579+00
-67a6c47f-01c8-442b-ac0c-eaaeb02d9448,htms-sattakut,en,images,text,/images/htms-sattakut.jpg /images/htms-sattakut-wreck.jpg /images/wreck.jpg,,2026-03-27 16:24:21.72643+00,2026-03-28 20:54:03.477122+00
+67a6c47f-01c8-442b-ac0c-eaaeb02d9448,htms-sattakut,en,images,text,https://www.divinginasia.com/images/htms-sattakut.jpg https://www.divinginasia.com/images/htms-sattakut-wreck.jpg https://www.divinginasia.com/images/wreck.jpg,,2026-03-27 16:24:21.72643+00,2026-03-28 20:54:03.477122+00
 68163cb9-b14c-4552-bdfa-1dd75dee2d53,msdt-program,en,why_items,text,"Teach at least five PADI Specialty courses
 Gain hands-on experience through team teaching and mentorship
 Increase your employability and earning potential
@@ -687,7 +687,7 @@ Discover Scuba Diving Deluxe is ideal if you want more than a short try dive. Yo
 7225e1d1-f7e4-457e-ad17-36d8a505e9b5,home,en,course_instructor_price_usd,text,1710,contact@prodiving.asia,2026-03-12 13:33:29.379002+00,2026-03-16 18:01:39.262481+00
 72676072-e6ba-45be-8618-7f1278c71c4d,sail-rock,en,quick_facts_difficulty,text,Advanced,,2026-03-27 13:40:10.789117+00,2026-03-28 12:47:09.516174+00
 727b7e73-5723-4611-b987-1fec918f2fa1,things-to-do,nl,cta_beaches,text,Ontdek stranden,,2026-03-28 13:31:13.441375+00,2026-03-28 13:31:13.441375+00
-72d82e68-672e-4de5-a9bc-6460a9b96534,japanese-gardens,en,images,text,/images/japanandwins.jpg,,2026-03-27 16:24:21.72643+00,2026-03-28 12:47:09.516174+00
+72d82e68-672e-4de5-a9bc-6460a9b96534,japanese-gardens,en,images,text,https://www.divinginasia.com/images/japanandwins.jpg,,2026-03-27 16:24:21.72643+00,2026-03-28 12:47:09.516174+00
 72e6c422-8364-4e94-9cde-d19bc867b36f,scuba-diver,nl,price_thb,text,8500,seed-script,2026-03-12 14:55:52.765748+00,2026-03-28 14:24:15.888987+00
 72ee0fec-2fdc-4483-9fdd-0d8b449cd616,dive-sites/sail-rock,en,overview,text,rwst xirebt,contact@prodiving.asia,2026-03-20 09:07:19.116003+00,2026-03-28 20:54:03.477122+00
 730598af-6e58-4030-bab5-d3b070b4bff5,south-west-pinnacle,nl,quick_facts_difficulty,text,Gevorderd,,2026-03-27 13:40:10.789117+00,2026-03-28 12:47:09.516174+00
@@ -817,7 +817,7 @@ Best light for photography: early morning and sunset",,2026-03-28 13:42:12.19213
 82add889-bccc-4db4-a2a1-7617a7ce599f,sail-rock,en,quick_facts_depth,text,18-40m,,2026-03-27 13:40:10.789117+00,2026-03-28 12:47:09.516174+00
 82e7acc0-ca3b-4381-830e-ee35371a98f5,advanced,en,duration,text,2 days,seed-script,2026-03-28 14:22:36.581793+00,2026-03-28 14:24:15.888987+00
 830c3c36-a670-4e49-91ce-cdad08c33b74,instructor,nl,section_learn_title,text,Wat je leert,,2026-03-28 13:19:45.973231+00,2026-03-28 13:19:45.973231+00
-8336ba7d-e66c-4ec8-a72f-f2125bf8e181,south-west-pinnacle,en,images,text,/images/photo-1682686580849-3e7f67df4015.avif,,2026-03-27 16:24:21.72643+00,2026-03-28 20:54:03.477122+00
+8336ba7d-e66c-4ec8-a72f-f2125bf8e181,south-west-pinnacle,en,images,text,https://www.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif,,2026-03-27 16:24:21.72643+00,2026-03-28 20:54:03.477122+00
 8365cd43-7d54-4918-a872-e81cfe803e62,twins-pinnacle,en,diving_tips,text,"Perfect for Open Water divers and training dives
 Explore the deeper west pinnacle first
 Navigate to the middle pinnacle and check the arch on the north side
@@ -1150,8 +1150,8 @@ b1e6b472-f665-4257-94e0-3f75030aa1c0,home,nl,course_open_water_duration,text,3-4
 b2104be7-cd9e-40f6-a444-2a8e1eb5231f,home,nl,course_discover_scuba_deluxe_description,textarea,Extended DSD with 3 dives for more underwater time and a more relaxed pace.,contact@prodiving.asia,2026-03-12 10:57:14.010608+00,2026-03-14 18:50:05.442579+00
 b22ea58b-174e-4616-8fd1-98cf65c4efa6,msdt-program,nl,enroll_title,text,Hoe schrijf je je in,,2026-03-28 13:22:02.219507+00,2026-03-28 13:22:02.219507+00
 b233ebb7-ee87-4b2b-bdcc-c74e50a8b6b3,rescue,en,faq_1_answer,text,The course is challenging but instructors support you step-by-step. Good fitness and comfort in the water help.,seed-script,2026-03-28 14:22:37.579329+00,2026-03-28 14:24:16.617176+00
-b2557321-57ea-46af-8afd-d06db86809e2,shark-island,nl,images,text,"/images/sharkisand.jpg
-/images/blacktip-reef-shark.jpg",,2026-03-27 16:24:21.72643+00,2026-03-28 12:47:09.516174+00
+b2557321-57ea-46af-8afd-d06db86809e2,shark-island,nl,images,text,"https://www.divinginasia.com/images/sharkisand.jpg
+https://www.divinginasia.com/images/blacktip-reef-shark.jpg",,2026-03-27 16:24:21.72643+00,2026-03-28 12:47:09.516174+00
 b27a3f6d-c042-4a3e-8ff8-e6ce889fc85c,dive-sites/chumphon-pinnacle,nl,diving_tips,text,"Gevorderde certificering aanbevolen door diepte en stroming
 Vroege ochtendtrips vergroten de kans op walvishaaiwaarnemingen
 Groothoeklens aanbevolen voor grote onderwerpen
@@ -1236,13 +1236,13 @@ bd441dee-3993-4519-bcd4-f483edca4c21,pro-level-courses,en,view_button,text,View,
 bd8b3820-5b6e-4c76-9476-e66b0e976c26,contact,en,footer_line_2,textarea,Discover the magic beneath the waves in Thailand's diving paradise.,contact@prodiving.asia,2026-03-12 14:31:13.936296+00,2026-04-06 04:40:49.337206+00
 bda18b67-66b2-4452-bb99-b83b993570f5,green-sea-turtle,en,frequency,text,Common in suitable habitats,seed-script,2026-03-28 14:15:08.09076+00,2026-03-28 14:15:08.09076+00
 bdbffef5-fe26-44e3-8584-446afe0aca3e,accommodation,en,roomsIntro,text,"Whether you are looking for a budget-friendly room or more space for family travel, we can match you with the right option.",,2026-03-27 11:51:48.105016+00,2026-03-28 20:55:30.812602+00
-bdc97da9-67fa-4a31-8599-bbef255bff28,mango-bay,nl,images,text,/images/mango-bay.webp,,2026-03-27 16:24:21.72643+00,2026-03-28 12:47:09.516174+00
+bdc97da9-67fa-4a31-8599-bbef255bff28,mango-bay,nl,images,text,https://www.divinginasia.com/images/mango-bay.webp,,2026-03-27 16:24:21.72643+00,2026-03-28 12:47:09.516174+00
 be1bf30a-0613-4eb8-8090-51d1912364ce,home,en,course_instructor_duration,text,2-3 weeks,contact@prodiving.asia,2026-03-12 10:01:50.741687+00,2026-03-16 18:01:39.262481+00
 be60a8d0-e384-49bc-9acc-2d3f18e1660d,home,nl,course_advanced_price,text,"฿9,500",contact@prodiving.asia,2026-03-12 10:57:14.010608+00,2026-03-14 18:50:05.442579+00
 be622cc3-eda4-477d-8ca6-05681f4e7acf,accommodation,en,roomsTitle,text,Our Rooms,,2026-03-27 11:51:48.105016+00,2026-03-28 20:55:30.812602+00
 bf0d140f-67dc-447b-b8aa-7977b18b79f1,contact,nl,form_title,text,Stuur ons een bericht,contact@prodiving.asia,2026-03-12 10:14:37.06477+00,2026-03-14 18:57:12.645596+00
 bf289a74-05fe-42dc-a192-a9ba5b60810a,viewpoints-koh-tao,nl,hiking_tips_title,text,Wandeltips,,2026-03-28 13:42:12.192138+00,2026-03-28 13:50:12.131579+00
-bfbd776c-f947-4537-a7cc-21f5014fefc6,dive-sites/chumphon-pinnacle,en,images,text,/images/chumphon-pinnacle-top.webp /images/photo-1682686580849-3e7f67df4015.avif /images/photo-1613853250147-2f73e55c1561.avif /images/photo-1618865181016-a80ad83a06d3.avif /images/photo-1647825194145-2d94e259c745.avif /images/photo-1659518893171-b15e20a8e201.avif /images/photo-1682687982423-295485af248a.avif,,2026-03-28 20:43:16.430069+00,2026-03-28 20:47:03.618356+00
+bfbd776c-f947-4537-a7cc-21f5014fefc6,dive-sites/chumphon-pinnacle,en,images,text,https://www.divinginasia.com/images/chumphon-pinnacle-top.webp https://www.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif https://www.divinginasia.com/images/photo-1613853250147-2f73e55c1561.avif https://www.divinginasia.com/images/photo-1618865181016-a80ad83a06d3.avif https://www.divinginasia.com/images/photo-1647825194145-2d94e259c745.avif https://www.divinginasia.com/images/photo-1659518893171-b15e20a8e201.avif https://www.divinginasia.com/images/photo-1682687982423-295485af248a.avif,,2026-03-28 20:43:16.430069+00,2026-03-28 20:47:03.618356+00
 bfd3a9b0-d0ee-4d65-81aa-98107f3b01d8,contact,en,form_sending_label,text,Sending...,contact@prodiving.asia,2026-03-12 14:31:13.936296+00,2026-04-06 04:40:49.337206+00
 c01e30cd-086c-4d78-97a9-afa93470a1d3,home,en,course_divemaster_price_usd,text,1190,contact@prodiving.asia,2026-03-12 13:33:29.379002+00,2026-03-16 18:01:39.262481+00
 c02dc353-2384-43c6-8c69-5ca52d3e45c8,sail-rock,en,quick_facts_best_time,text,"Year-round, best in dry season (December-May)",,2026-03-27 13:40:10.789117+00,2026-03-28 12:47:09.516174+00
@@ -1305,7 +1305,7 @@ c64ec2d3-54d7-42b6-a3de-2ea27780bf18,discover-scuba,en,faq_4_question,text,What 
 c6cbd81d-ea82-4336-a75c-22851df228ad,instructor,en,faq_2_a,text,"Yes. After completing the IDC and passing the Instructor Examination (IE), you earn the PADI Open Water Scuba Instructor certification and can teach professionally.",,2026-03-28 13:19:45.973231+00,2026-03-28 13:19:45.973231+00
 c6e80b04-e811-4b57-944c-d18d2a1bb9f2,contact,nl,phone_title,text,Telefoon,contact@prodiving.asia,2026-03-12 10:14:37.06477+00,2026-03-14 18:57:12.645596+00
 c6fb2182-0c78-4b75-a6c9-3d251b394219,food-drink,en,title,text,Food & drinks on Koh Tao,,2026-03-28 13:42:12.192138+00,2026-03-28 13:42:12.192138+00
-c73228a8-efe3-48c0-99b0-01bbc29cbef3,chumphon-pinnacle,en,images,text,/images/chumphon-pinnacle-top.webp /images/photo-1682686580849-3e7f67df4015.avif /images/photo-1613853250147-2f73e55c1561.avif /images/photo-1618865181016-a80ad83a06d3.avif /images/photo-1647825194145-2d94e259c745.avif /images/photo-1659518893171-b15e20a8e201.avif /images/photo-1682687982423-295485af248a.avif,,2026-03-27 14:44:46.785028+00,2026-03-28 20:53:36.669148+00
+c73228a8-efe3-48c0-99b0-01bbc29cbef3,chumphon-pinnacle,en,images,text,https://www.divinginasia.com/images/chumphon-pinnacle-top.webp https://www.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif https://www.divinginasia.com/images/photo-1613853250147-2f73e55c1561.avif https://www.divinginasia.com/images/photo-1618865181016-a80ad83a06d3.avif https://www.divinginasia.com/images/photo-1647825194145-2d94e259c745.avif https://www.divinginasia.com/images/photo-1659518893171-b15e20a8e201.avif https://www.divinginasia.com/images/photo-1682687982423-295485af248a.avif,,2026-03-27 14:44:46.785028+00,2026-03-28 20:53:36.669148+00
 c7420425-cd45-44b2-96c5-353d6ea9729d,contact,nl,subject_option_3,text,Uitrusting verhuur,contact@prodiving.asia,2026-03-12 13:34:35.256812+00,2026-03-14 18:57:12.645596+00
 c77950d2-2388-458c-a7e0-9f98f40e0369,rescue,nl,price_thb,text,10000,seed-script,2026-03-14 11:19:45.578131+00,2026-03-28 14:24:16.617176+00
 c7cbb4b9-e0a2-4903-b532-8f19673ec618,blacktip-reef-shark,en,interesting_facts,text,"Blacktip reef sharks can live up to 12 years
@@ -1492,7 +1492,7 @@ da0016d2-ec22-4c04-a85a-2502b38ff331,accommodation,nl,people,text,Aantal persone
 da8efb20-a524-4eb5-bba0-a52a6e681301,msdt-program,en,included_title,text,What's Included,,2026-03-28 13:22:02.219507+00,2026-03-28 13:22:02.219507+00
 dae75d0f-1ac5-4623-b031-bc336acb0416,contact,en,subject_option_3,text,Equipment Rental,contact@prodiving.asia,2026-03-12 14:31:13.936296+00,2026-04-06 04:40:49.337206+00
 db1194a3-5a93-4273-9fc7-e6fdfc444cb6,Diving tips,nl,diving-tips,text,tip 2,,2026-03-28 13:10:40.754266+00,2026-03-28 13:10:40.754266+00
-db9106fd-107e-4be2-85b1-e2c6b6bcc49a,shark-island,en,images,text,/images/sharkisand.jpg /images/blacktip-reef-shark.jpg,,2026-03-27 16:24:21.72643+00,2026-03-28 20:52:28.810735+00
+db9106fd-107e-4be2-85b1-e2c6b6bcc49a,shark-island,en,images,text,https://www.divinginasia.com/images/sharkisand.jpg https://www.divinginasia.com/images/blacktip-reef-shark.jpg,,2026-03-27 16:24:21.72643+00,2026-03-28 20:52:28.810735+00
 dbb46424-ff1d-4893-b470-b5af16075928,how-to-get-here,en,cta_visa_info,text,Visa information,,2026-03-28 13:42:12.192138+00,2026-03-28 13:42:12.192138+00
 dc4adb26-91ab-4bfa-b53f-3165cc79031e,hawksbill-sea-turtle,en,size,text,"Up to 1m (3.3ft), 50-80kg",seed-script,2026-03-28 14:15:08.526272+00,2026-03-28 14:15:08.526272+00
 dc4cde9a-d685-4987-9509-7a75c43cf8c2,msdt-program,en,prereq_items,text,"PADI Open Water Scuba Instructor (OWSI) certification
@@ -1605,7 +1605,7 @@ e72861de-e7b4-4fc9-830b-ec37b4d23015,blacktip-reef-shark,en,size,text,"Up to 2m 
 e72a33d8-f218-45a0-b7b9-ad9e9725c9ba,advanced,nl,faq_1_question,text,Moet ik een test doen?,seed-script,2026-03-28 14:22:36.581793+00,2026-03-28 14:24:15.888987+00
 e7988854-21b6-4a92-986e-e07fef778abf,fun-diving,nl,fun_diving_world_class_body,text,"Beneath the turquoise water surrounding Koh Tao lies a world of colorful coral reefs, teeming marine life from macro creatures to turtles and if you're lucky, the majestic whale shark. With over 25 captivating dive sites, there's boundless diversity to explore.",,2026-03-28 13:10:40.754266+00,2026-03-30 11:23:47.936366+00
 e7d01a39-5e24-4224-bcc1-0975af0f508a,blacktip-reef-shark,nl,conservation_status,text,Bijna bedreigd,seed-script,2026-03-28 14:15:08.526272+00,2026-03-28 14:15:08.526272+00
-e7da6615-99dc-4833-b7b1-3d20b31b1cd1,twins-pinnacle,en,images,text,/images/twins-header.png,,2026-03-27 16:24:21.72643+00,2026-03-28 12:47:09.516174+00
+e7da6615-99dc-4833-b7b1-3d20b31b1cd1,twins-pinnacle,en,images,text,https://www.divinginasia.com/images/twins-header.png,,2026-03-27 16:24:21.72643+00,2026-03-28 12:47:09.516174+00
 e87b47e1-184c-4c8e-8d13-6ce8188856fd,scuba-diver,en,course_overview,text,"The PADI Scuba Diver course introduces you to the underwater world in a fun and relaxed way. You'll learn basic scuba diving skills and explore shallow reefs, giving you the confidence to continue your diving journey. This course serves as an introduction to scuba diving and can lead to full Open Water certification.",seed-script,2026-03-12 14:56:23.775431+00,2026-03-28 14:24:15.888987+00
 e88a5576-4128-4541-8b39-2e0714e5127b,discover-scuba-deluxe,nl,hero_title,text,Discover Scuba Diving Deluxe. dutch,,2026-03-19 11:07:40.674469+00,2026-03-27 13:13:36.994736+00
 e92ddf41-f1fb-4cc8-ad5c-204b302e4a54,things-to-do,en,activities_title,text,Popular activities,,2026-03-28 13:31:13.441375+00,2026-03-28 13:31:13.441375+00
@@ -1617,7 +1617,7 @@ All required training materials
 Guidance on application process
 Access to experienced Course Directors",,2026-03-28 13:22:02.219507+00,2026-03-28 13:22:02.219507+00
 ea481a97-feaa-4bbc-9bb5-0983453ad9c0,medical-services,nl,care_title,text,Zorg & noodgevallen,,2026-03-28 13:46:34.702478+00,2026-03-28 14:56:21.792803+00
-ea548842-78fb-4d1e-8d7e-53e3c1b3f83b,japanese-gardens,nl,images,text,/images/japanandwins.jpg,,2026-03-27 16:24:21.72643+00,2026-03-28 12:47:09.516174+00
+ea548842-78fb-4d1e-8d7e-53e3c1b3f83b,japanese-gardens,nl,images,text,https://www.divinginasia.com/images/japanandwins.jpg,,2026-03-27 16:24:21.72643+00,2026-03-28 12:47:09.516174+00
 ea65323c-5e71-4405-ae48-b5676bf26daf,contact,nl,form_last_name_label,text,Achternaam,contact@prodiving.asia,2026-03-12 10:14:37.06477+00,2026-03-14 18:57:12.645596+00
 ea7ed4f0-e2c5-447c-bd85-2d308e020772,how-to-get-here,en,cta_book_stay,text,Book accommodation,,2026-03-28 13:42:12.192138+00,2026-03-28 13:42:12.192138+00
 ea85596c-2727-4ec7-8027-f993f4e34b68,south-west-pinnacle,nl,quick_facts_location,text,30-40 minuten offshore,,2026-03-27 13:40:10.789117+00,2026-03-28 12:47:09.516174+00
@@ -1730,12 +1730,12 @@ Option to add extra dives",seed-script,2026-03-28 14:22:37.204447+00,2026-03-28 
 fc9e37f6-2895-4637-a2e5-e570355c5c13,blacktip-reef-shark,en,habitat,text,"Coral reefs, shallow coastal waters",seed-script,2026-03-28 14:15:08.09076+00,2026-03-28 14:15:08.09076+00
 fcefe891-114b-42d9-b099-afa0c6ce65fd,specialty/night-diver,nl,price_thb,text,6500,,2026-03-28 13:10:40.754266+00,2026-03-28 13:10:40.754266+00
 fd177409-56c4-47b4-b09a-71f08166b9d3,home,nl,hero_secondary_cta,text,Cursussen,contact@prodiving.asia,2026-03-12 10:57:14.010608+00,2026-03-14 18:50:05.442579+00
-fd496fe9-9d13-4f35-9680-4fa21deb264b,sail-rock,nl,images,text,"/images/sailrock.webp
-/images/photo-1613853250147-2f73e55c1561.avif
-/images/photo-1618865181016-a80ad83a06d3.avif
-/images/photo-1647825194145-2d94e259c745.avif
-/images/photo-1682686580849-3e7f67df4015.avif
-/images/photo-1682687982423-295485af248a.avif",,2026-03-27 15:18:53.136052+00,2026-03-28 12:47:09.516174+00
+fd496fe9-9d13-4f35-9680-4fa21deb264b,sail-rock,nl,images,text,"https://www.divinginasia.com/images/sailrock.webp
+https://www.divinginasia.com/images/photo-1613853250147-2f73e55c1561.avif
+https://www.divinginasia.com/images/photo-1618865181016-a80ad83a06d3.avif
+https://www.divinginasia.com/images/photo-1647825194145-2d94e259c745.avif
+https://www.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif
+https://www.divinginasia.com/images/photo-1682687982423-295485af248a.avif",,2026-03-27 15:18:53.136052+00,2026-03-28 12:47:09.516174+00
 fdbe7274-2ee0-4736-8313-d153644f945d,msdt-program,nl,prereq_title,text,Toelatingseisen,,2026-03-28 13:22:02.219507+00,2026-03-28 13:22:02.219507+00
 fe2a0fbb-3f46-4249-a9da-427a9508c7bd,how-to-get-here,nl,cta_book_stay,text,Boek verblijf,,2026-03-28 13:42:12.192138+00,2026-03-28 13:42:12.192138+00
 fe7a7221-c0bb-4b54-a061-e93004b8413b,nudibranchs,en,best_time,text,"Year-round, especially after stronger currents",seed-script,2026-03-28 14:15:08.09076+00,2026-03-28 14:15:08.09076+00

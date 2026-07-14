@@ -28,7 +28,7 @@ const HTMSSattakut = () => {
           'Malabar tandbaarzen (resident)\nReuzenbarracuda\nScholen snapper en fusilier\nMurenen\nKoraalduivels en schorpioenvissen\nKoraalgroei op wrakstructuur\nDiverse rifvissen\nKogelvissen en trekkervissen',
         diving_tips:
           'Gevorderde certificering vereist voor wrakduiken\nUitstekende site voor wrakspecialisaties\nRespecteer de historische betekenis van deze locatie\nGebruik passende wrakduiktechnieken en penetratievaardigheden\nBlijf bij je gids bij verkenning van het interieur\nZeer geschikt voor onderwaterfotografie\nSpaar lucht door diepte en verkenning\nLet op de historische kenmerken van het schip',
-        images: '/images/htms-sattakut.jpg\n/images/htms-sattakut-wreck.jpg\n/images/wreck.jpeg',
+        images: 'https://www.divinginasia.com/images/htms-sattakut.jpg\nhttps://www.divinginasia.com/images/htms-sattakut-wreck.jpg\nhttps://www.divinginasia.com/images/wreck.jpeg',
       }
     : {
         overview:
@@ -42,7 +42,7 @@ const HTMSSattakut = () => {
           'Malabar Groupers (resident)\nGiant Barracuda\nSnapper and Fusilier schools\nMoray Eels\nLionfish and scorpionfish\nCoral growth on wreck structure\nVarious reef fish species\nPuffers and triggerfish',
         diving_tips:
           'Advanced certification required for wreck diving\nExcellent site for wreck diving specialty course\nRespect the historical significance of the site\nUse wreck diving techniques and penetration skills\nStay with your guide when exploring the interior\nPerfect for underwater photography\nConserve air due to depth and exploration\nLook for the ship\'s historical features',
-        images: '/images/htms-sattakut.jpg\n/images/htms-sattakut-wreck.jpg\n/images/wreck.jpeg',
+        images: 'https://www.divinginasia.com/images/htms-sattakut.jpg\nhttps://www.divinginasia.com/images/htms-sattakut-wreck.jpg\nhttps://www.divinginasia.com/images/wreck.jpeg',
       }), [isDutch]);
 
   const { content } = usePageContent({ pageSlug: 'htms-sattakut', locale, fallbackContent });

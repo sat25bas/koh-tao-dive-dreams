@@ -29,47 +29,47 @@ const Gallery = () => {
 
   const images = isDutch ? [
     {
-      src: "/images/photo-1682687982423-295485af248a.avif",
+      src: "https://www.divinginasia.com/images/photo-1682687982423-295485af248a.avif",
       alt: "Duikers op een boot, klaar voor de duik",
       category: "Duiken"
     },
     {
-      src: "/images/htms-sattakut-wreck.jpg",
+      src: "https://www.divinginasia.com/images/htms-sattakut-wreck.jpg",
       alt: "Diepduiken bij het HTMS Sattakut-wrak",
       category: "Wrakduiken"
     },
     {
-      src: "/images/sailrock.webp",
+      src: "https://www.divinginasia.com/images/sailrock.webp",
       alt: "Diepduiktrip bij Sail Rock, Koh Tao",
       category: "Diepduiken"
     },
     {
-      src: "/images/chumphon-pinnacle-top.webp",
+      src: "https://www.divinginasia.com/images/chumphon-pinnacle-top.webp",
       alt: "Chumphon Pinnacle met scholen rifvissen",
       category: "Duiklocaties"
     },
     {
-      src: "/images/htms-sattakut.jpg",
+      src: "https://www.divinginasia.com/images/htms-sattakut.jpg",
       alt: "Wrakduik op de HTMS Sattakut",
       category: "Duiklocaties"
     },
     {
-      src: "/images/twins.jpg",
+      src: "https://www.divinginasia.com/images/twins.jpg",
       alt: "Ondiepe rifduik bij Twins",
       category: "Duiklocaties"
     },
     {
-      src: "/images/mango-bay.webp",
+      src: "https://www.divinginasia.com/images/mango-bay.webp",
       alt: "Heldere omstandigheden bij Mango Bay",
       category: "Duiklocaties"
     },
     {
-      src: "/images/sharkisand.jpg",
+      src: "https://www.divinginasia.com/images/sharkisand.jpg",
       alt: "Rifstructuren bij Shark Island",
       category: "Duiklocaties"
     },
     {
-      src: "/images/fun.png",
+      src: "https://www.divinginasia.com/images/fun.png",
       alt: "Duikers die plezier hebben tijdens een fundive",
       category: "Fun Dives"
     },
@@ -89,22 +89,22 @@ const Gallery = () => {
       category: "Nachtleven"
     },
     {
-      src: "/images/food-drink-hero.jpg",
+      src: "https://www.divinginasia.com/images/food-drink-hero.jpg",
       alt: "Genieten van eten en drankjes na het duiken",
       category: "Eten & Drinken"
     },
     {
-      src: "/images/viewpoints-hero.jpg",
+      src: "https://www.divinginasia.com/images/viewpoints-hero.jpg",
       alt: "Uitzichtpunt wandeling op Koh Tao",
       category: "Bergwandelen"
     },
     {
-      src: "/images/things-to-do.jpg",
+      src: "https://www.divinginasia.com/images/things-to-do.jpg",
       alt: "Leuke activiteiten op Koh Tao",
       category: "Koh Tao Vibes"
     },
     {
-      src: "/images/JunejueaBeach.jpg",
+      src: "https://www.divinginasia.com/images/JunejueaBeach.jpg",
       alt: "Prachtig strand bij June Juea",
       category: "Koh Tao Vibes"
     },
@@ -120,47 +120,47 @@ const Gallery = () => {
     }
   ] : [
     {
-      src: "/images/photo-1682687982423-295485af248a.avif",
+      src: "https://www.divinginasia.com/images/photo-1682687982423-295485af248a.avif",
       alt: "Divers on a boat ready to dive",
       category: "Diving"
     },
     {
-      src: "/images/htms-sattakut-wreck.jpg",
+      src: "https://www.divinginasia.com/images/htms-sattakut-wreck.jpg",
       alt: "Deep dive at the HTMS Sattakut wreck",
       category: "Wreck Diving"
     },
     {
-      src: "/images/sailrock.webp",
+      src: "https://www.divinginasia.com/images/sailrock.webp",
       alt: "Deep diving trip at Sail Rock, Koh Tao",
       category: "Deep Diving"
     },
     {
-      src: "/images/chumphon-pinnacle-top.webp",
+      src: "https://www.divinginasia.com/images/chumphon-pinnacle-top.webp",
       alt: "Chumphon Pinnacle with schools of reef fish",
       category: "Dive Sites"
     },
     {
-      src: "/images/htms-sattakut.jpg",
+      src: "https://www.divinginasia.com/images/htms-sattakut.jpg",
       alt: "Wreck dive at HTMS Sattakut",
       category: "Dive Sites"
     },
     {
-      src: "/images/twins.jpg",
+      src: "https://www.divinginasia.com/images/twins.jpg",
       alt: "Shallow reef diving at Twins",
       category: "Dive Sites"
     },
     {
-      src: "/images/mango-bay.webp",
+      src: "https://www.divinginasia.com/images/mango-bay.webp",
       alt: "Clear-water conditions at Mango Bay",
       category: "Dive Sites"
     },
     {
-      src: "/images/sharkisand.jpg",
+      src: "https://www.divinginasia.com/images/sharkisand.jpg",
       alt: "Reef structure at Shark Island",
       category: "Dive Sites"
     },
     {
-      src: "/images/fun.png",
+      src: "https://www.divinginasia.com/images/fun.png",
       alt: "Divers having fun during a fun dive",
       category: "Fun Dives"
     },
@@ -180,22 +180,22 @@ const Gallery = () => {
       category: "Nightlife"
     },
     {
-      src: "/images/food-drink-hero.jpg",
+      src: "https://www.divinginasia.com/images/food-drink-hero.jpg",
       alt: "Enjoying food and drinks after diving",
       category: "Food & Drinks"
     },
     {
-      src: "/images/viewpoints-hero.jpg",
+      src: "https://www.divinginasia.com/images/viewpoints-hero.jpg",
       alt: "Viewpoint hike in Koh Tao",
       category: "Mountain Hikes"
     },
     {
-      src: "/images/things-to-do.jpg",
+      src: "https://www.divinginasia.com/images/things-to-do.jpg",
       alt: "Fun activities around Koh Tao",
       category: "Koh Tao Vibes"
     },
     {
-      src: "/images/JunejueaBeach.jpg",
+      src: "https://www.divinginasia.com/images/JunejueaBeach.jpg",
       alt: "Beautiful June Juea beach scene",
       category: "Koh Tao Vibes"
     },

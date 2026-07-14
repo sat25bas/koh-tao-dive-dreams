@@ -265,7 +265,7 @@ const BookNowForm: React.FC<BookNowFormProps> = ({ fullPage = false }) => {
   return (
     <div className="form-container" style={containerStyle}>
       <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
-        <img src="/images/logo.png" alt="Diving In Asia Logo" style={{ maxWidth: 180, height: 'auto' }} />
+        <img src="https://www.divinginasia.com/images/logo.png" alt="Diving In Asia Logo" style={{ maxWidth: 180, height: 'auto' }} />
       </div>
       <h2 style={{ textAlign: 'center', marginBottom: '1.5rem' }}>Booking / Inquiry Form</h2>
       {showThankYou ? (

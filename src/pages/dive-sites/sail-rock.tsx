@@ -29,7 +29,7 @@ const SailRock = () => {
         diving_tips:
           'Gevorderde certificering vereist - dit is een diepduiksite\nStromingsbewustzijn is essentieel - blijf bij je gids\nGebruik een duikcomputer voor nauwkeurige diepte- en tijdsbewaking\nWalvishaaien zijn vaak actiever in de ochtend - vroeg vertrek aanbevolen\nNeem een groothoeklens mee voor grote pelagische soorten\nSpaar lucht in verband met diepte en mogelijke stroming\nPerfect voor specialisaties in diepduiken',
         images:
-          '/images/sailrock.webp\n/images/marine-life-hero.webp\n/images/whale.webp\n/images/photo-1682686580849-3e7f67df4015.avif\n/images/photo-1659518893171-b15e20a8e201.avif\n/images/chumphon-pinnacle-top.webp',
+          'https://www.divinginasia.com/images/sailrock.webp\nhttps://www.divinginasia.com/images/marine-life-hero.webp\nhttps://www.divinginasia.com/images/whale.webp\nhttps://www.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif\nhttps://www.divinginasia.com/images/photo-1659518893171-b15e20a8e201.avif\nhttps://www.divinginasia.com/images/chumphon-pinnacle-top.webp',
       }
     : {
         overview:
@@ -44,7 +44,7 @@ const SailRock = () => {
         diving_tips:
           'Advanced certification required - this is a deep dive site\nStrong current awareness essential - stay with your guide\nUse a dive computer for accurate depth and time monitoring\nWhalesharks are most active in the morning - early boat departure recommended\nBring a wide-angle lens for photographing large pelagics\nConserve air due to depth and potential current\nPerfect for deep specialty course dives',
         images:
-          '/images/sailrock.webp\n/images/marine-life-hero.webp\n/images/whale.webp\n/images/photo-1682686580849-3e7f67df4015.avif\n/images/photo-1659518893171-b15e20a8e201.avif\n/images/chumphon-pinnacle-top.webp',
+          'https://www.divinginasia.com/images/sailrock.webp\nhttps://www.divinginasia.com/images/marine-life-hero.webp\nhttps://www.divinginasia.com/images/whale.webp\nhttps://www.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif\nhttps://www.divinginasia.com/images/photo-1659518893171-b15e20a8e201.avif\nhttps://www.divinginasia.com/images/chumphon-pinnacle-top.webp',
       }), [isDutch]);
 
   const { content } = usePageContent({ pageSlug: 'sail-rock', locale, fallbackContent });
@@ -64,7 +64,7 @@ const SailRock = () => {
         marineLifeHighlights={toList(content.marine_life_highlights)}
         divingTips={toList(content.diving_tips)}
         images={toList(content.images)}
-        heroImage="/images/sailrock.webp"
+        heroImage="https://www.divinginasia.com/images/sailrock.webp"
       />
       <DiveSiteBookingCTA siteName="Sail Rock" />
     </>

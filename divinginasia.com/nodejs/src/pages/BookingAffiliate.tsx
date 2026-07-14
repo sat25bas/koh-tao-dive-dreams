@@ -17,7 +17,7 @@ const hotels = [
     priceRange: "$$$",
     rating: 4.6,
     tags: ["Dive Shop On-Site", "Beach Access", "Pool", "Restaurant", "WiFi"],
-    image: "/images/photo-1613853250147-2f73e55c1561.avif",
+    image: "https://www.divinginasia.com/images/photo-1613853250147-2f73e55c1561.avif",
   },
   {
     name: "Koh Tao Cabana Hotel",
@@ -27,7 +27,7 @@ const hotels = [
     priceRange: "$$$",
     rating: 4.5,
     tags: ["Rooftop Pool", "Central Location", "Restaurant", "WiFi", "Bar"],
-    image: "/images/photo-1618865181016-a80ad83a06d3.avif",
+    image: "https://www.divinginasia.com/images/photo-1618865181016-a80ad83a06d3.avif",
   },
   {
     name: "Haad Tien Beach Resort",
@@ -37,7 +37,7 @@ const hotels = [
     priceRange: "$$$$",
     rating: 4.8,
     tags: ["Private Beach", "Secluded", "Restaurant", "Snorkeling", "Romantic"],
-    image: "/images/photo-1647825194145-2d94e259c745.avif",
+    image: "https://www.divinginasia.com/images/photo-1647825194145-2d94e259c745.avif",
   },
   {
     name: "Koh Tao Resort",
@@ -47,7 +47,7 @@ const hotels = [
     priceRange: "$$",
     rating: 4.3,
     tags: ["Garden", "Pool", "Restaurant", "WiFi", "Dive Packages"],
-    image: "/images/photo-1659518893171-b15e20a8e201.avif",
+    image: "https://www.divinginasia.com/images/photo-1659518893171-b15e20a8e201.avif",
   },
   {
     name: "Montra Resort",
@@ -57,7 +57,7 @@ const hotels = [
     priceRange: "$$$",
     rating: 4.7,
     tags: ["Sea Views", "Infinity Pool", "Quiet", "Restaurant", "WiFi"],
-    image: "/images/photo-1682686580849-3e7f67df4015.avif",
+    image: "https://www.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif",
   },
   {
     name: "Crystal Dive Koh Tao",
@@ -67,7 +67,7 @@ const hotels = [
     priceRange: "$$",
     rating: 4.4,
     tags: ["Dive School", "Pool", "Restaurant", "WiFi", "Budget-Friendly"],
-    image: "/images/photo-1682687982423-295485af248a.avif",
+    image: "https://www.divinginasia.com/images/photo-1682687982423-295485af248a.avif",
   },
   {
     name: "Koh Tao Hillside Resort",
@@ -77,7 +77,7 @@ const hotels = [
     priceRange: "$$",
     rating: 4.2,
     tags: ["Hillside Views", "Bungalows", "Pool", "WiFi", "Peaceful"],
-    image: "/images/photo-1682686580849-3e7f67df4015.avif",
+    image: "https://www.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif",
   },
   {
     name: "Koh Tao Coral Grand Resort",
@@ -87,7 +87,7 @@ const hotels = [
     priceRange: "$$$",
     rating: 4.5,
     tags: ["Beachfront", "Snorkeling", "Pool", "Restaurant", "WiFi"],
-    image: "/images/photo-1647825194145-2d94e259c745.avif",
+    image: "https://www.divinginasia.com/images/photo-1647825194145-2d94e259c745.avif",
   },
 ];
 
@@ -146,7 +146,7 @@ const BookingAffiliate = () => {
       <div
         className="relative min-h-[50vh] flex items-center justify-center"
         style={{
-          backgroundImage: `linear-gradient(rgba(0,30,60,0.55), rgba(0,60,100,0.55)), url('/images/staykohtai.png')`,
+          backgroundImage: `linear-gradient(rgba(0,30,60,0.55), rgba(0,60,100,0.55)), url('https://www.divinginasia.com/images/staykohtai.png')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}

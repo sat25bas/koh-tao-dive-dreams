@@ -34,14 +34,14 @@ const BeardedScorpionFish = () => {
       fullHeightHero={true}
       heroImageFit="cover"
       noOverlay={true}
-      secondaryImage="/images/sscorpio2.png"
+      secondaryImage="https://www.divinginasia.com/images/sscorpio2.png"
       images={[
-        "/images/bearded-scorpionfish.jpg",
-        "/images/photo-1618865181016-a80ad83a06d3.avif",
-        "/images/photo-1647825194145-2d94e259c745.avif",
-        "/images/photo-1659518893171-b15e20a8e201.avif",
-        "/images/photo-1682686580849-3e7f67df4015.avif",
-        "/images/photo-1682687982423-295485af248a.avif"
+        "https://www.divinginasia.com/images/bearded-scorpionfish.jpg",
+        "https://www.divinginasia.com/images/photo-1618865181016-a80ad83a06d3.avif",
+        "https://www.divinginasia.com/images/photo-1647825194145-2d94e259c745.avif",
+        "https://www.divinginasia.com/images/photo-1659518893171-b15e20a8e201.avif",
+        "https://www.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif",
+        "https://www.divinginasia.com/images/photo-1682687982423-295485af248a.avif"
       ]}
     />
   );

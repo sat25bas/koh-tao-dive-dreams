@@ -25,7 +25,7 @@ const AdvancedEn: React.FC = () => {
         faq_2_question: 'Can I choose my Adventure Dives?',
         faq_2_answer: 'Deep and Navigation are required. You choose 3 electives from options like Night, Wreck, Peak Performance Buoyancy, Fish ID, and more.',
       }}
-      heroImage="/images/advanved.png"
+      heroImage="https://www.divinginasia.com/images/advanved.png"
       level="Intermediate"
     />
   );

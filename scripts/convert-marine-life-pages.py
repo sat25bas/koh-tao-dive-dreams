@@ -67,14 +67,14 @@ pages['Nudibranchs'] = dict(
     nl_name='Naaktslakken',
     en_name='Nudibranchs',
     scientific_name='Various species (Gastropoda)',
-    secondary_image='/images/nudi.png',
+    secondary_image='https://www.divinginasia.com/images/nudi.png',
     images_block='''      images={[
-        "/images/headnudi.png",
-        "/images/photo-1618865181016-a80ad83a06d3.avif",
-        "/images/photo-1647825194145-2d94e259c745.avif",
-        "/images/photo-1659518893171-b15e20a8e201.avif",
-        "/images/photo-1682686580849-3e7f67df4015.avif",
-        "/images/photo-1682687982423-295485af248a.avif"
+        "https://www.divinginasia.com/images/headnudi.png",
+        "https://www.divinginasia.com/images/photo-1618865181016-a80ad83a06d3.avif",
+        "https://www.divinginasia.com/images/photo-1647825194145-2d94e259c745.avif",
+        "https://www.divinginasia.com/images/photo-1659518893171-b15e20a8e201.avif",
+        "https://www.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif",
+        "https://www.divinginasia.com/images/photo-1682687982423-295485af248a.avif"
       ]}''',
     nl={
         'description': 'Kleurrijke zeenaaktslakken met ongelooflijke patronen en vormen, perfect voor macrofotografie.',
@@ -110,14 +110,14 @@ pages['GreenSeaTurtle'] = dict(
     nl_name='Groene Zeeschildpad',
     en_name='Green sea turtle',
     scientific_name='Chelonia mydas',
-    secondary_image='/images/3turtle.png',
+    secondary_image='https://www.divinginasia.com/images/3turtle.png',
     images_block='''      images={[
-        "/images/green-sea-turtle.png",
-        "/images/photo-1618865181016-a80ad83a06d3.avif",
-        "/images/photo-1647825194145-2d94e259c745.avif",
-        "/images/photo-1659518893171-b15e20a8e201.avif",
-        "/images/photo-1682686580849-3e7f67df4015.avif",
-        "/images/photo-1682687982423-295485af248a.avif"
+        "https://www.divinginasia.com/images/green-sea-turtle.png",
+        "https://www.divinginasia.com/images/photo-1618865181016-a80ad83a06d3.avif",
+        "https://www.divinginasia.com/images/photo-1647825194145-2d94e259c745.avif",
+        "https://www.divinginasia.com/images/photo-1659518893171-b15e20a8e201.avif",
+        "https://www.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif",
+        "https://www.divinginasia.com/images/photo-1682687982423-295485af248a.avif"
       ]}''',
     nl={
         'description': 'Plantenetende zeeschildpadden die op zeegras en algen grazen en zo gezonde mari\u00ebne ecosystemen helpen behouden.',
@@ -153,14 +153,14 @@ pages['BlackTipReefShark'] = dict(
     nl_name='Zwartpuntrifhaai',
     en_name='Blacktip reef shark',
     scientific_name='Carcharhinus melanopterus',
-    secondary_image='/images/3turtle.png',
+    secondary_image='https://www.divinginasia.com/images/3turtle.png',
     images_block='''      images={[
-        "/images/blacktip-reef-shark.jpg",
-        "/images/photo-1618865181016-a80ad83a06d3.avif",
-        "/images/photo-1647825194145-2d94e259c745.avif",
-        "/images/photo-1659518893171-b15e20a8e201.avif",
-        "/images/photo-1682686580849-3e7f67df4015.avif",
-        "/images/photo-1682687982423-295485af248a.avif"
+        "https://www.divinginasia.com/images/blacktip-reef-shark.jpg",
+        "https://www.divinginasia.com/images/photo-1618865181016-a80ad83a06d3.avif",
+        "https://www.divinginasia.com/images/photo-1647825194145-2d94e259c745.avif",
+        "https://www.divinginasia.com/images/photo-1659518893171-b15e20a8e201.avif",
+        "https://www.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif",
+        "https://www.divinginasia.com/images/photo-1682687982423-295485af248a.avif"
       ]}''',
     nl={
         'description': 'Veelvoorkomende rifhaai met herkenbare zwarte puntjes op de vinnen, belangrijk voor een gezond koraalrifecosysteem.',
@@ -196,14 +196,14 @@ pages['HawksbillSeaTurtle'] = dict(
     nl_name='Karetschildpad',
     en_name='Hawksbill sea turtle',
     scientific_name='Eretmochelys imbricata',
-    secondary_image='/images/3turtle.png',
+    secondary_image='https://www.divinginasia.com/images/3turtle.png',
     images_block='''      images={[
-        "/images/hawksbill-sea-turtle.jpg",
-        "/images/photo-1618865181016-a80ad83a06d3.avif",
-        "/images/photo-1647825194145-2d94e259c745.avif",
-        "/images/photo-1659518893171-b15e20a8e201.avif",
-        "/images/photo-1682686580849-3e7f67df4015.avif",
-        "/images/photo-1682687982423-295485af248a.avif"
+        "https://www.divinginasia.com/images/hawksbill-sea-turtle.jpg",
+        "https://www.divinginasia.com/images/photo-1618865181016-a80ad83a06d3.avif",
+        "https://www.divinginasia.com/images/photo-1647825194145-2d94e259c745.avif",
+        "https://www.divinginasia.com/images/photo-1659518893171-b15e20a8e201.avif",
+        "https://www.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif",
+        "https://www.divinginasia.com/images/photo-1682687982423-295485af248a.avif"
       ]}''',
     nl={
         'description': 'Prachtige zeeschildpad met een kenmerkende snavelvormige bek, bekend om het eten van sponzen en het kleurrijke schild.',
@@ -376,7 +376,7 @@ const MarineLifePage = () => {
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-background">
       {/* Hero Section */}
       <div className="relative min-h-[calc(100vh-4rem)] text-white flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-[url(\'/images/marine.png\')] bg-cover bg-center" />
+        <div className="absolute inset-0 bg-[url(\'https://www.divinginasia.com/images/marine.png\')] bg-cover bg-center" />
         <div className="absolute inset-0 bg-black/40"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white drop-shadow-lg">

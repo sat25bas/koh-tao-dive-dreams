@@ -4,7 +4,7 @@ const VisasKohTao = () => (
   <main className="max-w-4xl mx-auto">
     {/* Hero Section */}
     <section className="relative h-64 md:h-96 flex items-center justify-center mb-8 overflow-hidden">
-      <div className="absolute inset-0 bg-[url('/images/visa.png')] bg-cover bg-center" />
+      <div className="absolute inset-0 bg-[url('https://www.divinginasia.com/images/visa.png')] bg-cover bg-center" />
       <div className="absolute inset-0 bg-black/35" />
       <div className="text-center text-white z-10 relative">
         <h1 className="text-4xl md:text-5xl font-bold drop-shadow-lg">Visa for Koh Tao</h1>

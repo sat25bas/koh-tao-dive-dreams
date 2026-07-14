@@ -33,7 +33,7 @@ const SouthWestPinnacle = () => {
       diving_tips: isDutch
         ? 'Geschikt voor gevorderde duikers met ervaring in diepe en driftduiken\nGebruik een SMB en blijf tijdens de opstijging bij de groep\nPlan je gasvoorraad zorgvuldig door diepte en stroming\nLuister goed naar de briefing omdat entry en pickup per dag verschillen'
         : 'Best suited for advanced divers with deep and drift experience\nUse delayed SMB and stay with the group during ascent\nPlan gas carefully due to depth and current exposure\nListen closely to briefing because entry and pickup can vary by conditions',
-      images: '/images/photo-1682686580849-3e7f67df4015.avif',
+      images: 'https://www.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif',
     }),
     [isDutch]
   );

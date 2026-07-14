@@ -2,7 +2,7 @@ const CACHE = 'dive-asia-v3';
 const PRECACHE = [
   '/',
   '/manifest.json',
-  '/images/logo.png',
+  'https://www.divinginasia.com/images/logo.png',
 ];
 
 self.addEventListener('install', (event) => {

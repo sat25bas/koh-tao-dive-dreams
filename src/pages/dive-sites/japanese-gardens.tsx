@@ -5,9 +5,9 @@ import { useTranslation } from 'react-i18next';
 import { usePageContent } from '@/hooks/usePageContent';
 
 const PAGE_GALLERY_IMAGES = [
-  '/images/japanandwins.jpg',
-  '/images/green-sea-turtle.png',
-  '/images/hawksbill-sea-turtle.jpg',
+  'https://www.divinginasia.com/images/japanandwins.jpg',
+  'https://www.divinginasia.com/images/green-sea-turtle.png',
+  'https://www.divinginasia.com/images/hawksbill-sea-turtle.jpg',
 ];
 
 const JapaneseGardens = () => {
@@ -38,7 +38,7 @@ const JapaneseGardens = () => {
     diving_tips: isDutch
       ? 'Beste periode november-mei voor zicht\nZoek naar unieke triggerfish en octopus\nGeweldig voor onderwaterfotografie'
       : 'Best time is November-May for visibility.\nLook for unique triggerfish and octopus.\nGreat for underwater photography.',
-    images: '/images/japanandwins.jpg',
+    images: 'https://www.divinginasia.com/images/japanandwins.jpg',
   }), [isDutch]);
 
   const { content } = usePageContent({ pageSlug: 'japanese-gardens', locale, fallbackContent });

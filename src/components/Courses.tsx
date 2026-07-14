@@ -518,7 +518,7 @@ const Courses = () => {
                                 {(course.courseImages as string[]).map((image, idx) => (
                                   <img
                                     key={idx}
-                                    src={`/images/${image}`}
+                                    src={`https://www.divinginasia.com/images/${image}`}
                                     alt={`${course.title} - underwater scene ${idx + 1}`}
                                     className="rounded-lg object-cover h-40 w-full"
                                   />

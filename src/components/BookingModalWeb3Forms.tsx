@@ -12,7 +12,7 @@ const BookingModalWeb3Forms: React.FC = () => {
           <div style={{background:'#fff',padding:'2rem',borderRadius:8,maxWidth:400,width:'100%',position:'relative'}}>
             <button onClick={() => setOpen(false)} style={{position:'absolute',top:8,right:8,fontSize:'1.5rem',background:'none',border:'none',cursor:'pointer'}}>&times;</button>
             <div style={{textAlign:'center',marginBottom:'1rem'}}>
-              <img src="/images/logo.png" alt="Diving In Asia Logo" style={{maxWidth:180,height:'auto'}} />
+              <img src="https://www.divinginasia.com/images/logo.png" alt="Diving In Asia Logo" style={{maxWidth:180,height:'auto'}} />
             </div>
             <h2 style={{textAlign:'center'}}>Booking / Inquiry Form</h2>
             <form action="https://api.web3forms.com/submit" method="POST" style={{marginTop:'1rem'}}>

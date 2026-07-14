@@ -33,7 +33,7 @@ const HinNgam = () => {
       diving_tips: isDutch
         ? 'Prima trainingslocatie voor beginners\nZoek rustig in spleten en op zandplekken\nGoed voor macrofotografie\nHoud een langzaam tempo voor meer vondsten'
         : 'A solid training site for beginners\nSearch slowly in cracks and sandy patches\nGood for macro photography\nKeep a slow pace to spot more life',
-      images: '/images/tanote.png',
+      images: 'https://www.divinginasia.com/images/tanote.png',
     }),
     [isDutch]
   );

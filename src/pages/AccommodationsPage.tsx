@@ -14,7 +14,7 @@ const AccommodationsPage = () => {
       rating: 4.8,
       amenities: ["Beach Access", "Restaurant & Bar", "Spa", "Pool", "WiFi", "Air Conditioning"],
       highlights: ["Sunset dining", "Water sports center", "Dive shop on-site"],
-      image: "/images/photo-1613853250147-2f73e55c1561.avif"
+      image: "https://www.divinginasia.com/images/photo-1613853250147-2f73e55c1561.avif"
     },
     {
       name: "Mid-Range Beach Bungalows",
@@ -24,7 +24,7 @@ const AccommodationsPage = () => {
       rating: 4.5,
       amenities: ["Beach Access", "Restaurant", "WiFi", "Garden", "Simple Rooms"],
       highlights: ["Personable service", "Local food", "Beach bar"],
-      image: "/images/photo-1618865181016-a80ad83a06d3.avif"
+      image: "https://www.divinginasia.com/images/photo-1618865181016-a80ad83a06d3.avif"
     },
     {
       name: "Budget-Friendly Hostel",
@@ -34,7 +34,7 @@ const AccommodationsPage = () => {
       rating: 4.2,
       amenities: ["Shared Kitchen", "Dorm Beds", "Private Rooms", "WiFi", "Common Areas"],
       highlights: ["Social scene", "Dive packages", "Budget meals"],
-      image: "/images/photo-1647825194145-2d94e259c745.avif"
+      image: "https://www.divinginasia.com/images/photo-1647825194145-2d94e259c745.avif"
     },
     {
       name: "Hillside Villa with Views",
@@ -44,7 +44,7 @@ const AccommodationsPage = () => {
       rating: 4.7,
       amenities: ["Mountain Views", "Pool", "Restaurant", "WiFi", "Garden"],
       highlights: ["Sunrise views", "Peaceful setting", "Excellent food"],
-      image: "/images/photo-1659518893171-b15e20a8e201.avif"
+      image: "https://www.divinginasia.com/images/photo-1659518893171-b15e20a8e201.avif"
     },
     {
       name: "Dive-Focused Bungalows",
@@ -54,7 +54,7 @@ const AccommodationsPage = () => {
       rating: 4.6,
       amenities: ["Dive Shop", "Equipment Storage", "Restaurant", "WiFi", "Briefing Area"],
       highlights: ["Convenient for diving", "Dive packages", "Experienced staff"],
-      image: "/images/photo-1682686580849-3e7f67df4015.avif"
+      image: "https://www.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif"
     },
     {
       name: "Eco-Friendly Jungle Resort",
@@ -64,7 +64,7 @@ const AccommodationsPage = () => {
       rating: 4.4,
       amenities: ["Garden Setting", "WiFi", "Restaurant", "Hammocks", "Nature Trails"],
       highlights: ["Eco-friendly", "Nature experience", "Good value"],
-      image: "/images/photo-1682687982423-295485af248a.avif"
+      image: "https://www.divinginasia.com/images/photo-1682687982423-295485af248a.avif"
     }
   ];
 

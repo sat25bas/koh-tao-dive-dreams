@@ -24,7 +24,7 @@ const RescueNl: React.FC = () => {
         faq_1_question: 'Is Rescue moeilijk?',
         faq_1_answer: 'De cursus is uitdagend, maar instructeurs begeleiden je stap voor stap. Een goede conditie en comfort in het water helpen.',
       }}
-      heroImage="/images/photo-1613853250147-2f73e55c1561.avif"
+      heroImage="https://www.divinginasia.com/images/photo-1613853250147-2f73e55c1561.avif"
       level="Gevorderd"
       bookingItemName="PADI Rescue Diver"
     />

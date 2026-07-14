@@ -15,7 +15,7 @@ const DiscoverScubaDeluxeEn: React.FC = () => {
         price_eur: '132',
         duration: '1-2 days',
       }}
-      heroImage="/images/deluxedsd.png"
+      heroImage="https://www.divinginasia.com/images/deluxedsd.png"
       level="Beginner"
       bookingItemName="Discover Scuba Diving Deluxe"
       bookingType="dive"

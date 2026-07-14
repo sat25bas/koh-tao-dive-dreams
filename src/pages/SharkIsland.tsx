@@ -27,7 +27,7 @@ const SharkIsland = () => {
           'Zwartpuntrifhaaien\nDiverse rifvissen\nGorgoon-zeewaaiers\nZachte boomkoralen\nAnthias\nPapegaaivissen en lipvissen\nMurenen\nNaaktslakken en andere ongewervelden',
         diving_tips:
           'Geschikt voor alle brevetniveaus\nUitstekend voor onderwaterfotografie\nZoek haaien in het blauwe water boven het rif\nVerken de koraalformaties met zorg\nGeweldige locatie voor observatie van onderwaterleven\nPerfect voor langere duiken\nGoede plek om fotografietechniek te oefenen\nSpaar energie voor de terugzwem',
-        images: '/images/sharkisand.jpg\n/images/blacktip-reef-shark.jpg',
+        images: 'https://www.divinginasia.com/images/sharkisand.jpg\nhttps://www.divinginasia.com/images/blacktip-reef-shark.jpg',
       }
     : {
         overview:
@@ -41,7 +41,7 @@ const SharkIsland = () => {
           'Black-tip Reef Sharks\nDiverse reef fish\nGorgonian sea fans\nSoft tree corals\nAnthias and anthias\nParrotfish and wrasse\nMoray eels\nNudibranchs and invertebrates',
         diving_tips:
           'Suitable for all certification levels\nExcellent for underwater photography\nLook for sharks in the blue water above the reef\nExplore the coral formations carefully\nGreat for marine life observation\nPerfect for extended dives\nGood site for practicing photography techniques\nConserve energy for the return swim',
-        images: '/images/sharkisand.jpg\n/images/blacktip-reef-shark.jpg',
+        images: 'https://www.divinginasia.com/images/sharkisand.jpg\nhttps://www.divinginasia.com/images/blacktip-reef-shark.jpg',
       }), [isDutch]);
 
   const { content } = usePageContent({ pageSlug: 'shark-island', locale, fallbackContent });
