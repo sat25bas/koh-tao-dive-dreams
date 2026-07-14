@@ -14,6 +14,32 @@ const CONTENT_OVERIDES = {
   },
 };
 
+// Fallback content for Open Water (slug: opewater)
+FALLBACK_PAGE_CONTENT['opewater'] = {
+  en: [
+    {
+      section_key: 'overview',
+      content_value:
+        'Open Water Diver course: a comprehensive beginner program that covers theory, confined water skills, and open water dives to certify you as a recreational diver. Learn essential safety, buoyancy, and underwater navigation skills with experienced instructors.',
+    },
+    {
+      section_key: 'images',
+      content_value: 'https://divinginasia.com/images/openwater.png',
+    },
+  ],
+  nl: [
+    {
+      section_key: 'overview',
+      content_value:
+        'Open Water Diver cursus: een complete beginnerscursus met theorie, zwembadvaardigheden en open water duiken om je te certificeren als recreatieve duiker. Leer essentiële veiligheids- en navigatievaardigheden onder begeleiding van ervaren instructeurs.',
+    },
+    {
+      section_key: 'images',
+      content_value: 'https://divinginasia.com/images/openwater.png',
+    },
+  ],
+};
+
 const FALLBACK_PAGE_CONTENT = {
   'sail-rock': {
     en: [
