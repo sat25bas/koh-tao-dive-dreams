@@ -111,11 +111,11 @@ const Accommodation = () => {
           price: 'THB 4,000 - 6,000 / nacht',
           desc: 'Ruime bungalow voor gezinnen of kleine groepen met comfortabele indeling.',
           features: ['Airco', 'Warme douche', 'Wi-Fi', 'TV', 'Tuinzicht'],
-          image: 'https://www.divinginasia.com/images/accommodation/family-bungalow-1.jpeg',
+          image: 'https://api.divinginasia.com/images/accommodation/family-bungalow-1.jpeg',
           gallery: [
-            'https://www.divinginasia.com/images/accommodation/family-bungalow-1.jpeg',
-            'https://www.divinginasia.com/images/accommodation/family-bungalow-2.jpeg',
-            'https://www.divinginasia.com/images/accommodation/family-bungalow-3.jpeg',
+            'https://api.divinginasia.com/images/accommodation/family-bungalow-1.jpeg',
+            'https://api.divinginasia.com/images/accommodation/family-bungalow-2.jpeg',
+            'https://api.divinginasia.com/images/accommodation/family-bungalow-3.jpeg',
           ],
         },
         {
@@ -123,11 +123,11 @@ const Accommodation = () => {
           price: 'THB 1,450 - 1,650 / nacht',
           desc: 'Praktische en nette kamer voor koppels of duikbuddy’s die slim willen reizen.',
           features: ['Airco', 'Wi-Fi', 'Warme douche', 'Tuinzicht'],
-          image: 'https://www.divinginasia.com/images/accommodation/basic-room-1.jpeg',
+          image: 'https://api.divinginasia.com/images/accommodation/basic-room-1.jpeg',
           gallery: [
-            'https://www.divinginasia.com/images/accommodation/basic-room-1.jpeg',
-            'https://www.divinginasia.com/images/accommodation/basic-room-2.jpeg',
-            'https://www.divinginasia.com/images/accommodation/basic-room-3.jpeg',
+            'https://api.divinginasia.com/images/accommodation/basic-room-1.jpeg',
+            'https://api.divinginasia.com/images/accommodation/basic-room-2.jpeg',
+            'https://api.divinginasia.com/images/accommodation/basic-room-3.jpeg',
           ],
         },
         {
@@ -135,11 +135,11 @@ const Accommodation = () => {
           price: 'THB 1,600 - 2,000 / nacht',
           desc: 'Rustige bungalow met meer privacy en korte toegang tot strand en centrum.',
           features: ['Airco', 'Wi-Fi', 'Tuinzicht', 'Privater gevoel'],
-          image: 'https://www.divinginasia.com/images/accommodation/bungalow-1.jpeg',
+          image: 'https://api.divinginasia.com/images/accommodation/bungalow-1.jpeg',
           gallery: [
-            'https://www.divinginasia.com/images/accommodation/bungalow-1.jpeg',
-            'https://www.divinginasia.com/images/accommodation/bungalow-2.jpeg',
-            'https://www.divinginasia.com/images/accommodation/bungalow-3.jpeg',
+            'https://api.divinginasia.com/images/accommodation/bungalow-1.jpeg',
+            'https://api.divinginasia.com/images/accommodation/bungalow-2.jpeg',
+            'https://api.divinginasia.com/images/accommodation/bungalow-3.jpeg',
           ],
         },
       ]
@@ -149,11 +149,11 @@ const Accommodation = () => {
           price: 'THB 4,000 - 6,000 / night',
           desc: 'Spacious setup for families or small groups with a comfortable layout.',
           features: ['Air conditioning', 'Hot shower', 'Wi-Fi', 'TV', 'Garden view'],
-          image: 'https://www.divinginasia.com/images/accommodation/family-bungalow-1.jpeg',
+          image: 'https://api.divinginasia.com/images/accommodation/family-bungalow-1.jpeg',
           gallery: [
-            'https://www.divinginasia.com/images/accommodation/family-bungalow-1.jpeg',
-            'https://www.divinginasia.com/images/accommodation/family-bungalow-2.jpeg',
-            'https://www.divinginasia.com/images/accommodation/family-bungalow-3.jpeg',
+            'https://api.divinginasia.com/images/accommodation/family-bungalow-1.jpeg',
+            'https://api.divinginasia.com/images/accommodation/family-bungalow-2.jpeg',
+            'https://api.divinginasia.com/images/accommodation/family-bungalow-3.jpeg',
           ],
         },
         {
@@ -161,11 +161,11 @@ const Accommodation = () => {
           price: 'THB 1,450 - 1,650 / night',
           desc: 'Clean, practical room for couples or dive buddies who want value.',
           features: ['Air conditioning', 'Wi-Fi', 'Hot shower', 'Garden view'],
-          image: 'https://www.divinginasia.com/images/accommodation/basic-room-1.jpeg',
+          image: 'https://api.divinginasia.com/images/accommodation/basic-room-1.jpeg',
           gallery: [
-            'https://www.divinginasia.com/images/accommodation/basic-room-1.jpeg',
-            'https://www.divinginasia.com/images/accommodation/basic-room-2.jpeg',
-            'https://www.divinginasia.com/images/accommodation/basic-room-3.jpeg',
+            'https://api.divinginasia.com/images/accommodation/basic-room-1.jpeg',
+            'https://api.divinginasia.com/images/accommodation/basic-room-2.jpeg',
+            'https://api.divinginasia.com/images/accommodation/basic-room-3.jpeg',
           ],
         },
         {
@@ -173,11 +173,11 @@ const Accommodation = () => {
           price: 'THB 1,600 - 2,000 / night',
           desc: 'Quiet bungalow with extra privacy and easy access to beach and town.',
           features: ['Air conditioning', 'Wi-Fi', 'Garden view', 'More privacy'],
-          image: 'https://www.divinginasia.com/images/accommodation/bungalow-1.jpeg',
+          image: 'https://api.divinginasia.com/images/accommodation/bungalow-1.jpeg',
           gallery: [
-            'https://www.divinginasia.com/images/accommodation/bungalow-1.jpeg',
-            'https://www.divinginasia.com/images/accommodation/bungalow-2.jpeg',
-            'https://www.divinginasia.com/images/accommodation/bungalow-3.jpeg',
+            'https://api.divinginasia.com/images/accommodation/bungalow-1.jpeg',
+            'https://api.divinginasia.com/images/accommodation/bungalow-2.jpeg',
+            'https://api.divinginasia.com/images/accommodation/bungalow-3.jpeg',
           ],
         },
       ];
@@ -282,7 +282,7 @@ const Accommodation = () => {
   return (
     <main className="min-h-screen bg-background">
       <section className="relative h-[65vh] min-h-[460px] overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://www.divinginasia.com/images/acc-head.jpg')] bg-cover bg-center" />
+        <div className="absolute inset-0 bg-[url('https://api.divinginasia.com/images/acc-head.jpg')] bg-cover bg-center" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/45 to-black/25" />
         <div className="relative z-10 h-full max-w-6xl mx-auto px-4 flex items-center">
           <div className="max-w-3xl text-white">

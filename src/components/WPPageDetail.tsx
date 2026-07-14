@@ -62,7 +62,7 @@ const WPPageDetail: React.FC<{ slug: string }> = ({ slug }) => {
   // Header image: use provided image for Japanese Gardens, else first gallery image
   let headerImage = '';
   if (slug === 'japanese-gardens') {
-    headerImage = 'https://www.divinginasia.com/images/japanandwins.jpg';
+    headerImage = 'https://api.divinginasia.com/images/japanandwins.jpg';
   } else if (gallery.length > 0) {
     headerImage = gallery[0];
   }

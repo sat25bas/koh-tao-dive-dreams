@@ -33,7 +33,7 @@ const TanoteBay = () => {
       diving_tips: isDutch
         ? 'Check de omstandigheden vooraf, oostkust kan gevoelig zijn\nKijk goed tussen rotsen voor macroleven\nGoed drijfvermogen helpt rond de granietblokken\nPrima voor fotografen en avontuurlijke recreatieve duikers'
         : 'Check conditions first since the east coast can be weather-sensitive\nSearch carefully between rocks for macro life\nGood buoyancy helps around the granite boulders\nGreat for photographers and adventurous recreational divers',
-      images: 'https://www.divinginasia.com/images/tanote.png',
+      images: 'https://api.divinginasia.com/images/tanote.png',
     }),
     [isDutch]
   );

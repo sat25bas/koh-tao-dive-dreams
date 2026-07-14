@@ -55,7 +55,7 @@ const FALLBACK_PAGE_CONTENT = {
       {
         section_key: 'images',
         content_value:
-          'https://www.divinginasia.com/images/sailrock.webp\nhttps://www.divinginasia.com/images/marine-life-hero.webp\nhttps://www.divinginasia.com/images/whale.webp\nhttps://www.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif\nhttps://www.divinginasia.com/images/photo-1659518893171-b15e20a8e201.avif\nhttps://www.divinginasia.com/images/chumphon-pinnacle-top.webp',
+          'https://api.divinginasia.com/images/sailrock.webp\nhttps://api.divinginasia.com/images/marine-life-hero.webp\nhttps://api.divinginasia.com/images/whale.webp\nhttps://api.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif\nhttps://api.divinginasia.com/images/photo-1659518893171-b15e20a8e201.avif\nhttps://api.divinginasia.com/images/chumphon-pinnacle-top.webp',
       },
     ],
     nl: [
@@ -97,7 +97,7 @@ const FALLBACK_PAGE_CONTENT = {
       {
         section_key: 'images',
         content_value:
-          'https://www.divinginasia.com/images/sailrock.webp\nhttps://www.divinginasia.com/images/marine-life-hero.webp\nhttps://www.divinginasia.com/images/whale.webp\nhttps://www.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif\nhttps://www.divinginasia.com/images/photo-1659518893171-b15e20a8e201.avif\nhttps://www.divinginasia.com/images/chumphon-pinnacle-top.webp',
+          'https://api.divinginasia.com/images/sailrock.webp\nhttps://api.divinginasia.com/images/marine-life-hero.webp\nhttps://api.divinginasia.com/images/whale.webp\nhttps://api.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif\nhttps://api.divinginasia.com/images/photo-1659518893171-b15e20a8e201.avif\nhttps://api.divinginasia.com/images/chumphon-pinnacle-top.webp',
       },
     ],
   },

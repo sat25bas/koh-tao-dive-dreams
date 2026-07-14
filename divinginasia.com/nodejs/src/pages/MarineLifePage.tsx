@@ -166,7 +166,7 @@ const MarineLifePage = () => {
       <div 
         className="relative min-h-[calc(100vh-4rem)] bg-cover bg-center text-white flex items-center justify-center"
         style={{
-          backgroundImage: 'url(https://www.divinginasia.com/images/marine.png)',
+          backgroundImage: 'url(https://api.divinginasia.com/images/marine.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}

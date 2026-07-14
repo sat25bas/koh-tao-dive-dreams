@@ -119,7 +119,7 @@ const MarineLifePage = () => {
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-background">
       {/* Hero Section */}
       <div className="relative min-h-[calc(100vh-4rem)] text-white flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://www.divinginasia.com/images/marine.png')] bg-cover bg-center" />
+        <div className="absolute inset-0 bg-[url('https://api.divinginasia.com/images/marine.png')] bg-cover bg-center" />
         <div className="absolute inset-0 bg-black/40"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white drop-shadow-lg">

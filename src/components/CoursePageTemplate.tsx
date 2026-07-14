@@ -58,7 +58,7 @@ const CoursePageTemplate: React.FC<CoursePageProps> = ({
   locale,
   fallbackContent,
   heroImage,
-  images = ['https://www.divinginasia.com/images/photo-1613853250147-2f73e55c1561.avif', 'https://www.divinginasia.com/images/photo-1618865181016-a80ad83a06d3.avif', 'https://www.divinginasia.com/images/photo-1647825194145-2d94e259c745.avif'],
+  images = ['https://api.divinginasia.com/images/photo-1613853250147-2f73e55c1561.avif', 'https://api.divinginasia.com/images/photo-1618865181016-a80ad83a06d3.avif', 'https://api.divinginasia.com/images/photo-1647825194145-2d94e259c745.avif'],
   sections = [],
   faqs = [],
   level = 'Recreational',

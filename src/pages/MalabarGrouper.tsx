@@ -86,14 +86,14 @@ const MalabarGrouper = () => {
       fullHeightHero={true}
       heroImageFit="cover"
       noOverlay={true}
-      secondaryImage="https://www.divinginasia.com/images/malabar-grouper.png"
+      secondaryImage="https://api.divinginasia.com/images/malabar-grouper.png"
       images={[
-        "https://www.divinginasia.com/images/groouper.png",
-        "https://www.divinginasia.com/images/photo-1618865181016-a80ad83a06d3.avif",
-        "https://www.divinginasia.com/images/photo-1647825194145-2d94e259c745.avif",
-        "https://www.divinginasia.com/images/photo-1659518893171-b15e20a8e201.avif",
-        "https://www.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif",
-        "https://www.divinginasia.com/images/photo-1682687982423-295485af248a.avif"
+        "https://api.divinginasia.com/images/groouper.png",
+        "https://api.divinginasia.com/images/photo-1618865181016-a80ad83a06d3.avif",
+        "https://api.divinginasia.com/images/photo-1647825194145-2d94e259c745.avif",
+        "https://api.divinginasia.com/images/photo-1659518893171-b15e20a8e201.avif",
+        "https://api.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif",
+        "https://api.divinginasia.com/images/photo-1682687982423-295485af248a.avif"
       ]}
     />
   );

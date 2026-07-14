@@ -14,7 +14,7 @@
     "whatYouCanSee": ["Whale sharks", "Trevally schools", "Eagle rays", "Chevron barracuda"],
     "marineLifeHighlights": ["test"],
     "divingTips": ["test"],
-    "images": ["https://www.divinginasia.com/images/whale-shark-snorkelling-fos-sustainable-certification-medium-1.webp"]
+    "images": ["https://api.divinginasia.com/images/whale-shark-snorkelling-fos-sustainable-certification-medium-1.webp"]
   },
   "sail-rock": {
     "name": "Sail Rock",
@@ -28,7 +28,7 @@
     "whatYouCanSee": ["Whale sharks", "Giant barracuda", "Malabar grouper", "Sailfish"],
     "marineLifeHighlights": ["test"],
     "divingTips": ["test"],
-    "images": ["https://www.divinginasia.com/images/sailrock.webp"]
+    "images": ["https://api.divinginasia.com/images/sailrock.webp"]
   },
   "twins-pinnacle": {
     "name": "Twins Pinnacle",
@@ -81,7 +81,7 @@
       "Excellent for marine awareness and identification courses",
       "Easy navigation thanks to the three pinnacles"
     ],
-    "images": ["https://www.divinginasia.com/images/twins-header.png"]
+    "images": ["https://api.divinginasia.com/images/twins-header.png"]
   },
   "mango-bay": {
     "name": "Mango Bay",
@@ -116,7 +116,7 @@
       "Good site for extended dives",
       "Perfect for Open Water certification dives"
     ],
-    "images": ["https://www.divinginasia.com/images/mango-bay.webp"]
+    "images": ["https://api.divinginasia.com/images/mango-bay.webp"]
   },
   "south-west-pinnacle": {
     "name": "South West Pinnacle",
@@ -130,7 +130,7 @@
     "whatYouCanSee": ["Whale sharks", "Bryde’s whales", "Giant barracuda", "Spanish mackerel"],
     "marineLifeHighlights": ["test"],
     "divingTips": ["test"],
-    "images": ["https://www.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif"]
+    "images": ["https://api.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif"]
   },
   "japanese-gardens": {
     "name": "Japanese Gardens",
@@ -162,6 +162,6 @@
       "Look for unique triggerfish and octopus.",
       "Great for underwater photography."
     ],
-    "images": ["https://www.divinginasia.com/images/japanandwins.jpg"]
+    "images": ["https://api.divinginasia.com/images/japanandwins.jpg"]
   }
 }

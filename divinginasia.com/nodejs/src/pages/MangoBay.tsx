@@ -34,14 +34,14 @@ const MangoBay = () => {
       ]}
       fullHeightHero={true}
       noOverlay={true}
-      secondaryImage="https://www.divinginasia.com/images/3turtle.png"
+      secondaryImage="https://api.divinginasia.com/images/3turtle.png"
       images={[
-        "https://www.divinginasia.com/images/mango-bay.webp",
-        "https://www.divinginasia.com/images/photo-1613853250147-2f73e55c1561.avif",
-        "https://www.divinginasia.com/images/photo-1647825194145-2d94e259c745.avif",
-        "https://www.divinginasia.com/images/photo-1659518893171-b15e20a8e201.avif",
-        "https://www.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif",
-        "https://www.divinginasia.com/images/photo-1682687982423-295485af248a.avif"
+        "https://api.divinginasia.com/images/mango-bay.webp",
+        "https://api.divinginasia.com/images/photo-1613853250147-2f73e55c1561.avif",
+        "https://api.divinginasia.com/images/photo-1647825194145-2d94e259c745.avif",
+        "https://api.divinginasia.com/images/photo-1659518893171-b15e20a8e201.avif",
+        "https://api.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif",
+        "https://api.divinginasia.com/images/photo-1682687982423-295485af248a.avif"
       ]}
     />
   );

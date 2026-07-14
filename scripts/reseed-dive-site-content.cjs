@@ -46,7 +46,7 @@ const pages = {
       diving_tips:
         'Advanced certification required - this is a deep dive site\nStrong current awareness essential - stay with your guide\nUse a dive computer for accurate depth and time monitoring\nWhalesharks are most active in the morning - early boat departure recommended\nBring a wide-angle lens for photographing large pelagics\nConserve air due to depth and potential current\nPerfect for deep specialty course dives',
       images:
-        'https://www.divinginasia.com/images/sailrock.webp\nhttps://www.divinginasia.com/images/photo-1613853250147-2f73e55c1561.avif\nhttps://www.divinginasia.com/images/photo-1618865181016-a80ad83a06d3.avif\nhttps://www.divinginasia.com/images/photo-1647825194145-2d94e259c745.avif\nhttps://www.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif\nhttps://www.divinginasia.com/images/photo-1682687982423-295485af248a.avif',
+        'https://api.divinginasia.com/images/sailrock.webp\nhttps://api.divinginasia.com/images/photo-1613853250147-2f73e55c1561.avif\nhttps://api.divinginasia.com/images/photo-1618865181016-a80ad83a06d3.avif\nhttps://api.divinginasia.com/images/photo-1647825194145-2d94e259c745.avif\nhttps://api.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif\nhttps://api.divinginasia.com/images/photo-1682687982423-295485af248a.avif',
     },
     nl: {
       overview:
@@ -61,7 +61,7 @@ const pages = {
       diving_tips:
         'Gevorderde certificering vereist - dit is een diepduiksite\nStromingsbewustzijn is essentieel - blijf bij je gids\nGebruik een duikcomputer voor nauwkeurige diepte- en tijdsbewaking\nWalvishaaien zijn vaak actiever in de ochtend - vroeg vertrek aanbevolen\nNeem een groothoeklens mee voor grote pelagische soorten\nSpaar lucht in verband met diepte en mogelijke stroming\nPerfect voor specialisaties in diepduiken',
       images:
-        'https://www.divinginasia.com/images/sailrock.webp\nhttps://www.divinginasia.com/images/photo-1613853250147-2f73e55c1561.avif\nhttps://www.divinginasia.com/images/photo-1618865181016-a80ad83a06d3.avif\nhttps://www.divinginasia.com/images/photo-1647825194145-2d94e259c745.avif\nhttps://www.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif\nhttps://www.divinginasia.com/images/photo-1682687982423-295485af248a.avif',
+        'https://api.divinginasia.com/images/sailrock.webp\nhttps://api.divinginasia.com/images/photo-1613853250147-2f73e55c1561.avif\nhttps://api.divinginasia.com/images/photo-1618865181016-a80ad83a06d3.avif\nhttps://api.divinginasia.com/images/photo-1647825194145-2d94e259c745.avif\nhttps://api.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif\nhttps://api.divinginasia.com/images/photo-1682687982423-295485af248a.avif',
     },
   },
   'shark-island': {
@@ -77,7 +77,7 @@ const pages = {
         'Black-tip Reef Sharks\nDiverse reef fish\nGorgonian sea fans\nSoft tree corals\nAnthias and anthias\nParrotfish and wrasse\nMoray eels\nNudibranchs and invertebrates',
       diving_tips:
         'Suitable for all certification levels\nExcellent for underwater photography\nLook for sharks in the blue water above the reef\nExplore the coral formations carefully\nGreat for marine life observation\nPerfect for extended dives\nGood site for practicing photography techniques\nConserve energy for the return swim',
-      images: 'https://www.divinginasia.com/images/sharkisand.jpg\nhttps://www.divinginasia.com/images/blacktip-reef-shark.jpg',
+      images: 'https://api.divinginasia.com/images/sharkisand.jpg\nhttps://api.divinginasia.com/images/blacktip-reef-shark.jpg',
     },
     nl: {
       overview:
@@ -91,7 +91,7 @@ const pages = {
         'Zwartpuntrifhaaien\nDiverse rifvissen\nGorgoon-zeewaaiers\nZachte boomkoralen\nAnthias\nPapegaaivissen en lipvissen\nMurenen\nNaaktslakken en andere ongewervelden',
       diving_tips:
         'Geschikt voor alle brevetniveaus\nUitstekend voor onderwaterfotografie\nZoek haaien in het blauwe water boven het rif\nVerken de koraalformaties met zorg\nGeweldige locatie voor observatie van onderwaterleven\nPerfect voor langere duiken\nGoede plek om fotografietechniek te oefenen\nSpaar energie voor de terugzwem',
-      images: 'https://www.divinginasia.com/images/sharkisand.jpg\nhttps://www.divinginasia.com/images/blacktip-reef-shark.jpg',
+      images: 'https://api.divinginasia.com/images/sharkisand.jpg\nhttps://api.divinginasia.com/images/blacktip-reef-shark.jpg',
     },
   },
   'htms-sattakut': {
@@ -107,7 +107,7 @@ const pages = {
         'Malabar Groupers (resident)\nGiant Barracuda\nSnapper and Fusilier schools\nMoray Eels\nLionfish and scorpionfish\nCoral growth on wreck structure\nVarious reef fish species\nPuffers and triggerfish',
       diving_tips:
         'Advanced certification required for wreck diving\nExcellent site for wreck diving specialty course\nRespect the historical significance of the site\nUse wreck diving techniques and penetration skills\nStay with your guide when exploring the interior\nPerfect for underwater photography\nConserve air due to depth and exploration\nLook for the ship\'s historical features',
-      images: 'https://www.divinginasia.com/images/htms-sattakut.jpg\nhttps://www.divinginasia.com/images/htms-sattakut-wreck.jpg\nhttps://www.divinginasia.com/images/wreck.jpeg',
+      images: 'https://api.divinginasia.com/images/htms-sattakut.jpg\nhttps://api.divinginasia.com/images/htms-sattakut-wreck.jpg\nhttps://api.divinginasia.com/images/wreck.jpeg',
     },
     nl: {
       overview:
@@ -121,7 +121,7 @@ const pages = {
         'Malabar tandbaarzen (resident)\nReuzenbarracuda\nScholen snapper en fusilier\nMurenen\nKoraalduivels en schorpioenvissen\nKoraalgroei op wrakstructuur\nDiverse rifvissen\nKogelvissen en trekkervissen',
       diving_tips:
         'Gevorderde certificering vereist voor wrakduiken\nUitstekende site voor wrakspecialisaties\nRespecteer de historische betekenis van deze locatie\nGebruik passende wrakduiktechnieken en penetratievaardigheden\nBlijf bij je gids bij verkenning van het interieur\nZeer geschikt voor onderwaterfotografie\nSpaar lucht door diepte en verkenning\nLet op de historische kenmerken van het schip',
-      images: 'https://www.divinginasia.com/images/htms-sattakut.jpg\nhttps://www.divinginasia.com/images/htms-sattakut-wreck.jpg\nhttps://www.divinginasia.com/images/wreck.jpeg',
+      images: 'https://api.divinginasia.com/images/htms-sattakut.jpg\nhttps://api.divinginasia.com/images/htms-sattakut-wreck.jpg\nhttps://api.divinginasia.com/images/wreck.jpeg',
     },
   },
   'japanese-gardens': {
@@ -135,7 +135,7 @@ const pages = {
       marine_life_highlights:
         'Pink-tailed Triggerfish (unique to this site)\nOcellated Eagle Rays\nMarbled Octopus\nBlue-ringed Octopus\nNudibranchs and flatworms\nParrotfish and wrasse\nAnthias and damselfish\nMoray eels and lionfish',
       diving_tips: 'Best time is November-May for visibility.\nLook for unique triggerfish and octopus.\nGreat for underwater photography.',
-      images: 'https://www.divinginasia.com/images/japanandwins.jpg',
+      images: 'https://api.divinginasia.com/images/japanandwins.jpg',
     },
     nl: {
       overview: 'Japanese Gardens is een prachtige duiklocatie bij Koh Nang Yuan, bekend om diverse koraalriffen en rijk onderwaterleven. Geschikt voor alle niveaus.',
@@ -147,7 +147,7 @@ const pages = {
       marine_life_highlights:
         'Pink-tailed triggerfish\nOcellated adelaarsrog\nGemarmerde octopus\nBlue-ringed octopus\nNaaktslakken en platwormen\nPapegaaivissen en lipvissen\nAnthias en juffervissen\nMurenen en koraalduivels',
       diving_tips: 'Beste periode november-mei voor zicht\nZoek naar unieke triggerfish en octopus\nGeweldig voor onderwaterfotografie',
-      images: 'https://www.divinginasia.com/images/japanandwins.jpg',
+      images: 'https://api.divinginasia.com/images/japanandwins.jpg',
     },
   },
   'mango-bay': {
@@ -161,7 +161,7 @@ const pages = {
       marine_life_highlights: 'Healthy reef ecosystem\nColorful hard and soft corals\nSea anemones\nAbundant marine life',
       diving_tips:
         'Perfect for beginners and training dives\nAlso excellent for snorkeling\nLook for grazers in seagrass and reef life\nGreat spot for underwater photography\nCalm water ideal for learning buoyancy\nMultiple coral bommies to explore\nSuitable for longer dives\nPerfect for Open Water certification dives',
-      images: 'https://www.divinginasia.com/images/mango-bay.webp',
+      images: 'https://api.divinginasia.com/images/mango-bay.webp',
     },
     nl: {
       overview: 'Ondiepe koraalriffen perfect voor ontspannen duiken met een bloeiend marien ecosysteem.',
@@ -173,7 +173,7 @@ const pages = {
       marine_life_highlights: 'Gezond rifecosysteem\nKleurrijke harde en zachte koralen\nZeeanemonen\nRijk onderwaterleven',
       diving_tips:
         'Perfect voor beginners en trainingsduiken\nOok uitstekend om te snorkelen\nZoek grazers in zeegras en rifleven\nToplocatie voor onderwaterfotografie\nKalm water ideaal voor trim- en drijfvermogen\nMeerdere koraalbommies om te verkennen\nGeschikt voor langere duiken\nPerfect voor Open Water trainingsduiken',
-      images: 'https://www.divinginasia.com/images/mango-bay.webp',
+      images: 'https://api.divinginasia.com/images/mango-bay.webp',
     },
   },
   'twins-pinnacle': {
@@ -188,7 +188,7 @@ const pages = {
       marine_life_highlights: 'Three granite pinnacles\nArch and rock formations\nRich marine life\nPerfect for training\nCalm conditions\nAnemones with clownfish',
       diving_tips:
         'Perfect for Open Water divers and training dives\nExplore the deeper west pinnacle first\nNavigate to the middle pinnacle and check the arch on the north side\nLook under overhangs at the shallow pinnacle\nDon’t miss the famous clownfish with Sebae anemone\nNote: there is a stone circle around the clownfish - do not enter\nGreat for macro photography\nPractice buoyancy on the arch and rock formations\nNearby Buoyancy World is dedicated to buoyancy skills\nExcellent for marine awareness\nEasy navigation thanks to the three peaks',
-      images: 'https://www.divinginasia.com/images/twins-header.png',
+      images: 'https://api.divinginasia.com/images/twins-header.png',
     },
     nl: {
       overview: 'Twins Pinnacle is de populairste duiksite van Koh Tao, met drie granieten pinnacles, rijk onderwaterleven en geschikt voor alle brevetniveaus.',
@@ -201,7 +201,7 @@ const pages = {
       marine_life_highlights: 'Drie granieten pinnacles\nBogen en rotsformaties\nRijk onderwaterleven\nPerfect voor training\nRustige omstandigheden\nAnemonen met clownfish',
       diving_tips:
         'Perfect voor Open Water en trainingsduiken\nVerken eerst de diepere westelijke pinnacle\nNavigeer naar de middelste pinnacle en bekijk de boog aan de noordkant\nKijk onder overhangen bij de ondiepe pinnacle\nMis de beroemde clownfish met Sebae-anemoon niet\nLet op: er is een steencirkel rond de clownfish - niet binnengaan\nGeweldig voor macrofotografie\nOefen drijfvermogen bij de bogen en rotsformaties\nBuoyancy World in de buurt is gewijd aan drijfvermogen\nUitstekend voor mariene bewustwording\nEenvoudige navigatie dankzij drie pieken',
-      images: 'https://www.divinginasia.com/images/twins-header.png',
+      images: 'https://api.divinginasia.com/images/twins-header.png',
     },
   },
   'chumphon-pinnacle': {
@@ -218,7 +218,7 @@ const pages = {
       diving_tips:
         'Advanced certification recommended due to depth and current\nEarly morning departures maximize wildlife sightings\nWide-angle photography lens recommended for large subjects\nStay with your dive guide in moderate currents\nPerfect for deep diving specialty courses\nWhalesharks are most active during incoming tides\nBring a good quality underwater camera',
       images:
-        'https://www.divinginasia.com/images/chumphon-pinnacle-top.webp\nhttps://www.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif\nhttps://www.divinginasia.com/images/photo-1613853250147-2f73e55c1561.avif\nhttps://www.divinginasia.com/images/photo-1618865181016-a80ad83a06d3.avif\nhttps://www.divinginasia.com/images/photo-1647825194145-2d94e259c745.avif\nhttps://www.divinginasia.com/images/photo-1659518893171-b15e20a8e201.avif\nhttps://www.divinginasia.com/images/photo-1682687982423-295485af248a.avif',
+        'https://api.divinginasia.com/images/chumphon-pinnacle-top.webp\nhttps://api.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif\nhttps://api.divinginasia.com/images/photo-1613853250147-2f73e55c1561.avif\nhttps://api.divinginasia.com/images/photo-1618865181016-a80ad83a06d3.avif\nhttps://api.divinginasia.com/images/photo-1647825194145-2d94e259c745.avif\nhttps://api.divinginasia.com/images/photo-1659518893171-b15e20a8e201.avif\nhttps://api.divinginasia.com/images/photo-1682687982423-295485af248a.avif',
     },
     nl: {
       overview:
@@ -233,7 +233,7 @@ const pages = {
       diving_tips:
         'Gevorderde certificering aanbevolen door diepte en stroming\nVroege ochtendtrips vergroten de kans op walvishaaiwaarnemingen\nGroothoeklens aanbevolen voor grote onderwerpen\nBlijf bij je gids bij matige stroming\nPerfect voor specialisatiecursus diepduiken\nWalvishaaien zijn het actiefst bij opkomend tij\nNeem een goede onderwatercamera mee',
       images:
-        'https://www.divinginasia.com/images/chumphon-pinnacle-top.webp\nhttps://www.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif\nhttps://www.divinginasia.com/images/photo-1613853250147-2f73e55c1561.avif\nhttps://www.divinginasia.com/images/photo-1618865181016-a80ad83a06d3.avif\nhttps://www.divinginasia.com/images/photo-1647825194145-2d94e259c745.avif\nhttps://www.divinginasia.com/images/photo-1659518893171-b15e20a8e201.avif\nhttps://www.divinginasia.com/images/photo-1682687982423-295485af248a.avif',
+        'https://api.divinginasia.com/images/chumphon-pinnacle-top.webp\nhttps://api.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif\nhttps://api.divinginasia.com/images/photo-1613853250147-2f73e55c1561.avif\nhttps://api.divinginasia.com/images/photo-1618865181016-a80ad83a06d3.avif\nhttps://api.divinginasia.com/images/photo-1647825194145-2d94e259c745.avif\nhttps://api.divinginasia.com/images/photo-1659518893171-b15e20a8e201.avif\nhttps://api.divinginasia.com/images/photo-1682687982423-295485af248a.avif',
     },
   },
   'south-west-pinnacle': {
@@ -249,7 +249,7 @@ const pages = {
         'Occasional whale shark encounters\nBryde\'s whales in favorable seasonal windows\nLarge schools of barracuda and mackerel\nTrevally, reef fish, and hunting pelagics in current lines',
       diving_tips:
         'Best suited for advanced divers with deep and drift experience\nUse delayed SMB and stay with the group during ascent\nPlan gas carefully due to depth and current exposure\nListen closely to briefing because entry and pickup can vary by conditions',
-      images: 'https://www.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif',
+      images: 'https://api.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif',
     },
     nl: {
       overview:
@@ -263,7 +263,7 @@ const pages = {
         'Af en toe ontmoetingen met walvishaaien\nBrydevinvissen in gunstige seizoensperiodes\nGrote scholen barracuda en makreel\nTrevally, rifvissen en jagende pelagische soorten bij stromingslijnen',
       diving_tips:
         'Geschikt voor gevorderde duikers met ervaring in diepe en driftduiken\nGebruik een SMB en blijf tijdens de opstijging bij de groep\nPlan je gasvoorraad zorgvuldig door diepte en stroming\nLuister goed naar de briefing omdat entry en pickup per dag verschillen',
-      images: 'https://www.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif',
+      images: 'https://api.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif',
     },
   },
 };

@@ -8,13 +8,13 @@ import { useNavigate } from 'react-router-dom';
 import ImageRow from '@/components/ImageRow';
 
 const imageList = [
-  'https://www.divinginasia.com/images/photo-1613853250147-2f73e55c1561.avif',
-  'https://www.divinginasia.com/images/photo-1618865181016-a80ad83a06d3.avif',
-  'https://www.divinginasia.com/images/photo-1647825194145-2d94e259c745.avif',
-  'https://www.divinginasia.com/images/photo-1659518893171-b15e20a8e201.avif',
-  'https://www.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif',
-  'https://www.divinginasia.com/images/photo-1682687982423-295485af248a.avif',
-  'https://www.divinginasia.com/images/turtle.avif',
+  'https://api.divinginasia.com/images/photo-1613853250147-2f73e55c1561.avif',
+  'https://api.divinginasia.com/images/photo-1618865181016-a80ad83a06d3.avif',
+  'https://api.divinginasia.com/images/photo-1647825194145-2d94e259c745.avif',
+  'https://api.divinginasia.com/images/photo-1659518893171-b15e20a8e201.avif',
+  'https://api.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif',
+  'https://api.divinginasia.com/images/photo-1682687982423-295485af248a.avif',
+  'https://api.divinginasia.com/images/turtle.avif',
 ];
 
 const OpenWater: React.FC = () => {
@@ -35,7 +35,7 @@ const OpenWater: React.FC = () => {
       </section>
 
       <main className="container mx-auto px-4 py-12">
-        <ImageRow images={["https://www.divinginasia.com/images/photo-1659518893171-b15e20a8e201.avif","https://www.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif","https://www.divinginasia.com/images/photo-1647825194145-2d94e259c745.avif"]} />
+        <ImageRow images={["https://api.divinginasia.com/images/photo-1659518893171-b15e20a8e201.avif","https://api.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif","https://api.divinginasia.com/images/photo-1647825194145-2d94e259c745.avif"]} />
         <div className="grid md:grid-cols-3 gap-8">
           <div className="md:col-span-2">
             <h2 className="text-2xl font-bold mb-4">Course Overview</h2>

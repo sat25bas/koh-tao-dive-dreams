@@ -50,12 +50,12 @@ const Twins = () => {
         "Easy navigation with the three peaks marking your dive route"
       ]}
       images={[
-        "https://www.divinginasia.com/images/twins-header.png",
-        "https://www.divinginasia.com/images/twins.jpg",
-        "https://www.divinginasia.com/images/photo-1659518893171-b15e20a8e201.avif",
-        "https://www.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif",
-        "https://www.divinginasia.com/images/photo-1682687982423-295485af248a.avif",
-        "https://www.divinginasia.com/images/photo-1618865181016-a80ad83a06d3.avif"
+        "https://api.divinginasia.com/images/twins-header.png",
+        "https://api.divinginasia.com/images/twins.jpg",
+        "https://api.divinginasia.com/images/photo-1659518893171-b15e20a8e201.avif",
+        "https://api.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif",
+        "https://api.divinginasia.com/images/photo-1682687982423-295485af248a.avif",
+        "https://api.divinginasia.com/images/photo-1618865181016-a80ad83a06d3.avif"
       ]}
     />
   );

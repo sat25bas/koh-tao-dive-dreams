@@ -10,7 +10,7 @@ const Instructor: React.FC = () => {
   const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-background">
-      <section className="relative h-72 md:h-96 flex items-center" style={{backgroundImage: "linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('https://www.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif')", backgroundSize: 'cover', backgroundPosition: 'center'}}>
+      <section className="relative h-72 md:h-96 flex items-center" style={{backgroundImage: "linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('https://api.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif')", backgroundSize: 'cover', backgroundPosition: 'center'}}>
         <div className="container mx-auto px-4 text-white z-10">
           <h1 className="text-4xl md:text-5xl font-bold">PADI Open Water Scuba Instructor</h1>
           <p className="mt-4 max-w-2xl">Train to become a PADI Instructor and teach divers worldwide. The Instructor Development Course (IDC) prepares candidates to lead courses and certify students.</p>
