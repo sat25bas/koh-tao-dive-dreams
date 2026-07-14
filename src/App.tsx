@@ -1,6 +1,6 @@
 import MSDTProgram from './pages/MSDTProgram';
 import { useEffect, useState } from 'react';
-import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom';
+import { HashRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { CurrencyProvider } from './hooks/useCurrency';
 import { TooltipProvider } from '@/components/ui/tooltip';
@@ -169,7 +169,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <CurrencyProvider>
-        <BrowserRouter>
+        <HashRouter>
           <ScrollToTop />
           <Layout>
             <Routes>
@@ -282,7 +282,7 @@ const App = () => (
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Layout>
-        </BrowserRouter>
+        </HashRouter>
       </CurrencyProvider>
     </TooltipProvider>
   </QueryClientProvider>
