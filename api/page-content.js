@@ -14,8 +14,7 @@ const CONTENT_OVERIDES = {
   },
 };
 
-// Fallback content for Open Water (slug: opewater)
-FALLBACK_PAGE_CONTENT['opewater'] = {
+const OPEN_WATER_FALLBACK = {
   en: [
     {
       section_key: 'overview',
@@ -41,6 +40,8 @@ FALLBACK_PAGE_CONTENT['opewater'] = {
 };
 
 const FALLBACK_PAGE_CONTENT = {
+  'open-water': OPEN_WATER_FALLBACK,
+  opewater: OPEN_WATER_FALLBACK,
   'sail-rock': {
     en: [
       {
