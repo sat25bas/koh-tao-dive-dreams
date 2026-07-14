@@ -144,8 +144,9 @@ export async function sendBookingNotificationEmail(payload = {}) {
     });
     return { success: true };
   } catch (mailErr) {
+    const message = mailErr instanceof Error ? mailErr.message : 'Email notification failed';
     console.error('send-booking-notification error', mailErr);
-    return { success: true, warning: mailErr instanceof Error ? mailErr.message : 'Email notification failed' };
+    return { success: false, error: message, warning: message };
   }
 }
 
@@ -562,7 +563,19 @@ export default async function handler(req, res) {
       sendCustomerInvoiceEmail(bodyData),
     ]);
 
+    const errors = [result.error, invoiceResult.error].filter(Boolean);
     const warnings = [result.warning, invoiceResult.warning].filter(Boolean);
+
+    if (errors.length) {
+      const errorMessage = errors.join('; ');
+      console.error('send-booking-notification handler error', errorMessage);
+      return res.status(500).json({
+        success: false,
+        error: errorMessage,
+        warning: warnings.length ? warnings.join('; ') : undefined,
+      });
+    }
+
     return res.status(200).json({
       success: true,
       warning: warnings.length ? warnings.join('; ') : undefined,
