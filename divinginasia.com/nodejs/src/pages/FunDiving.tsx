@@ -94,7 +94,7 @@ const FunDiving = () => {
       {/* Hero Section */}
       <section
         className="relative h-screen flex items-center justify-center bg-cover bg-center"
-        style={{ backgroundImage: "url('https://www.divinginasia.com/images/photo-1682687982423-295485af248a.avif')" }}
+        style={{ backgroundImage: "url('https://api.divinginasia.com/images/photo-1682687982423-295485af248a.avif')" }}
       >
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 text-center text-white px-4">
@@ -162,7 +162,7 @@ const FunDiving = () => {
               <h2 className="text-4xl font-bold text-center mb-8">Trips & Programs</h2>
               <div className="grid md:grid-cols-3 gap-6">
                 <Card className="overflow-hidden">
-                  <img src="https://www.divinginasia.com/images/photo-1682687982423-295485af248a.avif" alt="Fun Dive" className="w-full h-40 object-cover" />
+                  <img src="https://api.divinginasia.com/images/photo-1682687982423-295485af248a.avif" alt="Fun Dive" className="w-full h-40 object-cover" />
                   <CardHeader>
                     <div className="flex items-center justify-between">
                       <CardTitle>Fun Dive</CardTitle>
@@ -182,7 +182,7 @@ const FunDiving = () => {
                 </Card>
 
                 <Card className="overflow-hidden">
-                  <img src="https://www.divinginasia.com/images/photo-1659518893171-b15e20a8e201.avif" alt="Discover Scuba" className="w-full h-40 object-cover" />
+                  <img src="https://api.divinginasia.com/images/photo-1659518893171-b15e20a8e201.avif" alt="Discover Scuba" className="w-full h-40 object-cover" />
                   <CardHeader>
                     <div className="flex items-center justify-between">
                       <CardTitle>Discover Scuba (Try Dive)</CardTitle>
@@ -202,7 +202,7 @@ const FunDiving = () => {
                 </Card>
 
                 <Card className="overflow-hidden">
-                  <img src="https://www.divinginasia.com/images/sailrock.webp" alt="Sail Rock Special" className="w-full h-40 object-cover" onError={(e)=>{(e.target as HTMLImageElement).src='https://www.divinginasia.com/images/photo-1618865181016-a80ad83a06d3.avif'}} />
+                  <img src="https://api.divinginasia.com/images/sailrock.webp" alt="Sail Rock Special" className="w-full h-40 object-cover" onError={(e)=>{(e.target as HTMLImageElement).src='https://api.divinginasia.com/images/photo-1618865181016-a80ad83a06d3.avif'}} />
                   <CardHeader>
                     <div className="flex items-center justify-between">
                       <CardTitle>Sail Rock Special</CardTitle>

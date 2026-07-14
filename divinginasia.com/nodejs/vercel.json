@@ -2,7 +2,7 @@
   "version": 2,
   "headers": [
     {
-      "source": "https://www.divinginasia.com/images/(.*)",
+      "source": "https://api.divinginasia.com/images/(.*)",
       "headers": [
         {
           "key": "Cache-Control",

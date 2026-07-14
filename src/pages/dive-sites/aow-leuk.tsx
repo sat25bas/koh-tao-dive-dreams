@@ -33,7 +33,7 @@ const AowLeuk = () => {
       diving_tips: isDutch
         ? 'Perfect voor eerste duiken en opfriscursussen\nBlijf ondiep voor het beste licht\nGoed voor fotografie en lange duiktijden\nLet op bootverkeer bij de baai'
         : 'Perfect for first dives and refreshers\nStay shallow for the best light\nGreat for photography and long dive times\nWatch for boat traffic in the bay',
-      images: 'https://www.divinginasia.com/images/aowluk.jpg',
+      images: 'https://api.divinginasia.com/images/aowluk.jpg',
     }),
     [isDutch]
   );

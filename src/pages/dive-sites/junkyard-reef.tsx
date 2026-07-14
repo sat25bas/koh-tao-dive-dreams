@@ -33,7 +33,7 @@ const JunkyardReef = () => {
       diving_tips: isDutch
         ? 'Neem de tijd rond elke structuur\nGeweldig voor brede en close-up fotografie\nPrima locatie voor ontspannen middagduiken\nGoed drijfvermogen houdt de site in topconditie'
         : 'Take your time around each structure\nGreat for both wide-angle and close-up photography\nA solid choice for relaxed afternoon dives\nGood buoyancy helps keep the site in top condition',
-      images: 'https://www.divinginasia.com/images/htms-sattakut.jpg\nhttps://www.divinginasia.com/images/htms-sattakut-wreck.jpg',
+      images: 'https://api.divinginasia.com/images/htms-sattakut.jpg\nhttps://api.divinginasia.com/images/htms-sattakut-wreck.jpg',
     }),
     [isDutch]
   );

@@ -9,7 +9,7 @@ const ScubaReview: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <section className="relative h-72 md:h-96 flex items-center" style={{backgroundImage: "linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('https://www.divinginasia.com/images/photo-1618865181016-a80ad83a06d3.avif')", backgroundSize: 'cover', backgroundPosition: 'center'}}>
+      <section className="relative h-72 md:h-96 flex items-center" style={{backgroundImage: "linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('https://api.divinginasia.com/images/photo-1618865181016-a80ad83a06d3.avif')", backgroundSize: 'cover', backgroundPosition: 'center'}}>
         <div className="container mx-auto px-4 text-white z-10">
           <h1 className="text-4xl md:text-5xl font-bold">Scuba Review Course</h1>
           <p className="mt-4 max-w-2xl">Refresh your scuba diving skills and knowledge with our comprehensive review course.</p>

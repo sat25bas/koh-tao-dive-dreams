@@ -47,7 +47,7 @@ const ThingsToDo = () => {
   <main className="max-w-4xl mx-auto">
     {/* Hero Section */}
     <section className="relative h-64 md:h-96 flex items-center justify-center mb-8 overflow-hidden">
-      <div className="absolute inset-0 bg-[url('https://www.divinginasia.com/images/things-to-do.jpg')] bg-cover bg-center" />
+      <div className="absolute inset-0 bg-[url('https://api.divinginasia.com/images/things-to-do.jpg')] bg-cover bg-center" />
       <div className="absolute inset-0 bg-black/35" />
       <div className="text-center text-white z-10 relative">
         <h1 className="text-4xl md:text-5xl font-bold drop-shadow-lg">{content.title}</h1>

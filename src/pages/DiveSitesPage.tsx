@@ -184,7 +184,7 @@ const DiveSitesPage = () => {
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://www.divinginasia.com/images/whale.webp')] bg-cover bg-center" />
+        <div className="absolute inset-0 bg-[url('https://api.divinginasia.com/images/whale.webp')] bg-cover bg-center" />
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 text-center text-white px-4">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">{pageContent.hero_title}</h1>

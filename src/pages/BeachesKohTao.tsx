@@ -5,7 +5,7 @@ const beaches = [
   {
     name: "Mae Haad Beach",
     subtitle: "Noord & Zuid",
-    image: "https://www.divinginasia.com/images/maehad.jpg",
+    image: "https://api.divinginasia.com/images/maehad.jpg",
     description: "Often overlooked due to their proximity to the pier, both north and south sections of Mae Haad beach offer a great place to spend a day. The south section stretches from Coconut Monkey coffee shop all the way to Sensi Paradise resort — clean, white and sandy. Near the resort is a 60-year-old shipwreck, a great snorkeling location with its own marine ecosystem. The north side features a safe swimming area cordoned off from boat traffic, kept in pristine condition and cleaned daily. A very popular spot to watch Koh Tao's famous sunsets.",
     location: "Westkust",
     tags: ["Snorkelen", "Zwemmen", "Zonsondergang", "Gezinsvriendelijk"],
@@ -14,7 +14,7 @@ const beaches = [
   {
     name: "Sai Nuan Beach",
     subtitle: "Verborgen parel",
-    image: "https://www.divinginasia.com/images/sanjuan.jpg",
+    image: "https://api.divinginasia.com/images/sanjuan.jpg",
     description: "A hidden gem and throwback to the days when the first backpackers arrived on Koh Tao. Sai Nuan is actually two scenic beaches separated by a rocky outcrop. The first has a grass area with a tree swing and hammocks between palm trees. The small Sai Thong resort of wooden Thai-style bungalows adds to the relaxed, peaceful atmosphere. On a clear day expect white sand, coconut palms, and a clear warm turquoise sea. One of the least crowded beaches on the island.",
     location: "Zuidwest",
     tags: ["Afgelegen", "Rustig", "Snorkelen", "Hangmatten"],
@@ -23,7 +23,7 @@ const beaches = [
   {
     name: "June Juea Beach",
     subtitle: "Meest afgelegen",
-    image: "https://www.divinginasia.com/images/JunejueaBeach.jpg",
+    image: "https://api.divinginasia.com/images/JunejueaBeach.jpg",
     description: "Possibly the most remote beach on Koh Tao and certainly one of the smallest, June Juea is one of the most picturesque and secluded places to watch the sunset. Located on the south west side of the island, you can reach it by continuing the coastal walk from Sai Nuan, or walking from Chalok Baan Kao. The bay is made up of small areas of sand between large rocks and trees that provide natural shade. Perfect for getting away from it all.",
     location: "Zuidwest",
     tags: ["Afgelegen", "Zonsondergang", "Rust", "Zwemmen"],
@@ -32,7 +32,7 @@ const beaches = [
   {
     name: "Freedom Beach",
     subtitle: "Favoriet in het zuiden",
-    image: "https://www.divinginasia.com/images/freedom-beach-resort.jpg",
+    image: "https://api.divinginasia.com/images/freedom-beach-resort.jpg",
     description: "Another small secluded beach, Freedom beach is probably the most popular small beach on Koh Tao. Located on the south side, it's best reached by scooter — about 10 minutes from Sairee. The 100 baht entrance fee gives access to John Suwan Viewpoint, Taa Toh beach, and Freedom Beach. Beautiful white sandy beach with shade from Pemphis Acidula trees with hammocks, a shallow reef for snorkeling, and a beachside restaurant overlooking Chalok Baan Kao bay.",
     location: "Zuidkust",
     tags: ["Snorkelen", "Hangmatten", "Restaurant", "Dagtrip"],
@@ -41,7 +41,7 @@ const beaches = [
   {
     name: "Tanote Beach",
     subtitle: "Tanote Bay — Oostkust",
-    image: "https://www.divinginasia.com/images/tanote.png",
+    image: "https://api.divinginasia.com/images/tanote.png",
     description: "Situated on the east side of Koh Tao, Tanote Bay is easily accessible via the concrete road on a scooter. For early risers it's perfect for watching the sunrise facing east. Surrounded by steep jungle-covered hills, the beach stretches across the bay offering room for activities, swimming, snorkeling, and sunbathing. A large granite rock just offshore is the best rock jumping location on Koh Tao. Excellent marine life makes it a popular snorkeling and occasional diving spot.",
     location: "Oostkust",
     tags: ["Rots springen", "Zonsopkomst", "Snorkelen", "Duiken", "Restaurant"],
@@ -50,7 +50,7 @@ const beaches = [
   {
     name: "Aow Leuk Beach",
     subtitle: "Instagram-paradijs",
-    image: "https://www.divinginasia.com/images/aowluk.jpg",
+    image: "https://api.divinginasia.com/images/aowluk.jpg",
     description: "This beautiful beach sits in a stunning bay on the south east side of Koh Tao — one of the most picturesque bays in the entire Samui Archipelago. On a clear day you have a stunning backdrop of Koh Phangan with the iconic Shark Island in the foreground, less than 1km by kayak. A 100 baht entrance fee includes fresh water and a sun lounger with umbrella. Colourful coral reef lines both sides of the bay, and the sheltered middle is perfect for swimming.",
     location: "Zuidoost",
     tags: ["Snorkelen", "Ligbedden", "Koraalrif", "Fotografie"],
@@ -59,7 +59,7 @@ const beaches = [
   {
     name: "Sairee Beach",
     subtitle: "Het hoofdstrand — 2 km lang",
-    image: "https://www.divinginasia.com/images/sairee.png",
+    image: "https://api.divinginasia.com/images/sairee.png",
     description: "World-famous Sairee Beach is the busiest and longest beach on Koh Tao at almost 2 kilometres. The main tourist hub, Sairee has bars, restaurants, and resorts with soft white sand and plenty of shade. Activities include tree swings, paddleboarding, kayaking, beach volleyball, swimming, and snorkeling. Walk the full length along the path behind beachfront properties past shops and resort entrances. Popular sunset bars with music make evenings unforgettable on the west-facing shore.",
     location: "Westkust",
     tags: ["Bars & restaurants", "Paddleboarden", "Kajakken", "Zonsondergang", "Nachtleven"],
@@ -68,7 +68,7 @@ const beaches = [
   {
     name: "Koh Nang Yuan",
     subtitle: "Het iconische eiland — 800 m uit de kust",
-    image: "https://www.divinginasia.com/images/japanandwins.jpg",
+    image: "https://api.divinginasia.com/images/japanandwins.jpg",
     description: "Koh Nang Yuan is a separate island located approximately 800 metres off the north west coast of Koh Tao, accessible by long-tail boat. Probably the most photographed beach in Thailand — a unique inter-connected sandbar connecting three land masses. With a stunning Viewpoint to climb and snorkeling one of Thailand's most diverse coral reefs, it's on every visitor's bucket list. At low tide the sandbar connects the land masses with soft white sand and sun loungers.",
     location: "Noordwest (apart eiland)",
     tags: ["Iconisch", "Uitzichtpunt", "Snorkelen", "Koraalrif", "Fotografie"],
@@ -181,7 +181,7 @@ const BeachesKohTao = () => {
   <main className="min-h-screen bg-gradient-to-b from-blue-50 to-background">
     {/* Hero Section */}
     <section className="relative h-64 md:h-[70vh] flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-[url('https://www.divinginasia.com/images/sexy.png')] bg-cover bg-center" />
+      <div className="absolute inset-0 bg-[url('https://api.divinginasia.com/images/sexy.png')] bg-cover bg-center" />
       <div className="absolute inset-0 bg-black/40" />
       <div className="text-center text-white z-10 px-4 relative">
         <h1 className="text-4xl md:text-6xl font-bold drop-shadow-lg mb-4">{pageContent.heroTitle}</h1>

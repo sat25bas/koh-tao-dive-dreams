@@ -87,7 +87,7 @@ const DiveSiteDetail: React.FC<DiveSiteDetailProps> = ({
     return cleanImageToken(heroImage);
   })();
 
-  const hero = normalizedHero || normalizedImages[0] || 'https://www.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif';
+  const hero = normalizedHero || normalizedImages[0] || 'https://api.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif';
 
   const labels = isDutch
     ? {

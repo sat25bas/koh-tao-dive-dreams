@@ -319,7 +319,7 @@ export async function sendCustomerInvoiceEmail(payload = {}) {
         <!-- ── HEADER ── -->
         <tr>
           <td style="background:linear-gradient(135deg,#0b3d91 0%,#1a5ed4 100%);padding:32px 40px;text-align:center;">
-            <img src="https://www.divinginasia.com/images/logo.png"
+            <img src="https://api.divinginasia.com/images/logo.png"
                  alt="Diving In Asia"
                  width="120" height="auto"
                  style="display:block;margin:0 auto 14px;max-width:120px;" />
@@ -423,7 +423,7 @@ export async function sendCustomerInvoiceEmail(payload = {}) {
         <!-- ── FOOTER ── -->
         <tr>
           <td style="background:#0b3d91;padding:20px 40px;text-align:center;">
-            <img src="https://www.divinginasia.com/images/logo.png"
+            <img src="https://api.divinginasia.com/images/logo.png"
                  alt="Diving In Asia" width="70" height="auto"
                  style="display:block;margin:0 auto 10px;opacity:0.8;" />
             <p style="color:#93b4e8;margin:0;font-size:12px;line-height:1.6;">
