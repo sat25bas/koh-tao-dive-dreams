@@ -14,14 +14,14 @@ import Index from './pages';
 import NotFound from './pages/NotFound';
 import BookingAffiliate from './pages/BookingAffiliate';
 import AgodaHotels from './pages/AgodaHotels';
-import ClicksDashboard from './pages/ClicksDashboard';
+import ClicksDashboard from './pages/ProjectManager';
 import BookingPage from './pages/BookingPage';
 import StayBookingPage from './pages/StayBookingPage';
 import ThankYouPage from './pages/ThankYouPage';
-import Admin from './pages/Admin';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
-import Account from './pages/Account';
+import AdminRedirect from './pages/AdminRedirect';
+import Login from './pages/AdminRedirect';
+import Signup from './pages/AdminRedirect';
+import Account from './pages/BookingAffiliate';
 
 import OpenWater from './pages/OpenWater';
 import Advanced from './pages/Advanced';
@@ -77,36 +77,36 @@ import ViewpointsKohTao from './pages/ViewpointsKohTao';
 import VisasKohTao from './pages/VisasKohTao';
 import WeatherKohTao from './pages/WeatherKohTao';
 
-import DeepDiver from './pages/specialty/DeepDiver';
-import WreckDiver from './pages/specialty/WreckDiver';
-import EnrichedAirDiver from './pages/specialty/EnrichedAirDiver';
-import NightDiver from './pages/specialty/NightDiver';
-import PeakPerformanceBuoyancy from './pages/specialty/PeakPerformanceBuoyancy';
-import SearchRecovery from './pages/specialty/SearchRecovery';
-import SelfReliantDiver from './pages/specialty/SelfReliantDiver';
-import SidemountDiver from './pages/specialty/SidemountDiver';
-import UnderwaterNavigator from './pages/specialty/UnderwaterNavigator';
-import FishIdentification from './pages/specialty/FishIdentification';
-import DiveAgainstDebris from './pages/specialty/DiveAgainstDebris';
-import CoralWatch from './pages/specialty/CoralWatch';
-import DPVDiver from './pages/specialty/DPVDiver';
-import SharkConservation from './pages/specialty/SharkConservation';
-import SeaTurtleAwareness from './pages/specialty/SeaTurtleAwareness';
-import WhaleSharkAwareness from './pages/specialty/WhaleSharkAwareness';
-import AdaptiveSupportDiver from './pages/specialty/AdaptiveSupportDiver';
-import BoatDiver from './pages/specialty/BoatDiver';
-import CurrentDiver from './pages/specialty/CurrentDiver';
-import Photography from './pages/specialty/Photography';
-import EmergencyO2Provider from './pages/specialty/EmergencyO2Provider';
-import EquipmentSpecialist from './pages/specialty/EquipmentSpecialist';
-import UnderwaterNaturalist from './pages/specialty/UnderwaterNaturalist';
+import DeepDiver from './pages/SpecialtyDetail';
+import WreckDiver from './pages/SpecialtyDetail';
+import EnrichedAirDiver from './pages/SpecialtyDetail';
+import NightDiver from './pages/SpecialtyDetail';
+import PeakPerformanceBuoyancy from './pages/SpecialtyDetail';
+import SearchRecovery from './pages/SpecialtyDetail';
+import SelfReliantDiver from './pages/SpecialtyDetail';
+import SidemountDiver from './pages/SpecialtyDetail';
+import UnderwaterNavigator from './pages/SpecialtyDetail';
+import FishIdentification from './pages/SpecialtyDetail';
+import DiveAgainstDebris from './pages/SpecialtyDetail';
+import CoralWatch from './pages/SpecialtyDetail';
+import DPVDiver from './pages/SpecialtyDetail';
+import SharkConservation from './pages/SpecialtyDetail';
+import SeaTurtleAwareness from './pages/SpecialtyDetail';
+import WhaleSharkAwareness from './pages/SpecialtyDetail';
+import AdaptiveSupportDiver from './pages/SpecialtyDetail';
+import BoatDiver from './pages/SpecialtyDetail';
+import CurrentDiver from './pages/SpecialtyDetail';
+import Photography from './pages/SpecialtyDetail';
+import EmergencyO2Provider from './pages/SpecialtyDetail';
+import EquipmentSpecialist from './pages/SpecialtyDetail';
+import UnderwaterNaturalist from './pages/SpecialtyDetail';
 
 import DivemasterInternship from './pages/internship/Divemaster';
 import InstructorInternship from './pages/internship/Instructor';
 import OpenWaterToDivemaster from './pages/OpenWaterToDivemaster';
 import FacebookFeedPage from './pages/FacebookFeedPage';
 import TrainingVideos from './pages/TrainingVideos';
-import BookingToJiraForm from './components/BookingToJiraForm';
+
 
 // import BookNowSite from './pages/BookNowSite';
 
@@ -180,7 +180,7 @@ const App = () => (
               <Route path="/booking" element={<BookingPage />} />
               <Route path="/stay" element={<StayBookingPage />} />
               <Route path="/thank-you" element={<ThankYouPage />} />
-              <Route path="/admin" element={<RequireAdmin><Admin /></RequireAdmin>} />
+              <Route path="/admin" element={<RequireAdmin><AdminRedirect /></RequireAdmin>} />
               <Route path="/login" element={<Login />} />
               <Route path="/admin/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
@@ -277,7 +277,7 @@ const App = () => (
               <Route path="/WeatherKohTao" element={<WeatherKohTao />} />
               <Route path="/facebook" element={<FacebookFeedPage />} />
               <Route path="/training-videos" element={<TrainingVideos />} />
-              <Route path="/booking-to-jira" element={<RequireAdmin><BookingToJiraForm /></RequireAdmin>} />
+              
               {/* <Route path="/booknow-site" element={<BookNowSite />} /> */}
               <Route path="*" element={<NotFound />} />
             </Routes>

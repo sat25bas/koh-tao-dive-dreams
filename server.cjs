@@ -25,6 +25,17 @@ app.use(cors());
 app.use(express.json());
 
 app.options('/api/send-booking-notification', (_req, res) => res.status(200).end());
+app.get('/api/page-content', async (req, res) => {
+	try {
+		const { default: pageContentHandler } = await import('./api/page-content.js');
+		return await pageContentHandler(req, res);
+	} catch (err) {
+		console.error('Local page content route failed', err);
+		return res.status(500).json({
+			error: err instanceof Error ? err.message : 'Failed to load page content',
+		});
+	}
+});
 app.post('/api/send-booking-notification', async (req, res) => {
 	try {
 		const { default: sendBookingNotificationHandler } = await import('./api/send-booking-notification.js');
