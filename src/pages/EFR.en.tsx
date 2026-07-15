@@ -30,7 +30,7 @@ const EFREn: React.FC = () => {
           ],
         },
         {
-          title: 'Duration and prerequisites',
+          title: 'Duration and prerequisites'
           content: 'Duration: 1 day. No diving prerequisite - suitable for divers and non-divers alike.',
         },
         {
