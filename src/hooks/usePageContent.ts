@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { apiUrl } from '@/lib/apiBase';
 
 interface PageContent {
   [key: string]: string;
