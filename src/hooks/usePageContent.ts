@@ -27,10 +27,12 @@ const CONTENT_REFRESH_INTERVAL_MS = 15000;
 export function usePageContent({ pageSlug, locale, fallbackContent }: UsePageContentOptions) {
   const [content, setContent] = useState<PageContent>(() => fallbackContent);
   const [isLoading, setIsLoading] = useState(true);
+  const initialFallbackRef = useRef(fallbackContent);
 
   useEffect(() => {
     let isMounted = true;
 
+    initialFallbackRef.current = fallbackContent;
     setContent(fallbackContent);
 
     const mergeRowsAndSet = (rows: PageContentRow[] | null | undefined) => {
@@ -76,7 +78,7 @@ export function usePageContent({ pageSlug, locale, fallbackContent }: UsePageCon
         });
 
         if (isMounted) {
-          setContent({ ...fallbackContent, ...dbContent });
+          setContent({ ...initialFallbackRef.current, ...dbContent });
         }
         return true;
       }
