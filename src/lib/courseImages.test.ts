@@ -13,9 +13,9 @@ test('resolves known local course image filenames to local public assets', () =>
   assert.equal(resolveCourseImageUrl('openwater.png'), '/images/openwater.png');
 });
 
-test('keeps absolute course image URLs unchanged when not from the broken host', () => {
+test('resolves known public image host URLs to local public assets', () => {
   const url = 'https://divinginasia.com/images/openwater.png';
-  assert.equal(resolveCourseImageUrl(url), url);
+  assert.equal(resolveCourseImageUrl(url), '/images/openwater.png');
 });
 
 test('resolves broken image host URLs to local public assets when possible', () => {

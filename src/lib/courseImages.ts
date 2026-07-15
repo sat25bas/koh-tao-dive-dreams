@@ -1,6 +1,6 @@
 const IMAGE_HOST = 'https://api.divinginasia.com/images/';
 const LOCAL_IMAGE_PATH = '/images/';
-const BROKEN_IMAGE_HOST = 'api.divinginasia.com/images/';
+const BROKEN_IMAGE_HOSTS = ['api.divinginasia.com/images/', 'divinginasia.com/images/'];
 
 const LOCAL_IMAGE_FILENAMES = new Set([
   'openwater.png',
@@ -61,7 +61,7 @@ export const resolveCourseImageUrl = (image?: string | null): string => {
       return LOCAL_IMAGE_ALIAS[filename];
     }
 
-    if (trimmed.includes(BROKEN_IMAGE_HOST)) {
+    if (BROKEN_IMAGE_HOSTS.some((host) => trimmed.includes(host))) {
       return getLocalImagePath(filename);
     }
 
