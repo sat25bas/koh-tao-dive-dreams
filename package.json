@@ -9,7 +9,7 @@
     "dev:local": "concurrently \"npm run dev\" \"npm run dev:api\"",
     "build": "vite build",
     "build:static": "vite build && node scripts/write-static-htaccess.cjs",
-    "build:hostinger": "vite build",
+    "build:hostinger": "npm run build:static",
     "deploy:static:local": "npm run build:static && rsync -av --delete dist/ divinginasia.com/public_html/",
     "start": "node server.cjs",
     "start:hostinger": "node hostinger-server.cjs",

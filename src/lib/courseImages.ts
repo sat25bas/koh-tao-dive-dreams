@@ -1,32 +1,72 @@
 const IMAGE_HOST = 'https://api.divinginasia.com/images/';
+const LOCAL_IMAGE_PATH = '/images/';
+
+const LOCAL_IMAGE_FILENAMES = new Set([
+  'openwater.png',
+  'photo-1659518893171-b15e20a8e201.avif',
+  'photo-1682686580849-3e7f67df4015.avif',
+  'sailrock.webp',
+  'chumphon-pinnacle-top.webp',
+  'mango-bay.webp',
+  'marine-life-hero.webp',
+  'sharkisand.jpg',
+  'whale-shark-snorkelling-fos-sustainable-certification-medium-1.webp',
+  'turtle.avif',
+  'logo.png',
+  'logo.avif',
+  'logo-new.png',
+  'downline.png',
+  'downline.jpg',
+  'efr.jpeg',
+]);
 
 const BROKEN_IMAGE_FALLBACKS: Record<string, string> = {
-  'photo-1682687982423-295485af248a.avif': 'https://api.divinginasia.com/images/photo-1659518893171-b15e20a8e201.avif',
-  'photo-1618865181016-a80ad83a06d3.avif': 'https://api.divinginasia.com/images/photo-1659518893171-b15e20a8e201.avif',
-  'photo-1647825194145-2d94e259c745.avif': 'https://api.divinginasia.com/images/photo-1682686580849-3e7f67df4015.avif',
-  'photo-1613853250147-2f73e55c1561.avif': 'https://api.divinginasia.com/images/photo-1659518893171-b15e20a8e201.avif',
-  'openwater.png': 'https://divinginasia.com/images/openwater.png',
+  'photo-1682687982423-295485af248a.avif': '/images/photo-1659518893171-b15e20a8e201.avif',
+  'photo-1618865181016-a80ad83a06d3.avif': '/images/photo-1659518893171-b15e20a8e201.avif',
+  'photo-1647825194145-2d94e259c745.avif': '/images/photo-1682686580849-3e7f67df4015.avif',
+  'photo-1613853250147-2f73e55c1561.avif': '/images/photo-1659518893171-b15e20a8e201.avif',
+  'openwater.png': '/images/openwater.png',
 };
+
+const getLocalImagePath = (filename: string) => `${LOCAL_IMAGE_PATH}${filename}`;
 
 export const resolveCourseImageUrl = (image?: string | null): string => {
   if (!image) {
-    return 'https://api.divinginasia.com/images/photo-1659518893171-b15e20a8e201.avif';
+    return getLocalImagePath('photo-1659518893171-b15e20a8e201.avif');
   }
 
   const trimmed = image.trim();
   if (!trimmed) {
-    return 'https://api.divinginasia.com/images/photo-1659518893171-b15e20a8e201.avif';
+    return getLocalImagePath('photo-1659518893171-b15e20a8e201.avif');
   }
 
-  if (/^https?:\/\//i.test(trimmed)) {
+  if (trimmed.startsWith('/images/')) {
+    return trimmed;
+  }
+
+  if (trimmed.startsWith('images/')) {
+    return `/${trimmed}`;
+  }
+
+  if (/^(https?:)?\/\//i.test(trimmed)) {
     return trimmed;
   }
 
   const filename = trimmed.split('/').pop() || trimmed;
+  if (LOCAL_IMAGE_FILENAMES.has(filename)) {
+    return getLocalImagePath(filename);
+  }
+
   return `${IMAGE_HOST}${filename}`;
 };
 
 export const getCourseImageFallbackUrl = (image?: string | null): string => {
   const filename = (image || '').trim().split('/').pop() || '';
-  return BROKEN_IMAGE_FALLBACKS[filename] || resolveCourseImageUrl(image);
+  if (BROKEN_IMAGE_FALLBACKS[filename]) {
+    return BROKEN_IMAGE_FALLBACKS[filename];
+  }
+  if (LOCAL_IMAGE_FILENAMES.has(filename)) {
+    return getLocalImagePath(filename);
+  }
+  return resolveCourseImageUrl(image);
 };
