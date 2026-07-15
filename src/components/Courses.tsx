@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/accordion";
 import { usePageContent } from '@/hooks/usePageContent';
 import { useCurrency } from '@/hooks/useCurrency';
+import { getCourseImageFallbackUrl, resolveCourseImageUrl } from '@/lib/courseImages';
 const Courses = () => {
 
 
@@ -515,14 +516,26 @@ const Courses = () => {
                           {course.courseImages && (course.courseImages as string[]).length > 0 && (
                             <div className="my-6">
                               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                                {(course.courseImages as string[]).map((image, idx) => (
-                                  <img
-                                    key={idx}
-                                    src={`https://api.divinginasia.com/images/${image}`}
-                                    alt={`${course.title} - underwater scene ${idx + 1}`}
-                                    className="rounded-lg object-cover h-40 w-full"
-                                  />
-                                ))}
+                                {(course.courseImages as string[]).map((image, idx) => {
+                                  const resolvedSrc = resolveCourseImageUrl(image);
+                                  const fallbackSrc = getCourseImageFallbackUrl(image);
+                                  return (
+                                    <img
+                                      key={idx}
+                                      src={resolvedSrc}
+                                      alt={`${course.title} - underwater scene ${idx + 1}`}
+                                      className="rounded-lg object-cover h-40 w-full"
+                                      onError={(event) => {
+                                        const target = event.currentTarget;
+                                        if (target.getAttribute('data-fallback-used') === 'true') {
+                                          return;
+                                        }
+                                        target.setAttribute('data-fallback-used', 'true');
+                                        target.src = fallbackSrc;
+                                      }}
+                                    />
+                                  );
+                                })}
                               </div>
                             </div>
                           )}

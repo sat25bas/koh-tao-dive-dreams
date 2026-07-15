@@ -39,7 +39,7 @@ Before building, set:
 VITE_API_BASE_URL=https://YOUR_API_DOMAIN_OR_VERCEL_URL
 ```
 
-Then run `npm run build:static` again.
+Then run `npm run build:static again.
 
 ## 5. Verify
 

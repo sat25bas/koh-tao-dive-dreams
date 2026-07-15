@@ -11,6 +11,7 @@ import InlineCourseBookingForm from './InlineCourseBookingForm';
 import { depositFromTotal } from '@/lib/depositRate';
 import DropboxGallerySection from './DropboxGallerySection';
 import ImageRow from './ImageRow';
+import { resolveCourseImageUrl } from '@/lib/courseImages';
 
 export interface CourseSection {
   title: string;
@@ -143,7 +144,7 @@ const CoursePageTemplate: React.FC<CoursePageProps> = ({
   const thbAmount = parseAmount(priceThb);
   const usdAmount = parseAmount(priceUsd);
   const eurAmount = parseAmount(priceEur);
-  const heroImageUrl = heroImage || images[0];
+  const heroImageUrl = resolveCourseImageUrl(heroImage || images[0]);
 
   const openBookNow = () => {
     const params = new URLSearchParams();

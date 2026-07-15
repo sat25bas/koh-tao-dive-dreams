@@ -1,27 +1,25 @@
-/** Vercel API origin for production sites (Hostinger frontend has no /api routes). */
-export const PRODUCTION_API_BASE = 'https://api.divinginasia.com';
+const DEFAULT_API_HOSTS = new Set(['https://api.divinginasia.com', 'http://api.divinginasia.com']);
 
-const PRODUCTION_HOSTS = new Set([
-  'www.divinginasia.com',
-  'divinginasia.com',
-  'admin.divinginasia.com',
-]);
+function readViteEnvValue(name: string) {
+  const viteEnv = (import.meta as ImportMeta & { env?: Record<string, string | undefined> }).env;
+  return viteEnv?.[name]?.trim() ?? '';
+}
 
+/** Resolve the API origin used by the frontend.
+ *
+ * The public site should not silently redirect /api requests to the API host
+ * unless a specific API base is explicitly configured. This keeps the frontend
+ * on the same host for page navigation while allowing explicit split-hosting
+ * setups to opt in via VITE_API_BASE_URL/VITE_API_URL.
+ */
 export function resolveApiBaseUrl() {
-  const rawBase = (
-    (import.meta.env.VITE_API_BASE_URL as string | undefined)
-    || (import.meta.env.VITE_API_URL as string | undefined)
-    || ''
-  ).trim();
+  const rawBase = readViteEnvValue('VITE_API_BASE_URL') || readViteEnvValue('VITE_API_URL');
+  const normalizedBase = rawBase.replace(/\/+$/, '');
 
-  const runtimeFallback = (() => {
-    if (typeof window === 'undefined') return '';
-    const host = window.location.hostname.toLowerCase();
-    if (PRODUCTION_HOSTS.has(host)) return PRODUCTION_API_BASE;
-    return '';
-  })();
+  if (!normalizedBase) return '';
+  if (DEFAULT_API_HOSTS.has(normalizedBase)) return '';
 
-  return (rawBase || runtimeFallback).replace(/\/+$/, '');
+  return normalizedBase;
 }
 
 export function getApiBaseUrl() {
