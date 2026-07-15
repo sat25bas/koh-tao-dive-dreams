@@ -144,7 +144,13 @@ const CoursePageTemplate: React.FC<CoursePageProps> = ({
   const thbAmount = parseAmount(priceThb);
   const usdAmount = parseAmount(priceUsd);
   const eurAmount = parseAmount(priceEur);
-  const heroImageUrl = resolveCourseImageUrl(heroImage || images[0]);
+  const [heroImageSrc, setHeroImageSrc] = useState(resolveCourseImageUrl(heroImage || images[0]));
+
+  useEffect(() => {
+    setHeroImageSrc(resolveCourseImageUrl(heroImage || images[0]));
+  }, [heroImage, images]);
+
+  const heroImageUrl = heroImageSrc;
 
   const openBookNow = () => {
     const params = new URLSearchParams();
@@ -166,10 +172,18 @@ const CoursePageTemplate: React.FC<CoursePageProps> = ({
   return (
     <div className="min-h-screen bg-background">
       <section className="relative h-72 md:h-96 flex items-center overflow-hidden">
-        <img 
-          src={heroImageUrl} 
-          alt={content.hero_title} 
-          className="absolute inset-0 w-full h-full object-cover object-center" 
+        <img
+          src={heroImageUrl}
+          alt={content.hero_title}
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          onError={(event) => {
+            const target = event.currentTarget;
+            if (target.getAttribute('data-fallback-used') === 'true') {
+              return;
+            }
+            target.setAttribute('data-fallback-used', 'true');
+            target.src = resolveCourseImageUrl(images[0]);
+          }}
         />
         <div className="absolute inset-0 bg-black/40" />
         <div className="container mx-auto px-[20px] text-white z-10">

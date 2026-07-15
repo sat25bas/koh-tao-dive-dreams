@@ -11,6 +11,7 @@
     "build:static": "vite build && node scripts/write-static-htaccess.cjs",
     "build:hostinger": "npm run build:static",
     "deploy:static:local": "npm run build:static && rsync -av --delete dist/ divinginasia.com/public_html/",
+    "test:unit": "tsx src/lib/courseImages.test.ts",
     "start": "node server.cjs",
     "start:hostinger": "node hostinger-server.cjs",
     "preview": "vite preview",
