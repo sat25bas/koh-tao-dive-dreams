@@ -27,7 +27,7 @@ const DiscoverScubaNl: React.FC = () => {
         faq_4_question: 'Wat is de DSD Deluxe-optie?',
         faq_4_answer: 'Deluxe is een uitgebreidere ervaring met extra duiken en meer tijd onder water, ideaal als je daarna mogelijk verder wilt met Open Water.',
       }}
-      heroImage="https://api.divinginasia.com/images/discover-scuba-dsd.png"
+      heroImage="/images/sidemount-diver-underwater.jpg"
       level="Beginner"
       bookingItemName="Discover Scuba Diving"
       bookingType="dive"

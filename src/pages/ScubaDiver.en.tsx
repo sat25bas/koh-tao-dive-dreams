@@ -19,7 +19,7 @@ const ScubaDiverEn: React.FC = () => {
         section_3_title: 'Why choose Scuba Diver?',
         section_3_content: 'Shorter commitment than full Open Water course\nPerfect introduction to scuba diving\nCan be upgraded to Open Water certification\nFun and relaxed learning environment\nExplore beautiful Koh Tao reefs',
       }}
-      heroImage="https://api.divinginasia.com/images/scubadiver-hero.png"
+      heroImage="/images/sidemount-diver-underwater.jpg"
       level="Entry Level"
       bookingItemName="PADI Scuba Diver Course"
     />

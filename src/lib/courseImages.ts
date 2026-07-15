@@ -1,5 +1,6 @@
 const IMAGE_HOST = 'https://api.divinginasia.com/images/';
 const LOCAL_IMAGE_PATH = '/images/';
+const BROKEN_IMAGE_HOST = 'api.divinginasia.com/images/';
 
 const LOCAL_IMAGE_FILENAMES = new Set([
   'openwater.png',
@@ -18,7 +19,12 @@ const LOCAL_IMAGE_FILENAMES = new Set([
   'downline.png',
   'downline.jpg',
   'efr.jpeg',
+  'sidemount-diver-underwater.jpg',
 ]);
+
+const LOCAL_IMAGE_ALIAS: Record<string, string> = {
+  'scubadiver-hero.png': '/images/sidemount-diver-underwater.jpg',
+};
 
 const BROKEN_IMAGE_FALLBACKS: Record<string, string> = {
   'photo-1682687982423-295485af248a.avif': '/images/photo-1659518893171-b15e20a8e201.avif',
@@ -26,6 +32,7 @@ const BROKEN_IMAGE_FALLBACKS: Record<string, string> = {
   'photo-1647825194145-2d94e259c745.avif': '/images/photo-1682686580849-3e7f67df4015.avif',
   'photo-1613853250147-2f73e55c1561.avif': '/images/photo-1659518893171-b15e20a8e201.avif',
   'openwater.png': '/images/openwater.png',
+  'scubadiver-hero.png': '/images/sidemount-diver-underwater.jpg',
 };
 
 const getLocalImagePath = (filename: string) => `${LOCAL_IMAGE_PATH}${filename}`;
@@ -50,13 +57,30 @@ export const resolveCourseImageUrl = (image?: string | null): string => {
 
   if (/^(https?:)?\/\//i.test(trimmed)) {
     const filename = trimmed.split('/').pop() || trimmed;
-    if (LOCAL_IMAGE_FILENAMES.has(filename)) {
+    if (LOCAL_IMAGE_ALIAS[filename]) {
+      return LOCAL_IMAGE_ALIAS[filename];
+    }
+
+    if (trimmed.includes(BROKEN_IMAGE_HOST)) {
       return getLocalImagePath(filename);
     }
+
     return trimmed;
   }
 
   const filename = trimmed.split('/').pop() || trimmed;
+  if (LOCAL_IMAGE_ALIAS[filename]) {
+    return LOCAL_IMAGE_ALIAS[filename];
+  }
+
+  if (trimmed.startsWith('/images/')) {
+    return trimmed;
+  }
+
+  if (trimmed.startsWith('images/')) {
+    return `/${trimmed}`;
+  }
+
   if (LOCAL_IMAGE_FILENAMES.has(filename)) {
     return getLocalImagePath(filename);
   }

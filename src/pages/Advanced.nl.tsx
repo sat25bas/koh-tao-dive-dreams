@@ -25,7 +25,7 @@ const AdvancedNl: React.FC = () => {
         faq_2_question: 'Kan ik mijn Adventure Dives kiezen?',
         faq_2_answer: 'Deep en Navigation zijn verplicht. Je kiest 3 keuzevakken uit opties zoals Night, Wreck, Peak Performance Buoyancy, Fish ID, en meer.',
       }}
-      heroImage="https://api.divinginasia.com/images/advanved.png"
+      heroImage="/images/openwater.png"
       level="Intermediate"
     />
   );

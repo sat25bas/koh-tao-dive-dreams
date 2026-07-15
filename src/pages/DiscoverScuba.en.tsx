@@ -27,7 +27,7 @@ const DiscoverScubaEn: React.FC = () => {
         faq_4_question: 'What is the DSD Deluxe option?',
         faq_4_answer: 'Deluxe is an extended experience with extra dives and more underwater time, ideal if you want a deeper introduction before starting Open Water.',
       }}
-      heroImage="https://api.divinginasia.com/images/discover-scuba-dsd.png"
+      heroImage="/images/sidemount-diver-underwater.jpg"
       level="Beginner"
       bookingItemName="Discover Scuba Diving"
       bookingType="dive"
