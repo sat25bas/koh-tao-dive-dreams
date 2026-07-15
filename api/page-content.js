@@ -34,7 +34,7 @@ const OPEN_WATER_FALLBACK = {
     },
     {
       section_key: 'images',
-      content_value: 'https://divinginasia.com/images/openwater.png',
+      content_value: '/images/openwater.png',
     },
   ],
 };
