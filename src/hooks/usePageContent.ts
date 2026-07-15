@@ -92,8 +92,7 @@ export function usePageContent({ pageSlug, locale, fallbackContent }: UsePageCon
 
       try {
         const params = new URLSearchParams({ slug: pageSlug, locale });
-        const base = import.meta.env.VITE_API_URL || '';
-        const endpoint = `${base}/api/page-content?${params.toString()}`;
+        const endpoint = apiUrl(`/api/page-content?${params.toString()}`);
         const response = await fetch(endpoint, { cache: 'no-store' });
         if (!response.ok) {
           const text = await response.text().catch(() => '');
@@ -138,7 +137,7 @@ export function usePageContent({ pageSlug, locale, fallbackContent }: UsePageCon
       document.removeEventListener('visibilitychange', refreshContent);
       window.removeEventListener('focus', refreshContent);
     };
-  }, [pageSlug, locale, fallbackContent]);
+  }, [pageSlug, locale]);
 
   return { content, isLoading };
 }
