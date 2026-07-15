@@ -13,7 +13,7 @@ const EFREn: React.FC = () => {
         price_thb: '4500',
         price_usd: '167',
         price_eur: '154',
-        duration: '1 day',
+        duration: '1-2 day',
       }}
       heroImage="/images/efr.jpeg"
       images={[]}
