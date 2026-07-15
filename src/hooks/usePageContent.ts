@@ -24,11 +24,13 @@ interface PageContentApiResponse {
 const CONTENT_REFRESH_INTERVAL_MS = 15000;
 
 export function usePageContent({ pageSlug, locale, fallbackContent }: UsePageContentOptions) {
-  const [content, setContent] = useState<PageContent>(fallbackContent);
+  const [content, setContent] = useState<PageContent>(() => fallbackContent);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     let isMounted = true;
+
+    setContent(fallbackContent);
 
     const mergeRowsAndSet = (rows: PageContentRow[] | null | undefined) => {
       if (rows && rows.length > 0) {
