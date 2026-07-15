@@ -35,7 +35,7 @@ const Contact = () => {
         phone_line_1: '+31 6 38697279',
         phone_line_2: '+62(0)81353833289',
         email_title: 'E-mail',
-        email_value: 'contact@divinginasia.com',
+        email_value: 'booking@divinginasia.com',
         opening_hours_title: 'Openingstijden',
         opening_hours_line_1: 'Dagelijks: 07:00 - 19:00',
         opening_hours_line_2: 'Noodgeval: 24/7',
@@ -68,7 +68,7 @@ const Contact = () => {
       phone_line_1: '+66 77 456 789',
       phone_line_2: '+66 89 123 4567',
       email_title: 'Email',
-      email_value: 'contact@divinginasia.com',
+      email_value: 'booking@divinginasia.com',
       opening_hours_title: 'Opening Hours',
       opening_hours_line_1: 'Daily: 07:00 - 19:00',
       opening_hours_line_2: 'Emergency: 24/7',
@@ -169,7 +169,7 @@ const Contact = () => {
     } catch (error) {
       console.error('Contact form submission failed:', error);
       const message = error instanceof Error ? error.message : 'Network error';
-      toast.error(`Failed to save contact: ${message}. Please try again or email us at contact@divinginasia.com`);
+      toast.error(`Failed to save contact: ${message}. Please try again or email us at booking@divinginasia.com`);
     } finally {
       setIsSubmitting(false);
     }

@@ -261,7 +261,7 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <span className="block text-white font-semibold text-xs uppercase tracking-wider mb-1">Email</span>
-                <a href="mailto:contact@divinginasia.com" className="hover:text-white transition">contact@divinginasia.com</a>
+                <a href="mailto:booking@divinginasia.com" className="hover:text-white transition">booking@divinginasia.com</a>
               </li>
               <li>
                 <span className="block text-white font-semibold text-xs uppercase tracking-wider mb-1">
