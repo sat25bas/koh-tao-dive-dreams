@@ -122,11 +122,13 @@ const CoursePageTemplate: React.FC<CoursePageProps> = ({
     return parsed;
   };
 
-  if (isLoading) {
-    return <div className="min-h-screen bg-background flex items-center justify-center">Loading...</div>;
-  }
-
   const localeTag = locale === 'nl' ? 'nl-NL' : 'en-US';
+  const [heroImageSrc, setHeroImageSrc] = useState(resolveCourseImageUrl(heroImage || images[0]));
+
+  useEffect(() => {
+    setHeroImageSrc(resolveCourseImageUrl(heroImage || images[0]));
+  }, [heroImage, images]);
+
   const parseAmount = (value: string) => {
     const digits = String(value || '').replace(/[^\d.-]/g, '');
     return Number(digits || 0);
@@ -144,11 +146,6 @@ const CoursePageTemplate: React.FC<CoursePageProps> = ({
   const thbAmount = parseAmount(priceThb);
   const usdAmount = parseAmount(priceUsd);
   const eurAmount = parseAmount(priceEur);
-  const [heroImageSrc, setHeroImageSrc] = useState(resolveCourseImageUrl(heroImage || images[0]));
-
-  useEffect(() => {
-    setHeroImageSrc(resolveCourseImageUrl(heroImage || images[0]));
-  }, [heroImage, images]);
 
   const heroImageUrl = heroImageSrc;
 

@@ -26,7 +26,7 @@ const CONTENT_REFRESH_INTERVAL_MS = 15000;
 
 export function usePageContent({ pageSlug, locale, fallbackContent }: UsePageContentOptions) {
   const [content, setContent] = useState<PageContent>(() => fallbackContent);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const initialFallbackRef = useRef(fallbackContent);
 
   useEffect(() => {

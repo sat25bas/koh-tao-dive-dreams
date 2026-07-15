@@ -15,7 +15,7 @@ const EFRNl: React.FC = () => {
         price_eur: '154',
         duration: '1 dag',
       }}
-      heroImage="/images/efr.jpeg"
+      heroImage="https://api.divinginasia.com/images/efr.jpeg"
       images={[]}
       level="Eerste hulp"
       bookingItemName="Emergency First Response (EFR)"

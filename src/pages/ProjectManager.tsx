@@ -2,9 +2,10 @@
 import TaskTable from '../components/TaskTable';
 import TaskCalendar from '../components/TaskCalendar';
 
-const jiraEmbedUrl = process.env.NEXT_PUBLIC_JIRA_EMBED_URL || '';
-const jiraProjectUrl = process.env.NEXT_PUBLIC_JIRA_PROJECT_URL || jiraEmbedUrl || 'https://divinginasia.atlassian.net';
-const trelloBoardUrl = process.env.NEXT_PUBLIC_TRELLO_BOARD_URL || 'https://trello.com';
+const env = (import.meta as ImportMeta & { env?: Record<string, string | undefined> }).env ?? {};
+const jiraEmbedUrl = (env.VITE_JIRA_EMBED_URL || env.NEXT_PUBLIC_JIRA_EMBED_URL || '').trim();
+const jiraProjectUrl = (env.VITE_JIRA_PROJECT_URL || env.NEXT_PUBLIC_JIRA_PROJECT_URL || jiraEmbedUrl || 'https://divinginasia.atlassian.net').trim();
+const trelloBoardUrl = (env.VITE_TRELLO_BOARD_URL || env.NEXT_PUBLIC_TRELLO_BOARD_URL || 'https://trello.com').trim();
 
 export default function ProjectManager() {
   return (
