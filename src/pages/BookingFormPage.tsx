@@ -13,7 +13,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { toast } from 'sonner';
 import { sendBookingNotification } from '@/lib/sendBookingNotification';
 import { apiUrl } from '@/lib/apiBase';
-import { DEPOSIT_PERCENT_LABEL, depositFromTotal } from '@/lib/depositRate';
+import { DEPOSIT_PERCENT_LABEL, depositFromTotal, totalPayableNowFromTotal } from '@/lib/depositRate';
 
 const bookingSchema = z.object({
   name: z.string().trim().min(1, 'Name is required').max(100),
@@ -168,8 +168,7 @@ const       BookingPage: React.FC = () => {
     console.log('Form validation errors:', form.formState.errors);
     setIsSubmitting(true);
     try {
-      const commissionAmount = totalItemCostMajor > 0 ? Math.round(totalItemCostMajor * 0.1) : 0;
-      const amountMajor = (isStayBooking ? 0 : depositMajor) + totalAddons + commissionAmount;
+      const amountMajor = (isStayBooking ? 0 : depositMajor) + totalAddons;
       const totalAmountMajor = totalItemCostMajor > 0 ? totalItemCostMajor : null;
       const depositAmountMajor = amountMajor > 0 ? amountMajor : null;
       const balanceAmountMajor = totalItemCostMajor > 0
@@ -206,7 +205,7 @@ const       BookingPage: React.FC = () => {
         addons_json: JSON.stringify(selectedAddonsList),
         addons_total: totalAddons,
         subtotal_amount: totalItemCostMajor > 0 ? totalItemCostMajor : null,
-        commission_amount: commissionAmount > 0 ? commissionAmount : null,
+        commission_amount: null,
         total_payable_now: amountMajor > 0 ? amountMajor : null,
         message: messageWithSource,
         status: 'new',
@@ -623,10 +622,10 @@ const       BookingPage: React.FC = () => {
           <div className="text-sm text-muted-foreground">
             {isStayBooking ? 'Payment:' : (isDiveBooking ? 'Total payable now (incl. add-ons):' : 'Total payable now:')}
           </div>
-          <div className="text-2xl font-bold">{isStayBooking ? 'Quote on request' : `฿${depositMajor + totalAddons + Math.round(totalItemCostMajor * 0.1)}`}</div>
+          <div className="text-2xl font-bold">{isStayBooking ? 'Quote on request' : `฿${totalPayableNowFromTotal(totalItemCostMajor) + totalAddons}`}</div>
           {!isStayBooking && totalItemCostMajor > 0 && (
             <div className="text-sm text-muted-foreground mt-1">
-              Total: ฿{totalItemCostMajor} · Deposit (10%): ฿{depositMajor} · Commission (10%): ฿{Math.round(totalItemCostMajor * 0.1)} · Add-ons: ฿{totalAddons} · Balance: ฿{Math.max(totalItemCostMajor - depositMajor, 0)}
+              Total: ฿{totalItemCostMajor} · Deposit (10%): ฿{depositMajor} · Add-ons: ฿{totalAddons} · Balance: ฿{Math.max(totalItemCostMajor - depositMajor, 0)}
             </div>
           )}
         </div>

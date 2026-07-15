@@ -10,3 +10,7 @@ export function depositFromTotal(totalMajor: number) {
 export function totalFromDeposit(depositMajor: number) {
   return depositMajor > 0 ? Math.round(depositMajor / COURSE_DEPOSIT_RATE) : 0;
 }
+
+export function totalPayableNowFromTotal(totalMajor: number) {
+  return depositFromTotal(totalMajor);
+}
