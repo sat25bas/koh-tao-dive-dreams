@@ -1,5 +1,3 @@
-const DEFAULT_API_HOSTS = new Set(['https://api.divinginasia.com', 'http://api.divinginasia.com']);
-
 function readViteEnvValue(name: string) {
   const viteEnv = (import.meta as ImportMeta & { env?: Record<string, string | undefined> }).env;
   return viteEnv?.[name]?.trim() ?? '';
@@ -14,12 +12,7 @@ function readViteEnvValue(name: string) {
  */
 export function resolveApiBaseUrl() {
   const rawBase = readViteEnvValue('VITE_API_BASE_URL') || readViteEnvValue('VITE_API_URL');
-  const normalizedBase = rawBase.replace(/\/+$/, '');
-
-  if (!normalizedBase) return '';
-  if (DEFAULT_API_HOSTS.has(normalizedBase)) return '';
-
-  return normalizedBase;
+  return rawBase.replace(/\/+$/, '');
 }
 
 export function getApiBaseUrl() {
