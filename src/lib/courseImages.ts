@@ -49,6 +49,10 @@ export const resolveCourseImageUrl = (image?: string | null): string => {
   }
 
   if (/^(https?:)?\/\//i.test(trimmed)) {
+    const filename = trimmed.split('/').pop() || trimmed;
+    if (LOCAL_IMAGE_FILENAMES.has(filename)) {
+      return getLocalImagePath(filename);
+    }
     return trimmed;
   }
 
