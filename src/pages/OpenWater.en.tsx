@@ -15,7 +15,7 @@ const OpenWaterEn: React.FC = () => {
         price_eur: '290',
         duration: '3-4 days',
       }}
-        heroImage="/images/openwater.png"
+        heroImage="https://www.divinginasia.com/images/openwater.png"
         images={['/images/downline.png', '/images/openwater.png', '/images/photo-1682686580849-3e7f67df4015.avif', '/images/photo-1659518893171-b15e20a8e201.avif']}
       level="Beginner"
       bookingItemName="PADI Open Water Course"
