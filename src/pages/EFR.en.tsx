@@ -15,7 +15,7 @@ const EFREn: React.FC = () => {
         price_eur: '154',
         duration: '1 day',
       }}
-      heroImage="https://divinginasia.com/images/efr.jpeg"
+      heroImage="https://api.divinginasia.com/images/efr.jpeg"
       level="First Aid"
       bookingItemName="Emergency First Response (EFR)"
       sections={[
@@ -52,4 +52,3 @@ const EFREn: React.FC = () => {
 };
 
 export default EFREn;
-
