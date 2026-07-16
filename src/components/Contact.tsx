@@ -85,7 +85,7 @@ const Contact = () => {
       form_message_label: 'Message',
       form_submit_label: 'Send Message',
       form_sending_label: 'Sending...',
-      footer_line_1: '© 2026 Pro Diving Asia. All rights reserved. Powered by One Media Asia @ www.onemedia.asia',
+      footer_line_1: '© 2026 Pro Diving in  Asia. All rights reserved. Powered by <ahref="https://onemedia.asia">One Media Asia</a> @ www.onemedia.asia',
       footer_line_2: "Discover the magic beneath the waves in Thailand's diving paradise.",
     };
   }, [isDutch]);
