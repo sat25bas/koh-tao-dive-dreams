@@ -133,8 +133,15 @@ const BookingForm: React.FC<BookingFormProps> = ({ isOpen, onClose, itemType, it
         form.reset();
         onClose();
       } else {
-        console.error('Booking save error:', dbError, dbResult);
-        toast.error(`Failed to save booking: ${dbError}. Please try again.`);
+        console.error('Booking save error:', {
+          dbError,
+          dbResult,
+          apiUrl: apiUrl('/api/bookings'),
+          responseStatus: dbResult?.status,
+          responseError: dbResult?.error,
+        });
+        const userMessage = dbResult?.error || dbError || 'Unknown error occurred';
+        toast.error(`Failed to save booking: ${userMessage}. Please try again.`);
       }
     } catch (error) {
       console.error('Booking submission failed:', error);
