@@ -33,7 +33,7 @@ const SpecialtyDetail: React.FC = () => {
     duration: '1 day',
   };
 
-  // Use a CMS page slug that matches how course pages are stored. The API
+  // U//se a CMS page slug that matches how course pages are stored. The API
   // accepts arbitrary slugs, and many pages use names like `specialties/<slug>`.
   const pageSlug = `specialties/${slug}`;
 
