@@ -17,7 +17,7 @@ const Navigation = () => {
 
   const handleAnchorClick = (e: React.MouseEvent, href: string) => {
     e.preventDefault();
-    // href format: /path#anchor or /#anchor
+    // //href format: /path#anchor or /#anchor
     const parts = href.split('#');
     const path = parts[0] || '/';
     const anchor = parts[1];
