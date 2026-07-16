@@ -163,7 +163,7 @@ const Instructor: React.FC = () => {
           </div>
         </div>
       </section>
-
+#
       <main className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-3 gap-8">
           <div className="md:col-span-2">
