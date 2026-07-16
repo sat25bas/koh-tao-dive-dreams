@@ -74,7 +74,7 @@ const InstallBanner: React.FC = () => {
 const TRIP_ALLIANCE_ID = import.meta.env.VITE_TRIP_ALLIANCE_ID as string | undefined;
 const TRIP_SITE_ID = import.meta.env.VITE_TRIP_SITE_ID as string | undefined;
 const WHATSAPP_LINK = 'https://wa.me/66612345678';
-const FACEBOOK_LINK = 'https://www.facebook.com/divegoprobybas/';
+const FACEBOOK_LINK = 'https://www.facebook.com/diveoprobybas/';
 const INSTAGRAM_LINK = 'https://www.instagram.com/pro_diving_asia/';
 
 const trackBookingWidgetClick = (source: 'left-widget' | 'mobile-sticky') => {
@@ -291,7 +291,7 @@ const Footer: React.FC = () => {
           {footerContent.footer_line_1 || (
             <>
               <div>
-                © {new Date().getFullYear()} Pro Diving Asia — All rights reserved | Powered By{' '}
+                © {new Date().getFullYear()} Go Pro Diving Asia — All rights reserved | Powered By{' '}
                 <a
                   href="https://www.onemedia.asia"
                   target="_blank"
@@ -341,3 +341,4 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 };
 
 export default Layout;
+
