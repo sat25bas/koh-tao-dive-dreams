@@ -28,6 +28,7 @@ const CONTENT_REFRESH_INTERVAL_MS = 15000;
 export function usePageContent({ pageSlug, locale, fallbackContent, alternateSlugs }: UsePageContentOptions) {
   const [content, setContent] = useState<PageContent>(() => fallbackContent);
   const [isLoading, setIsLoading] = useState(false);
+  const [resolvedSlug, setResolvedSlug] = useState<string | null>(null);
   const initialFallbackRef = useRef(fallbackContent);
 
   useEffect(() => {
@@ -109,12 +110,14 @@ export function usePageContent({ pageSlug, locale, fallbackContent, alternateSlu
 
           if (mergeRowsAndSet(rows)) {
             console.debug(`[usePageContent] resolved content for slug=${s}, rows=${rows.length}, source=${payload.source || 'unknown'}`);
+            if (isMounted) setResolvedSlug(s);
             return;
           }
         }
 
         if (isMounted) {
           console.debug(`[usePageContent] no content found for slugs=${slugsToTry.join(', ')} — using fallback`);
+          setResolvedSlug(null);
           setContent(fallbackContent);
         }
       } catch (err) {
@@ -151,3 +154,4 @@ export function usePageContent({ pageSlug, locale, fallbackContent, alternateSlu
 
   return { content, isLoading };
 }
+export type UsePageContentResult = ReturnType<typeof usePageContent>;

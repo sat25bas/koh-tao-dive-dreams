@@ -77,7 +77,7 @@ const CoursePageTemplate: React.FC<CoursePageProps> = ({
   // All hooks must be called unconditionally at the top
   const navigate = useNavigate();
   const { exchangeRates } = useCurrency();
-  const { content, isLoading } = usePageContent({
+  const { content, isLoading, resolvedSlug } = usePageContent({
     pageSlug,
     locale,
     fallbackContent,
@@ -188,6 +188,11 @@ const CoursePageTemplate: React.FC<CoursePageProps> = ({
         <div className="container mx-auto px-[20px] text-white z-10">
           <h1 className="text-4xl md:text-5xl font-bold">{content.hero_title}</h1>
           <p className="mt-4 max-w-2xl text-lg">{content.hero_subtitle}</p>
+          {resolvedSlug && (
+            <div className="mt-2 text-sm opacity-80 italic">
+              Loaded from CMS slug: <span className="font-mono">{resolvedSlug}</span>
+            </div>
+          )}
           <div className="mt-6">
             <Button size="lg" asChild>
               <a href={bookingHref} onClick={(event) => {
