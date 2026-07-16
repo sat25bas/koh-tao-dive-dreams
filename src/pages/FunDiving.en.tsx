@@ -813,7 +813,7 @@ const FunDiving = () => {
                   onClick={() => setShowBookNow(true)}
                 >
                   Send Booking Request
-                </Button>
+                </Button>#
             </div>
           </section>
         </TabsContent>
