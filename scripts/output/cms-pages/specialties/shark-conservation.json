@@ -1,0 +1,13 @@
+{
+  "page": "specialties/shark-conservation",
+  "locale": "en",
+  "content": {
+    "hero_title": "Shark Conservation Awareness",
+    "hero_subtitle": "Learn about shark behavior, ecology, and the importance of shark conservation.",
+    "course_overview": "Learn about shark behavior, ecology, and the importance of shark conservation.",
+    "price_thb": "3500",
+    "price_usd": "95",
+    "price_eur": "85",
+    "duration": "1 day"
+  }
+}

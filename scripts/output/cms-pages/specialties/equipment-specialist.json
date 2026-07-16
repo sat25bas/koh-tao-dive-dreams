@@ -1,0 +1,13 @@
+{
+  "page": "specialties/equipment-specialist",
+  "locale": "en",
+  "content": {
+    "hero_title": "Equipment Specialist",
+    "hero_subtitle": "Master dive equipment assembly, maintenance, and troubleshooting.",
+    "course_overview": "Master dive equipment assembly, maintenance, and troubleshooting.",
+    "price_thb": "4500",
+    "price_usd": "125",
+    "price_eur": "115",
+    "duration": "1 day"
+  }
+}

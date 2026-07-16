@@ -1,0 +1,13 @@
+{
+  "page": "specialties/whaleshark-awareness",
+  "locale": "en",
+  "content": {
+    "hero_title": "Whale Shark Awareness",
+    "hero_subtitle": "Learn about whale sharks and responsible interactions with these gentle giants.",
+    "course_overview": "Learn about whale sharks and responsible interactions with these gentle giants.",
+    "price_thb": "3500",
+    "price_usd": "95",
+    "price_eur": "85",
+    "duration": "1 day"
+  }
+}

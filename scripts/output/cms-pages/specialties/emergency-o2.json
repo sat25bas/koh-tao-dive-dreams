@@ -1,0 +1,13 @@
+{
+  "page": "specialties/emergency-o2",
+  "locale": "en",
+  "content": {
+    "hero_title": "Emergency O2 Provider",
+    "hero_subtitle": "Learn to provide emergency oxygen assistance to distressed divers.",
+    "course_overview": "Learn to provide emergency oxygen assistance to distressed divers.",
+    "price_thb": "4500",
+    "price_usd": "125",
+    "price_eur": "115",
+    "duration": "1 day"
+  }
+}

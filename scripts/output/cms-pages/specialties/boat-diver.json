@@ -1,0 +1,13 @@
+{
+  "page": "specialties/boat-diver",
+  "locale": "en",
+  "content": {
+    "hero_title": "Boat Diver",
+    "hero_subtitle": "Learn proper boat diving techniques and boat entry/exit procedures.",
+    "course_overview": "Learn proper boat diving techniques and boat entry/exit procedures.",
+    "price_thb": "4500",
+    "price_usd": "125",
+    "price_eur": "115",
+    "duration": "1 day"
+  }
+}

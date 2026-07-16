@@ -1,0 +1,13 @@
+{
+  "page": "specialties/deep-diver",
+  "locale": "en",
+  "content": {
+    "hero_title": "Deep Diver",
+    "hero_subtitle": "Learn navigation techniques to explore safely and find your way underwater.",
+    "course_overview": "Learn navigation techniques to explore safely and find your way underwater.",
+    "price_thb": "4500",
+    "price_usd": "125",
+    "price_eur": "115",
+    "duration": "1 day"
+  }
+}

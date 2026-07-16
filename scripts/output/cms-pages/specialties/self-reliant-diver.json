@@ -1,0 +1,13 @@
+{
+  "page": "specialties/self-reliant-diver",
+  "locale": "en",
+  "content": {
+    "hero_title": "Self Reliant Diver",
+    "hero_subtitle": "Develop independence and confidence in managing your own dives.",
+    "course_overview": "Develop independence and confidence in managing your own dives.",
+    "price_thb": "3500",
+    "price_usd": "95",
+    "price_eur": "85",
+    "duration": "1 day"
+  }
+}

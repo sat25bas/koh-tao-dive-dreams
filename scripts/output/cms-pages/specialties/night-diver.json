@@ -1,0 +1,13 @@
+{
+  "page": "specialties/night-diver",
+  "locale": "en",
+  "content": {
+    "hero_title": "Night Diver",
+    "hero_subtitle": "Experience the magic of nocturnal diving with proper lighting and safety.",
+    "course_overview": "Experience the magic of nocturnal diving with proper lighting and safety.",
+    "price_thb": "6500",
+    "price_usd": "180",
+    "price_eur": "165",
+    "duration": "2 days"
+  }
+}
