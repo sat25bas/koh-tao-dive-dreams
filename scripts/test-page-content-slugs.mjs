@@ -14,6 +14,9 @@ const slugsToTest = [
   'underwater-naturalist'
 ];
 
+// Add known good pages to validate API responsiveness
+slugsToTest.push('home', 'fun-diving', 'instructor');
+
 async function test() {
   console.log(`Using API base: ${API_BASE}`);
 
