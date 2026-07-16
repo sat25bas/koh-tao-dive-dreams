@@ -190,6 +190,7 @@ const Footer: React.FC = () => {
               <li><Link to="/courses/advanced" className="hover:text-white transition">Advanced</Link></li>
               <li><Link to="/courses/rescue" className="hover:text-white transition">Rescue Diver</Link></li>
               <li><Link to="/courses/divemaster" className="hover:text-white transition">Divemaster</Link></li>
+              <li><Link to="/courses/specialties" className="hover:text-white transition">{isDutch ? 'Specialiteiten' : 'Specialties'}</Link></li>
               <li><Link to="/fun-diving-koh-tao" className="hover:text-white transition">{isDutch ? 'Fun Diving' : 'Fun Diving'}</Link></li>
               <li><Link to="/training-videos" className="hover:text-white transition">{isDutch ? 'Trainingsvideos' : 'Training Videos'}</Link></li>
               <li><Link to="/marine-life" className="hover:text-white transition">{isDutch ? 'Mariene Fauna' : 'Marine Life'}</Link></li>

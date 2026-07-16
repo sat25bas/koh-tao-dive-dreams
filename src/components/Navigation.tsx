@@ -132,6 +132,12 @@ const Navigation = () => {
         { name: isDutch ? 'Trainingsvideos' : 'Training Videos', to: '/training-videos' },
       ],
     },
+    {
+      label: labels.specialtyCourses,
+      items: [
+        { name: labels.specialtyCourses, to: '/courses/specialties' },
+      ],
+    },
     
     
   ];
