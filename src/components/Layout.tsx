@@ -293,7 +293,7 @@ const Footer: React.FC = () => {
               <div>
                 © {new Date().getFullYear()} Pro Diving Asia — All rights reserved | Powered By{' '}
                 <a
-                  href="https://onemediia.asia"
+                  href="https://www.onemedia.asia"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-cyan-400 hover:text-cyan-300 transition"
