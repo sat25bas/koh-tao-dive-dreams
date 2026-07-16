@@ -152,7 +152,7 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-5 mb-10">
           <div>
-            <div className="text-xl font-bold text-cyan-400 mb-3">Go Pro Diving Asia</div>
+            <div className="text-xl font-bold text-cyan-400 mb-3">Pro Diving Asia</div>
             <p className="text-sm leading-relaxed text-gray-300 mb-4">
               {isDutch
                 ? 'Koh Tao\'s premium duikschool voor PADI-cursussen, fun dives en onvergetelijke onderwaterervaringen.'
@@ -291,9 +291,9 @@ const Footer: React.FC = () => {
           {footerContent.footer_line_1 || (
             <>
               <div>
-                © {new Date().getFullYear()} Go Pro Diving Asia — All rights reserved | Powered By{' '}
+                © {new Date().getFullYear()} Pro Diving Asia — All rights reserved | Powered By{' '}
                 <a
-                  href="https://onemedia.asia"
+                  href="https://onemediia.asia"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-cyan-400 hover:text-cyan-300 transition"
