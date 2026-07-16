@@ -288,7 +288,22 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-[#1a3a5c] pt-6 text-center text-xs text-gray-500 space-y-1">
-          {footerContent.footer_line_1 || `© ${new Date().getFullYear()} Go Pro Diving Asia — All rights reserved | Powered By One Media Asia Co, Ltd`}
+          {footerContent.footer_line_1 || (
+            <>
+              <div>
+                © {new Date().getFullYear()} Go Pro Diving Asia — All rights reserved | Powered By{' '}
+                <a
+                  href="https://onemediia.asia"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-cyan-400 hover:text-cyan-300 transition"
+                >
+                  One Media Asia
+                </a>{' '}
+                Co, Ltd
+              </div>
+            </>
+          )}
           {footerContent.footer_line_2 && <span>{footerContent.footer_line_2}</span>}
         </div>
       </div>
