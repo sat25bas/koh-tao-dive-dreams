@@ -33,7 +33,22 @@ const SpecialtyDetail: React.FC = () => {
   const { slug } = useParams();
   const data = slug ? SPECIALTIES[slug] : null;
 
-  if (!data) {
+  // If no specific specialty data exists, build a friendly fallback
+  const fallbackFromSlug = (s: string | undefined) => {
+    if (!s) return null;
+    const pretty = s.replace(/[-_]/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+    return {
+      title: pretty,
+      overview: 'Detailed curriculum and specifics will be available soon. Contact us for full course information and booking.',
+      duration: '1 day',
+      depositMajor: 3500,
+      depositCurrency: 'THB',
+    };
+  };
+
+  const resolved = data || fallbackFromSlug(slug);
+
+  if (!resolved) {
     return (
       <div className="min-h-screen bg-background">
         <div className="max-w-4xl mx-auto py-20 px-4">
@@ -43,26 +58,25 @@ const SpecialtyDetail: React.FC = () => {
       </div>
     );
   }
-
   return (
     <div className="min-h-screen bg-background">
       <section className="py-20">
         <div className="max-w-4xl mx-auto px-4">
           <Card>
             <CardHeader>
-              <CardTitle className="text-2xl">{data.title}</CardTitle>
-              <CardDescription className="mt-2">{data.overview}</CardDescription>
+              <CardTitle className="text-2xl">{resolved.title}</CardTitle>
+              <CardDescription className="mt-2">{resolved.overview}</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                <p><strong>Duration:</strong> {data.duration}</p>
-                <p><strong>Deposit (10%):</strong> {data.depositMajor ? `฿${data.depositMajor}` : 'Contact us'}</p>
-                <p><strong>Total Payable Now:</strong> {data.depositMajor ? `฿${data.depositMajor}` : 'Contact us'}</p>
+                <p><strong>Duration:</strong> {resolved.duration}</p>
+                <p><strong>Deposit (approx):</strong> {resolved.depositMajor ? `฿${resolved.depositMajor}` : 'Contact us'}</p>
+                <p><strong>Total Payable Now:</strong> {resolved.depositMajor ? `฿${resolved.depositMajor}` : 'Contact us'}</p>
                 <p className="text-muted-foreground">Detailed curriculum, prerequisites, and certification information available on request.</p>
                 <div className="mt-6">
                   <Button onClick={() => {
-                    const priceMajor = data.priceMajor || (data.depositMajor ? data.depositMajor * 5 : '');
-                    navigate(`/booking?item=${encodeURIComponent(data.title)}&type=course&price=${priceMajor}&currency=${data.depositCurrency || ''}`);
+                    const priceMajor = (resolved as any).priceMajor || (resolved.depositMajor ? resolved.depositMajor * 5 : '');
+                    navigate(`/booking?item=${encodeURIComponent(resolved.title)}&type=course&price=${priceMajor}&currency=${resolved.depositCurrency || ''}`);
                   }}>Enquire / Book</Button>
                 </div>
               </div>
