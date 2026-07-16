@@ -200,7 +200,7 @@ const MarineLifePage = () => {
             <Link to="/fun-diving-koh-tao">
               <Button size="lg" variant="outline">
                 {pageContent.cta_fun_dives}
-              </Button>#
+              </Button>
             </Link>
           </div>
         </div>

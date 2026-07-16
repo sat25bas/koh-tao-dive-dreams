@@ -221,6 +221,10 @@ async function fetchFromWordPress(slug, locale) {
 
   const combined = [];
 
+  const authBasic = String(process.env.WP_AUTH || process.env.WP_BASIC_AUTH || process.env.VITE_WP_AUTH || '').trim();
+  const headers = { 'Content-Type': 'application/json' };
+  if (authBasic) headers.Authorization = `Basic ${authBasic}`;
+
   for (const variant of variants) {
     try {
       const params = new URLSearchParams({
@@ -256,6 +260,51 @@ async function fetchFromWordPress(slug, locale) {
   return dedupeRows(normalizeRows(combined));
 }
 
+async function fetchFromWpCore(slug, locale) {
+  const wpBase = String(process.env.WP_BOOKING_URL || '')
+    .trim()
+    .replace(/\/$/, '') || WP_CANONICAL_URL;
+  if (!wpBase) return [];
+
+  const variants = buildSlugVariants(slug);
+  if (!variants.length) return [];
+
+  for (const variant of variants) {
+    try {
+      const params = new URLSearchParams({ slug: variant, _embed: 'true' });
+      const url = `${wpBase}/wp-json/wp/v2/pages?${params.toString()}`;
+      const res = await fetchWithTimeout(url, { cache: 'no-store', headers });
+      if (!res.ok) continue;
+      const arr = await res.json().catch(() => []);
+      if (!Array.isArray(arr) || !arr.length) continue;
+      const page = arr[0];
+
+      const stripHtml = (s = '') => String(s).replace(/<[^>]*>/g, '').trim();
+
+      const rows = [];
+      if (page.title && page.title.rendered) rows.push({ section_key: 'hero_title', content_value: stripHtml(page.title.rendered) });
+      if (page.excerpt && page.excerpt.rendered) rows.push({ section_key: 'hero_subtitle', content_value: stripHtml(page.excerpt.rendered) });
+      if (page.content && page.content.rendered) rows.push({ section_key: 'course_overview', content_value: page.content.rendered });
+      // try to surface a simple images list if available via _embedded media
+      try {
+        const medias = [];
+        if (page._embedded && page._embedded['wp:featuredmedia']) {
+          for (const m of page._embedded['wp:featuredmedia']) {
+            if (m && m.source_url) medias.push(m.source_url);
+          }
+        }
+        if (medias.length) rows.push({ section_key: 'images', content_value: medias.join('\n') });
+      } catch (e) {}
+
+      return dedupeRows(normalizeRows(rows));
+    } catch (err) {
+      continue;
+    }
+  }
+
+  return [];
+}
+
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
@@ -277,7 +326,11 @@ export default async function handler(req, res) {
   }
 
   try {
-    const wpRows = await fetchFromWordPress(rawSlug, locale);
+    let wpRows = await fetchFromWordPress(rawSlug, locale);
+    if (!wpRows.length) {
+      // plugin endpoint returned nothing — try core WP pages as fallback
+      wpRows = await fetchFromWpCore(rawSlug, locale);
+    }
     const fallbackRows = getFallbackRows(rawSlug, locale);
 
     if (!wpRows.length && !fallbackRows.length) {
