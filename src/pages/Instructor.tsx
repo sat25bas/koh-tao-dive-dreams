@@ -152,7 +152,7 @@ const Instructor: React.FC = () => {
           ))}
         </select>
       </div>
-      <section className="instructor-hero-bg relative h-72 md:h-96 flex items-center">
+      <section className="relative h-72 md:h-96 flex items-center">
         <div className="container mx-auto px-4 text-white z-10">
           <h1 className="text-4xl md:text-5xl font-bold">{content.hero_title}</h1>
           <p className="mt-4 max-w-2xl">{content.hero_subtitle}</p>
