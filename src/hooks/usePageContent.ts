@@ -100,16 +100,21 @@ export function usePageContent({ pageSlug, locale, fallbackContent, alternateSlu
           const response = await fetch(endpoint, { cache: 'no-store' });
           if (!response.ok) {
             // If 404 or other non-ok, continue to next slug variant
+            console.debug(`[usePageContent] no content for slug=${s} (status=${response.status})`);
             continue;
           }
 
           const payload = (await response.json().catch(() => ({}))) as PageContentApiResponse;
           const rows = Array.isArray(payload.rows) ? payload.rows : [];
 
-          if (mergeRowsAndSet(rows)) return;
+          if (mergeRowsAndSet(rows)) {
+            console.debug(`[usePageContent] resolved content for slug=${s}, rows=${rows.length}, source=${payload.source || 'unknown'}`);
+            return;
+          }
         }
 
         if (isMounted) {
+          console.debug(`[usePageContent] no content found for slugs=${slugsToTry.join(', ')} — using fallback`);
           setContent(fallbackContent);
         }
       } catch (err) {
