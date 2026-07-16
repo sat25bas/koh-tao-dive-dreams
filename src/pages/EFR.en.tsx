@@ -51,4 +51,4 @@ const EFREn: React.FC = () => {
   );
 };
 
-export default EFREn;
+exportedefaulss EFREn;
