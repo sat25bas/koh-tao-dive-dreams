@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+: !/usr/bin/env node
 import fs from 'fs';
 import path from 'path';
 
@@ -23,32 +23,29 @@ if (arrStart === -1 || arrEnd === -1) {
 }
 const arrText = raw.slice(arrStart + 1, arrEnd);
 
-// Split objects by '},' that appear at top-level assuming no nested '},' within strings
-const objects = arrText.split(/},\s*\n/).map(s => s.trim()).filter(Boolean);
-
 if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
 
-const extract = (objText, key) => {
-  const re = new RegExp(`${key}\s*:\s*'([^']*)'`);
-  const m = objText.match(re);
-  return m ? m[1] : '';
-};
-const extractNum = (objText, key) => {
-  const re = new RegExp(`${key}\s*:\s*([0-9]+)`);
-  const m = objText.match(re);
-  return m ? Number(m[1]) : 0;
-};
-
+const slugRe = /slug\s*:\s*'([^']+)'/g;
+let match;
 let count = 0;
-for (const obj of objects) {
-  const slug = extract(obj, 'slug');
-  if (!slug) continue;
-  const title = extract(obj, 'title') || slug.replace(/-/g, ' ');
-  const description = extract(obj, 'description') || '';
-  const duration = extract(obj, 'duration') || '1 day';
-  const priceTHB = extractNum(obj, 'priceTHB') || 3500;
-  const priceUSD = extractNum(obj, 'priceUSD') || 0;
-  const priceEUR = extractNum(obj, 'priceEUR') || 0;
+while ((match = slugRe.exec(arrText)) !== null) {
+  const slug = match[1];
+  const idx = match.index;
+  // look backwards up to 300 chars to find title
+  const back = arrText.slice(Math.max(0, idx - 400), idx + 200);
+  const titleMatch = back.match(/title\s*:\s*'([^']+)'/);
+  const descMatch = back.match(/description\s*:\s*'([^']+)'/);
+  const durationMatch = back.match(/duration\s*:\s*'([^']+)'/);
+  const priceTHBMatch = back.match(/priceTHB\s*:\s*([0-9]+)/);
+  const priceUSDMatch = back.match(/priceUSD\s*:\s*([0-9]+)/);
+  const priceEURMatch = back.match(/priceEUR\s*:\s*([0-9]+)/);
+
+  const title = (titleMatch && titleMatch[1]) || slug.replace(/-/g, ' ');
+  const description = (descMatch && descMatch[1]) || '';
+  const duration = (durationMatch && durationMatch[1]) || '1 day';
+  const priceTHB = (priceTHBMatch && Number(priceTHBMatch[1])) || 3500;
+  const priceUSD = (priceUSDMatch && Number(priceUSDMatch[1])) || 0;
+  const priceEUR = (priceEURMatch && Number(priceEURMatch[1])) || 0;
 
   const payload = {
     page: `specialties/${slug}`,
