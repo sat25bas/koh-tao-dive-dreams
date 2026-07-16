@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';#
+import React, { useMemo } from 'react';
 
 import { Clock, Star, ChevronDown, ChevronUp } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
