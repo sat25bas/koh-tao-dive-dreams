@@ -54,7 +54,7 @@ const InstallBanner: React.FC = () => {
           <span className="truncate">
             {isDutch ? 'Installeer de app op je telefoon' : 'Install the app on your phone'}
           </span>
-        )}#
+        )}
       </div>
       <div className="flex items-center gap-2 shrink-0">
         {!isIos && (
