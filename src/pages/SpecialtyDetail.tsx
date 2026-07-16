@@ -49,7 +49,7 @@ const SpecialtyDetail: React.FC = () => {
       pageSlug={pageSlug}
       locale={locale as 'en' | 'nl'}
       fallbackContent={fallbackContent}
-      alternatePageSlugs={alternateSlugs}
+      alternateSlugs={alternateSlugs}
       bookingItemName={prettyTitle}
       bookingType="course"
     />

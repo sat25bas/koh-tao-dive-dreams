@@ -52,7 +52,7 @@ export interface CoursePageProps {
   galleryDescription?: string;
   galleryUnavailableMessage?: string;
   galleryEmptyMessage?: string;
-  alternatePageSlugs?: string[];
+  alternateSlugs?: string[];
 }
 
 const CoursePageTemplate: React.FC<CoursePageProps> = ({
@@ -68,6 +68,7 @@ const CoursePageTemplate: React.FC<CoursePageProps> = ({
   bookingType = 'course',
   selectedCurrency,
   priceConverted,
+  alternateSlugs,
   galleryFolder,
   galleryTitle,
   galleryDescription,
@@ -81,7 +82,7 @@ const CoursePageTemplate: React.FC<CoursePageProps> = ({
     pageSlug,
     locale,
     fallbackContent,
-    alternateSlugs: alternatePageSlugs,
+    alternateSlugs,
   });
 
   const parseListValue = (value: string) =>
