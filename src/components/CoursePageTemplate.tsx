@@ -1,157 +1,339 @@
-import { useEffect, useRef, useState } from 'react';
-import { apiUrl } from '@/lib/apiBase';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useCurrency } from '@/hooks/useCurrency';
 
-interface PageContent {
-  [key: string]: string;
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { usePageContent } from '@/hooks/usePageContent';
+// PageContentEditor import removed
+import InlineCourseBookingForm from './InlineCourseBookingForm';
+import { depositFromTotal } from '@/lib/depositRate';
+import DropboxGallerySection from './DropboxGallerySection';
+import ImageRow from './ImageRow';
+import { resolveCourseImageUrl } from '@/lib/courseImages';
+
+export interface CourseSection {
+  title: string;
+  content: string | string[];
 }
 
-interface UsePageContentOptions {
+export interface CourseFAQ {
+  question: string;
+  answer: string;
+}
+
+export interface CoursePageProps {
   pageSlug: string;
-  locale: string;
-  fallbackContent: PageContent;
+  locale: 'en' | 'nl';
+  fallbackContent: {
+    hero_title: string;
+    hero_subtitle: string;
+    course_overview: string;
+    price_thb?: string;
+    price_usd?: string;
+    price_eur?: string;
+    duration?: string;
+    [key: string]: string | undefined;
+  };
+  heroImage?: string;
+  images?: string[];
+  sections?: CourseSection[];
+  faqs?: CourseFAQ[];
+  level?: string;
+  bookingItemName?: string;
+  bookingType?: 'course' | 'dive';
+  // Added for currency display
+  priceTHB?: number;
+  priceConverted?: string;
+  selectedCurrency?: string;
+  galleryFolder?: string;
+  galleryTitle?: string;
+  galleryDescription?: string;
+  galleryUnavailableMessage?: string;
+  galleryEmptyMessage?: string;
   alternateSlugs?: string[];
 }
 
-interface PageContentRow {
-  section_key: string;
-  content_value: string | null;
-  updated_at?: string | null;
-}
+const CoursePageTemplate: React.FC<CoursePageProps> = ({
+  pageSlug,
+  locale,
+  fallbackContent,
+  heroImage,
+  images = ['/images/photo-1659518893171-b15e20a8e201.avif', '/images/photo-1682686580849-3e7f67df4015.avif', '/images/openwater.png'],
+  sections = [],
+  faqs = [],
+  level = 'Recreational',
+  bookingItemName,
+  bookingType = 'course',
+  selectedCurrency,
+  priceConverted,
+  alternateSlugs,
+  galleryFolder,
+  galleryTitle,
+  galleryDescription,
+  galleryUnavailableMessage,
+  galleryEmptyMessage,
+}) => {
+  // All hooks must be called unconditionally at the top
+  const navigate = useNavigate();
+  const { exchangeRates } = useCurrency();
+  const { content, isLoading, resolvedSlug } = usePageContent({
+    pageSlug,
+    locale,
+    fallbackContent,
+    alternateSlugs,
+  });
 
-interface PageContentApiResponse {
-  rows?: PageContentRow[];
-  source?: string;
-}
+  const parseListValue = (value: string) =>
+    String(value)
+      .split('\n')
+      .map((item) => item.trim())
+      .filter(Boolean);
 
-const CONTENT_REFRESH_INTERVAL_MS = 15000;
+  const buildCmsSections = (source: Record<string, string | undefined>): CourseSection[] => {
+    const parsed: CourseSection[] = [];
 
-export function usePageContent({ pageSlug, locale, fallbackContent, alternateSlugs }: UsePageContentOptions) {
-  const [content, setContent] = useState<PageContent>(() => fallbackContent);
-  const [isLoading, setIsLoading] = useState(false);
-  const [resolvedSlug, setResolvedSlug] = useState<string | null>(null);
-  const initialFallbackRef = useRef(fallbackContent);
+    for (let idx = 1; idx <= 8; idx += 1) {
+      const title = source[`section_${idx}_title`];
+      const rawContent = source[`section_${idx}_content`];
+
+      if (!title || !rawContent) continue;
+
+      const items = parseListValue(rawContent);
+      parsed.push({
+        title,
+        content: items.length > 1 ? items : rawContent,
+      });
+    }
+
+    return parsed;
+  };
+
+  const buildCmsFaqs = (source: Record<string, string | undefined>): CourseFAQ[] => {
+    const parsed: CourseFAQ[] = [];
+
+    for (let idx = 1; idx <= 10; idx += 1) {
+      const question = source[`faq_${idx}_question`];
+      const answer = source[`faq_${idx}_answer`];
+
+      if (!question || !answer) continue;
+
+      parsed.push({ question, answer });
+    }
+
+    return parsed;
+  };
+
+  const localeTag = locale === 'nl' ? 'nl-NL' : 'en-US';
+  const [heroImageSrc, setHeroImageSrc] = useState(resolveCourseImageUrl(heroImage || images[0]));
 
   useEffect(() => {
-    let isMounted = true;
+    setHeroImageSrc(resolveCourseImageUrl(heroImage || images[0]));
+  }, [heroImage, images]);
 
-    initialFallbackRef.current = fallbackContent;
-    setContent(fallbackContent);
+  const parseAmount = (value: string) => {
+    const digits = String(value || '').replace(/[^\d.-]/g, '');
+    return Number(digits || 0);
+  };
 
-    const mergeRowsAndSet = (rows: PageContentRow[] | null | undefined) => {
-      if (rows && rows.length > 0) {
-        const latestBySection = new Map<string, PageContentRow>();
 
-        rows.forEach((row) => {
-          const existing = latestBySection.get(row.section_key);
+  const priceThb = content.price_thb || fallbackContent.price_thb || '0';
+  const priceUsd = content.price_usd || fallbackContent.price_usd || '0';
+  const priceEur = content.price_eur || fallbackContent.price_eur || '0';
+  const duration = content.duration || fallbackContent.duration || 'Contact us';
+  const cmsSections = buildCmsSections(content as Record<string, string | undefined>);
+  const cmsFaqs = buildCmsFaqs(content as Record<string, string | undefined>);
+  const displaySections = cmsSections.length > 0 ? cmsSections : sections;
+  const displayFaqs = cmsFaqs.length > 0 ? cmsFaqs : faqs;
+  const thbAmount = parseAmount(priceThb);
+  const usdAmount = parseAmount(priceUsd);
+  const eurAmount = parseAmount(priceEur);
 
-          if (!existing) {
-            latestBySection.set(row.section_key, row);
-            return;
-          }
+  const heroImageUrl = heroImageSrc;
 
-          const existingTs = Date.parse(existing.updated_at || '');
-          const incomingTs = Date.parse(row.updated_at || '');
+  const openBookNow = () => {
+    const params = new URLSearchParams();
+    if (bookingItemName) params.append('item', bookingItemName);
+    params.append('type', bookingType);
+    if (thbAmount > 0) params.append('price', thbAmount.toString());
+    params.append('currency', 'THB');
 
-          const hasIncomingTs = Number.isFinite(incomingTs);
-          const hasExistingTs = Number.isFinite(existingTs);
+    navigate(`/booking?${params.toString()}`);
+  };
 
-          if (!hasExistingTs && hasIncomingTs) {
-            latestBySection.set(row.section_key, row);
-            return;
-          }
+  const bookNowParams = new URLSearchParams();
+  if (bookingItemName) bookNowParams.append('item', bookingItemName);
+  bookNowParams.append('type', bookingType);
+  if (thbAmount > 0) bookNowParams.append('price', thbAmount.toString());
+  bookNowParams.append('currency', 'THB');
+  const bookingHref = `/booking?${bookNowParams.toString()}`;
 
-          if (hasIncomingTs && hasExistingTs && incomingTs > existingTs) {
-            latestBySection.set(row.section_key, row);
-            return;
-          }
+  return (
+    <div className="min-h-screen bg-background">
+      <section className="relative h-72 md:h-96 flex items-center overflow-hidden">
+        <img
+          src={heroImageUrl}
+          alt={content.hero_title}
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          onError={(event) => {
+            const target = event.currentTarget;
+            if (target.getAttribute('data-fallback-used') === 'true') {
+              return;
+            }
+            target.setAttribute('data-fallback-used', 'true');
+            target.src = resolveCourseImageUrl(images[0]);
+          }}
+        />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="container mx-auto px-[20px] text-white z-10">
+          <h1 className="text-4xl md:text-5xl font-bold">{content.hero_title}</h1>
+          <p className="mt-4 max-w-2xl text-lg">{content.hero_subtitle}</p>
+          {resolvedSlug && (
+            <div className="mt-2 text-sm opacity-80 italic">
+              Loaded from CMS slug: <span className="font-mono">{resolvedSlug}</span>
+            </div>
+          )}
+          <div className="mt-6">
+            <Button size="lg" asChild>
+              <a href={bookingHref} onClick={(event) => {
+                event.preventDefault();
+                openBookNow();
+              }}>
+                {locale === 'nl' ? 'Boek Nu' : 'Book Now'}
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
 
-          if (!hasIncomingTs && !hasExistingTs) {
-            latestBySection.set(row.section_key, row);
-          }
-        });
+      <main className="container mx-auto px-[20px] py-12">
+        {images.length > 0 && <ImageRow images={images} />}
 
-        const stripHtml = (str: string) => str.replace(/<[^>]*>/g, '').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&nbsp;/g, ' ').trim();
+        {galleryFolder ? (
+          <div className="mt-10">
+            <DropboxGallerySection
+              folder={galleryFolder}
+              title={galleryTitle || (locale === 'nl' ? 'Galerij' : 'Gallery')}
+              description={galleryDescription}
+              unavailableMessage={galleryUnavailableMessage}
+              emptyMessage={galleryEmptyMessage}
+            />
+          </div>
+        ) : null}
+        
+        <div className="grid md:grid-cols-3 gap-8 mt-8">
+          <div className="md:col-span-2">
+            <h2 className="text-2xl font-bold mb-4">
+              {locale === 'nl' ? 'Cursusoverzicht' : 'Course Overview'}
+            </h2>
+            <p className="mb-6 text-base leading-relaxed">{content.course_overview}</p>
 
-        const dbContent: PageContent = {};
-        latestBySection.forEach((row) => {
-          const val = row.content_value;
-          if (val == null || val === '') return;
-          dbContent[row.section_key] = val.includes('<') ? stripHtml(val) : val;
-        });
+            {displaySections.map((section, idx) => (
+              <div key={idx} className="mb-6">
+                <h3 className="text-xl font-semibold mb-3">{section.title}</h3>
+                {Array.isArray(section.content) ? (
+                  <ul className="list-disc pl-5 space-y-1">
+                    {section.content.map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-base leading-relaxed">{section.content}</p>
+                )}
+              </div>
+            ))}
 
-        if (isMounted) {
-          setContent({ ...initialFallbackRef.current, ...dbContent });
-        }
-        return true;
-      }
-      return false;
-    };
+            {displayFaqs.length > 0 && (
+              <>
+                <h3 className="text-xl font-semibold mb-4 mt-8">
+                  {locale === 'nl' ? 'Veelgestelde Vragen' : 'Frequently Asked Questions'}
+                </h3>
+                <div className="space-y-4">
+                  {displayFaqs.map((faq, idx) => (
+                    <Card key={idx}>
+                      <CardHeader>
+                        <CardTitle className="text-lg">{faq.question}</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-muted-foreground">{faq.answer}</p>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
 
-    const fetchContent = async (showLoading = false) => {
-      if (showLoading && isMounted) {
-        setIsLoading(true);
-      }
+          <aside>
+            <Card className="sticky top-4">
+              <CardHeader>
+                <div className="flex items-center justify-between">
+                  <CardTitle>{locale === 'nl' ? 'Cursusdetails' : 'Course Details'}</CardTitle>
+                  <Badge>{level}</Badge>
+                </div>
+                <CardDescription>{duration}</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div>
+                  <div className="text-sm text-muted-foreground mb-2">
+                    {locale === 'nl' ? 'Prijs' : 'Price'}
+                  </div>
+                  <div className="space-y-1">
+                    <p className="text-2xl font-bold text-sky-600">฿{thbAmount.toLocaleString(localeTag)}</p>
+                    {exchangeRates && exchangeRates.USD && exchangeRates.THB && (
+                      <p className="text-base text-muted-foreground">
+                        ${(thbAmount / exchangeRates.THB * exchangeRates.USD).toLocaleString(localeTag, { maximumFractionDigits: 0 })} USD
+                      </p>
+                    )}
+                    {exchangeRates && exchangeRates.EUR && exchangeRates.THB && (
+                      <p className="text-base text-muted-foreground">
+                        €{(thbAmount / exchangeRates.THB * exchangeRates.EUR).toLocaleString(localeTag, { maximumFractionDigits: 0 })} EUR
+                      </p>
+                    )}
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  {locale === 'nl' 
+                    ? 'Inclusief alle training, materialen, PADI certificering en uitrusting' 
+                    : 'Includes all training, materials, PADI certification and equipment'}
+                </p>
+                <Button className="w-full" asChild>
+                  <a href={bookingHref} onClick={(event) => {
+                    event.preventDefault();
+                    openBookNow();
+                  }}>
+                    {locale === 'nl' ? 'Boek / Informeer' : 'Book / Enquire'}
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+          </aside>
+        </div>
 
-      try {
-        const slugsToTry = [pageSlug].concat(Array.isArray(alternateSlugs) ? alternateSlugs : []);
+        {/* PageContentEditor removed */}
+        
+        <section className="mt-12" id="book-with-us">
+          <div className="max-w-2xl mx-auto">
+            <h2 className="text-2xl font-bold mb-2">
+              {locale === 'nl' ? 'Boek bij ons' : 'Book with Us Now'}
+            </h2>
+            <p className="text-muted-foreground mb-6 text-sm">
+              {locale === 'nl'
+                ? 'Vul het formulier in en we nemen binnen 24 uur contact met je op.'
+                : 'Fill in the form below and we\'ll confirm availability within 24 hours.'}
+            </p>
+            <InlineCourseBookingForm
+              itemType={bookingType}
+              itemTitle={bookingItemName || content.hero_title || ''}
+              depositMajor={thbAmount > 0 ? depositFromTotal(thbAmount) : undefined}
+              depositCurrency="THB"
+            />
+          </div>
+        </section>
+      </main>
+    </div>
+  );
+};
 
-        for (const s of slugsToTry) {
-          const params = new URLSearchParams({ slug: s, locale });
-          const endpoint = apiUrl(`/api/page-content?${params.toString()}`);
-          const response = await fetch(endpoint, { cache: 'no-store' });
-          if (!response.ok) {
-            // If 404 or other non-ok, continue to next slug variant
-            console.debug(`[usePageContent] no content for slug=${s} (status=${response.status})`);
-            continue;
-          }
-
-          const payload = (await response.json().catch(() => ({}))) as PageContentApiResponse;
-          const rows = Array.isArray(payload.rows) ? payload.rows : [];
-
-          if (mergeRowsAndSet(rows)) {
-            console.debug(`[usePageContent] resolved content for slug=${s}, rows=${rows.length}, source=${payload.source || 'unknown'}`);
-            if (isMounted) setResolvedSlug(s);
-            return;
-          }
-        }
-
-        if (isMounted) {
-          console.debug(`[usePageContent] no content found for slugs=${slugsToTry.join(', ')} — using fallback`);
-          setResolvedSlug(null);
-          setContent(fallbackContent);
-        }
-      } catch (err) {
-        console.error('Failed to fetch page content:', err);
-        if (isMounted) {
-          setContent(fallbackContent);
-        }
-      } finally {
-        if (isMounted) {
-          setIsLoading(false);
-        }
-      }
-    };
-
-    const refreshContent = () => {
-      if (document.visibilityState === 'visible') {
-        void fetchContent(false);
-      }
-    };
-
-    void fetchContent(true);
-
-    const intervalId = window.setInterval(refreshContent, CONTENT_REFRESH_INTERVAL_MS);
-    document.addEventListener('visibilitychange', refreshContent);
-    window.addEventListener('focus', refreshContent);
-
-    return () => {
-      isMounted = false;
-      window.clearInterval(intervalId);
-      document.removeEventListener('visibilitychange', refreshContent);
-      window.removeEventListener('focus', refreshContent);
-    };
-  }, [pageSlug, locale]);
-
-  return { content, isLoading };
-}
-export type UsePageContentResult = ReturnType<typeof usePageContent>;
+export default CoursePageTemplate;
