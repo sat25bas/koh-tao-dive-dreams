@@ -35,6 +35,7 @@ import DiscoverScuba from './pages/DiscoverScuba';
 import DiscoverScubaDeluxe from './pages/DiscoverScubaDeluxe';
 import ProLevelCourses from './pages/ProLevelCourses';
 import SpecialtyDetail from './pages/SpecialtyDetail';
+import Specialties from './pages/Specialties';
 
 import FunDiving from './pages/FunDiving';
 import DiveSitesPage from './pages/DiveSitesPage';
@@ -200,6 +201,7 @@ const App = () => (
               <Route path="/courses/discover-scuba-deluxe" element={<DiscoverScubaDeluxe />} />
               <Route path="/courses/dsd-deluxe" element={<DiscoverScubaDeluxe />} />
               <Route path="/courses/pro-level" element={<ProLevelCourses />} />
+              <Route path="/courses/specialties" element={<Specialties />} />
               <Route path="/courses/specialties/:slug" element={<SpecialtyDetail />} />
               <Route path="/specialty/deep-diver" element={<DeepDiver />} />
               <Route path="/specialty/wreck-diver" element={<WreckDiver />} />
