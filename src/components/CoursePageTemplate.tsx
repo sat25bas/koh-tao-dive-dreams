@@ -52,6 +52,7 @@ export interface CoursePageProps {
   galleryDescription?: string;
   galleryUnavailableMessage?: string;
   galleryEmptyMessage?: string;
+  alternatePageSlugs?: string[];
 }
 
 const CoursePageTemplate: React.FC<CoursePageProps> = ({
@@ -80,6 +81,7 @@ const CoursePageTemplate: React.FC<CoursePageProps> = ({
     pageSlug,
     locale,
     fallbackContent,
+    alternateSlugs: alternatePageSlugs,
   });
 
   const parseListValue = (value: string) =>

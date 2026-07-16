@@ -37,11 +37,19 @@ const SpecialtyDetail: React.FC = () => {
   // accepts arbitrary slugs, and many pages use names like `specialties/<slug>`.
   const pageSlug = `specialties/${slug}`;
 
+  const alternateSlugs = Array.from(new Set([
+    `specialty-${slug}`,
+    `${slug}`,
+    `courses/specialties/${slug}`,
+    `specialties/${slug.replace(/-/g, '_')}`,
+  ]));
+
   return (
     <CoursePageTemplate
       pageSlug={pageSlug}
       locale={locale as 'en' | 'nl'}
       fallbackContent={fallbackContent}
+      alternatePageSlugs={alternateSlugs}
       bookingItemName={prettyTitle}
       bookingType="course"
     />

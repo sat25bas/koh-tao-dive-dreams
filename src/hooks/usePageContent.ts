@@ -9,6 +9,7 @@ interface UsePageContentOptions {
   pageSlug: string;
   locale: string;
   fallbackContent: PageContent;
+  alternateSlugs?: string[];
 }
 
 interface PageContentRow {
@@ -24,7 +25,7 @@ interface PageContentApiResponse {
 
 const CONTENT_REFRESH_INTERVAL_MS = 15000;
 
-export function usePageContent({ pageSlug, locale, fallbackContent }: UsePageContentOptions) {
+export function usePageContent({ pageSlug, locale, fallbackContent, alternateSlugs }: UsePageContentOptions) {
   const [content, setContent] = useState<PageContent>(() => fallbackContent);
   const [isLoading, setIsLoading] = useState(false);
   const initialFallbackRef = useRef(fallbackContent);
@@ -91,18 +92,22 @@ export function usePageContent({ pageSlug, locale, fallbackContent }: UsePageCon
       }
 
       try {
-        const params = new URLSearchParams({ slug: pageSlug, locale });
-        const endpoint = apiUrl(`/api/page-content?${params.toString()}`);
-        const response = await fetch(endpoint, { cache: 'no-store' });
-        if (!response.ok) {
-          const text = await response.text().catch(() => '');
-          throw new Error(`Page content API failed (${response.status}): ${text || 'unknown error'}`);
+        const slugsToTry = [pageSlug].concat(Array.isArray(alternateSlugs) ? alternateSlugs : []);
+
+        for (const s of slugsToTry) {
+          const params = new URLSearchParams({ slug: s, locale });
+          const endpoint = apiUrl(`/api/page-content?${params.toString()}`);
+          const response = await fetch(endpoint, { cache: 'no-store' });
+          if (!response.ok) {
+            // If 404 or other non-ok, continue to next slug variant
+            continue;
+          }
+
+          const payload = (await response.json().catch(() => ({}))) as PageContentApiResponse;
+          const rows = Array.isArray(payload.rows) ? payload.rows : [];
+
+          if (mergeRowsAndSet(rows)) return;
         }
-
-        const payload = (await response.json().catch(() => ({}))) as PageContentApiResponse;
-        const rows = Array.isArray(payload.rows) ? payload.rows : [];
-
-        if (mergeRowsAndSet(rows)) return;
 
         if (isMounted) {
           setContent(fallbackContent);
