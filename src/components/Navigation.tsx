@@ -124,7 +124,6 @@ const Navigation = () => {
     {
       label: labels.professionalCourses,
       items: [
-        { name: t('courses.divemaster.title'), to: '/courses/divemaster' },
         { name: t('courses.instructor.title'), to: '/courses/instructor' },
         { name: isDutch ? 'Divemaster Stage' : 'Divemaster Internship', to: '/internship/divemaster' },
         { name: isDutch ? 'Instructeur Stage' : 'Instructor Internship', to: '/internship/instructor' },
