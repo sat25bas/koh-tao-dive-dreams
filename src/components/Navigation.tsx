@@ -237,17 +237,10 @@ const Navigation = () => {
                     {labels.locationsTitle}
                   </h4>
                   <ul className="space-y-1">
+                  
                     <li>
                       <Link
-                        to="/locations/thailand"
-                        className="block py-1.5 text-sm text-gray-300 hover:text-white hover:pl-1 transition-all duration-150"
-                      >
-                        {labels.thailand}
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/locations/indonesia"
+                        to="https://prodiving.asia"
                         className="block py-1.5 text-sm text-gray-300 hover:text-white hover:pl-1 transition-all duration-150"
                       >
                         {labels.indonesia}
@@ -255,7 +248,7 @@ const Navigation = () => {
                     </li>
                     <li>
                       <Link
-                        to="/locations/philippines"
+                        to="#"
                         className="block py-1.5 text-sm text-gray-300 hover:text-white hover:pl-1 transition-all duration-150"
                       >
                         {labels.philippines}
