@@ -1,7 +1,7 @@
 /**
  * Dive Site Reports API Client
  * Shared between web and mobile apps
- */
+ *///
 
 export type DiverRole = 'Dive Pro' | 'Fun Diver';
 
@@ -22,8 +22,8 @@ export type DiveSiteReport = {
 
 export type SubmitDiveSiteReportPayload = Omit<DiveSiteReport, 'id'>;
 
-const API_BASE = 'https://api.divinginasia.com/api';
-const USE_MOCK_DATA = false;
+const API_BASE = 'https://api.divinginasia.com';
+const USE_MOCK_DATA = true;
 
 // Mock dive reports for testing
 const MOCK_REPORTS: DiveSiteReport[] = [
