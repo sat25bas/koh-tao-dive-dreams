@@ -451,7 +451,7 @@ export async function sendCustomerInvoiceEmail(payload = {}) {
     return { success: true };
   } catch (err) {
     console.error('sendCustomerInvoiceEmail error', err);
-    return { success: true, warning: `Customer invoice email failed: ${err.message}` };
+    return { success: false, error: `Customer invoice email failed: ${err instanceof Error ? err.message : String(err)}` };
   }
 }
 
@@ -508,7 +508,7 @@ export async function sendAdminInvoiceCopyEmail(payload = {}) {
     return { success: true };
   } catch (err) {
     console.error('sendAdminInvoiceCopyEmail error', err);
-    return { success: true, warning: `Admin invoice copy failed: ${err.message}` };
+    return { success: false, error: `Admin invoice copy failed: ${err instanceof Error ? err.message : String(err)}` };
   }
 }
 
