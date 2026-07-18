@@ -634,13 +634,11 @@ const Navigation = () => {
                 </button>
                 {locationsOpen && (
                   <div className="pl-4 space-y-1 bg-muted rounded-lg mx-2 py-2">
-                    <Link to="/locations/thailand" className="block px-3 py-1.5 text-sm text-gray-600 hover:text-blue-600" onClick={() => setIsOpen(false)}>
-                      {labels.thailand}
-                    </Link>
-                    <Link to="/locations/indonesia" className="block px-3 py-1.5 text-sm text-gray-600 hover:text-blue-600" onClick={() => setIsOpen(false)}>
+                  
+                    <Link to="https://prodiving.asia" className="block px-3 py-1.5 text-sm text-gray-600 hover:text-blue-600" onClick={() => setIsOpen(false)}>
                       {labels.indonesia}
                     </Link>
-                    <Link to="/locations/philippines" className="block px-3 py-1.5 text-sm text-gray-600 hover:text-blue-600" onClick={() => setIsOpen(false)}>
+                    <Link to="#" className="block px-3 py-1.5 text-sm text-gray-600 hover:text-blue-600" onClick={() => setIsOpen(false)}>
                       {labels.philippines}
                     </Link>
                   </div>
