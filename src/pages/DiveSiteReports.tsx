@@ -1,5 +1,5 @@
-import { useMemo, useState } from 'react';
-import { BarChart3, Filter, Fish, MapPinned, Send } from 'lucide-react';
+import { useEffect, useMemo, useState } from 'react';
+import { BarChart3, Filter, Fish, MapPinned, Send, AlertCircle, Loader } from 'lucide-react';
 import {
   diveSitesByRegion,
   regions,
@@ -9,6 +9,12 @@ import {
   type DiverRole,
   type DiveSiteReport,
 } from '@/data/diveSiteReports';
+import {
+  getDiveSiteReports,
+  submitDiveSiteReport,
+  type DiveSiteReport as ApiDiveSiteReport,
+  type SubmitDiveSiteReportPayload,
+} from '@/lib/diveSiteReportsApi';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -37,22 +43,11 @@ const formatDate = (value: string) =>
     year: 'numeric',
   });
 
-const loadStoredReports = () => {
-  try {
-    const raw = window.localStorage.getItem(STORAGE_KEY);
-    if (!raw) return starterReports;
-
-    const parsed = JSON.parse(raw) as DiveSiteReport[];
-    if (!Array.isArray(parsed)) return starterReports;
-
-    return parsed;
-  } catch {
-    return starterReports;
-  }
-};
-
 const DiveSiteReports = () => {
-  const [reports, setReports] = useState<DiveSiteReport[]>(loadStoredReports);
+  const [reports, setReports] = useState<DiveSiteReport[]>(starterReports);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [roleFilter, setRoleFilter] = useState<'All' | DiverRole>('All');
   const [regionFilter, setRegionFilter] = useState<string>('All regions');
 
@@ -67,6 +62,27 @@ const DiveSiteReports = () => {
   const [formTemp, setFormTemp] = useState('28');
   const [formSightings, setFormSightings] = useState('');
   const [formNotes, setFormNotes] = useState('');
+
+  // Fetch reports from API on mount
+  useEffect(() => {
+    const fetchReports = async () => {
+      try {
+        setIsLoading(true);
+        setError(null);
+        const apiReports = await getDiveSiteReports({ limit: 100 });
+        // Convert API reports to local format if needed
+        setReports(apiReports as unknown as DiveSiteReport[]);
+      } catch (err) {
+        console.error('Failed to fetch reports:', err);
+        setError('Failed to load dive site reports. Showing local data.');
+        // Keep showing starter reports as fallback
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchReports();
+  }, []);
 
   const filteredReports = useMemo(() => {
     return reports
@@ -103,36 +119,56 @@ const DiveSiteReports = () => {
 
   const saveReports = (next: DiveSiteReport[]) => {
     setReports(next);
+    // Also save to localStorage as fallback
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
   };
 
-  const onSubmit = (event: React.FormEvent) => {
+  const onSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
-    const nextReport: DiveSiteReport = {
-      id: String(Date.now()),
-      site: formSite,
-      region: formRegion,
-      submittedBy: formName.trim() || 'Anonymous Diver',
-      role: formRole,
-      date: formDate,
-      visibilityM: Number(formVisibility),
-      current: Number(formCurrent) as 1 | 2 | 3 | 4 | 5,
-      waves: Number(formWaves) as 1 | 2 | 3 | 4 | 5,
-      temperatureC: Number(formTemp),
-      sightings: formSightings
-        .split(',')
-        .map((entry) => entry.trim())
-        .filter(Boolean),
-      notes: formNotes.trim(),
-    };
+    try {
+      setIsSubmitting(true);
+      setError(null);
 
-    saveReports([nextReport, ...reports]);
-    setFormSightings('');
-    setFormNotes('');
-    setFormName('');
-    setFormRole('Fun Diver');
-    setFormDate(new Date().toISOString().slice(0, 10));
+      const payload: SubmitDiveSiteReportPayload = {
+        site: formSite,
+        region: formRegion,
+        submittedBy: formName.trim() || 'Anonymous Diver',
+        role: formRole,
+        date: formDate,
+        visibilityM: Number(formVisibility),
+        current: Number(formCurrent) as 1 | 2 | 3 | 4 | 5,
+        waves: Number(formWaves) as 1 | 2 | 3 | 4 | 5,
+        temperatureC: Number(formTemp),
+        sightings: formSightings
+          .split(',')
+          .map((entry) => entry.trim())
+          .filter(Boolean),
+        notes: formNotes.trim(),
+      };
+
+      // Submit to API
+      const newReport = await submitDiveSiteReport(payload);
+
+      // Update local state
+      const nextReport: DiveSiteReport = newReport as unknown as DiveSiteReport;
+      saveReports([nextReport, ...reports]);
+
+      // Reset form
+      setFormSightings('');
+      setFormNotes('');
+      setFormName('');
+      setFormRole('Fun Diver');
+      setFormDate(new Date().toISOString().slice(0, 10));
+
+      // Show success message
+      alert('Report submitted successfully!');
+    } catch (err) {
+      console.error('Failed to submit report:', err);
+      setError('Failed to submit report. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const onRegionChange = (region: string) => {
@@ -162,11 +198,20 @@ const DiveSiteReports = () => {
       </section>
 
       <section className="max-w-6xl mx-auto px-4 py-10 grid lg:grid-cols-[1.6fr_1fr] gap-6">
+        {error && (
+          <div className="col-span-full bg-amber-50 border border-amber-200 rounded-lg p-4 flex gap-3">
+            <AlertCircle className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
+            <div>
+              <p className="font-semibold text-amber-900">{error}</p>
+              <p className="text-sm text-amber-800 mt-1">Data may be outdated. Refresh to try again.</p>
+            </div>
+          </div>
+        )}
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-2xl">
               <Filter className="h-5 w-5 text-sky-700" />
-              Live Reports
+              Live Reports {isLoading && <Loader className="h-4 w-4 animate-spin ml-auto" />}
             </CardTitle>
             <CardDescription>Filter by diver role and region like the iPhone app workflow.</CardDescription>
           </CardHeader>
@@ -204,7 +249,15 @@ const DiveSiteReports = () => {
             </div>
 
             <div className="space-y-4 max-h-[580px] overflow-y-auto pr-1">
-              {filteredReports.map((report) => (
+              {isLoading ? (
+                <div className="flex items-center justify-center py-12">
+                  <Loader className="h-6 w-6 animate-spin text-sky-600" />
+                  <p className="ml-3 text-slate-600">Loading dive reports...</p>
+                </div>
+              ) : filteredReports.length === 0 ? (
+                <p className="text-center text-slate-500 py-8">No reports found for the selected filters.</p>
+              ) : (
+                filteredReports.map((report) => (
                 <article key={report.id} className="rounded-lg border border-slate-200 bg-white p-4">
                   <div className="flex flex-wrap items-center gap-2 mb-2">
                     <h3 className="font-semibold text-lg">{report.site}</h3>
@@ -227,7 +280,8 @@ const DiveSiteReports = () => {
                   )}
                   {report.notes && <p className="text-sm text-slate-700">{report.notes}</p>}
                 </article>
-              ))}
+              ))
+              )}
             </div>
           </CardContent>
         </Card>
@@ -366,7 +420,22 @@ const DiveSiteReports = () => {
                 <Textarea id="notes" value={formNotes} onChange={(event) => setFormNotes(event.target.value)} />
               </div>
 
-              <Button type="submit" className="w-full">Submit report</Button>
+              {error && (
+                <div className="bg-red-50 border border-red-200 rounded p-3">
+                  <p className="text-red-800 text-sm">{error}</p>
+                </div>
+              )}
+
+              <Button type="submit" className="w-full" disabled={isSubmitting}>
+                {isSubmitting ? (
+                  <>
+                    <Loader className="h-4 w-4 mr-2 animate-spin" />
+                    Submitting...
+                  </>
+                ) : (
+                  'Submit report'
+                )}
+              </Button>
             </form>
           </CardContent>
         </Card>
