@@ -225,47 +225,6 @@ const Navigation = () => {
               </div>
             </div>
 
-            {/* Locations dropdown */}
-            <div className="relative group">
-              <button className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium flex items-center gap-1">
-                {labels.locationsTitle}
-                <ChevronRight className="h-4 w-4 transition-transform duration-200 group-hover:rotate-90" />
-              </button>
-              <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                <div className="bg-[#0b1e3d]/80 rounded-lg shadow-2xl border border-[#1a3a5c] min-w-[250px] p-5">
-                  <h4 className="text-blue-400 text-xs font-bold uppercase tracking-wider mb-3 border-b border-[#1a3a5c] pb-2">
-                    {labels.locationsTitle}
-                  </h4>
-                  <ul className="space-y-1">
-                    <li>
-                      <Link
-                        to="/locations/thailand"
-                        className="block py-1.5 text-sm text-gray-300 hover:text-white hover:pl-1 transition-all duration-150"
-                      >
-                        {labels.thailand}
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/locations/indonesia"
-                        className="block py-1.5 text-sm text-gray-300 hover:text-white hover:pl-1 transition-all duration-150"
-                      >
-                        {labels.indonesia}
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/locations/philippines"
-                        className="block py-1.5 text-sm text-gray-300 hover:text-white hover:pl-1 transition-all duration-150"
-                      >
-                        {labels.philippines}
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
             {/* Dive Sites dropdown */}
             <div className="relative group">
               <a
@@ -619,30 +578,6 @@ const Navigation = () => {
                         ))}
                       </div>
                     ))}
-                  </div>
-                )}
-              </div>
-
-              {/* Locations dropdown for Mobile */}
-              <div>
-                <button
-                  onClick={() => setLocationsOpen(!locationsOpen)}
-                  className="flex items-center justify-between w-full px-3 py-2 text-gray-700 hover:text-blue-600"
-                >
-                  {labels.locationsTitle}
-                  <ChevronRight className={`h-4 w-4 transition-transform duration-200 ${locationsOpen ? 'rotate-90' : ''}`} />
-                </button>
-                {locationsOpen && (
-                  <div className="pl-4 space-y-1 bg-muted rounded-lg mx-2 py-2">
-                    <Link to="/locations/thailand" className="block px-3 py-1.5 text-sm text-gray-600 hover:text-blue-600" onClick={() => setIsOpen(false)}>
-                      {labels.thailand}
-                    </Link>
-                    <Link to="/locations/indonesia" className="block px-3 py-1.5 text-sm text-gray-600 hover:text-blue-600" onClick={() => setIsOpen(false)}>
-                      {labels.indonesia}
-                    </Link>
-                    <Link to="/locations/philippines" className="block px-3 py-1.5 text-sm text-gray-600 hover:text-blue-600" onClick={() => setIsOpen(false)}>
-                      {labels.philippines}
-                    </Link>
                   </div>
                 )}
               </div>
