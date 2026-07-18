@@ -257,30 +257,32 @@ const DiveSiteReports = () => {
               ) : filteredReports.length === 0 ? (
                 <p className="text-center text-slate-500 py-8">No reports found for the selected filters.</p>
               ) : (
-                filteredReports.map((report) => (
-                <article key={report.id} className="rounded-lg border border-slate-200 bg-white p-4">
-                  <div className="flex flex-wrap items-center gap-2 mb-2">
-                    <h3 className="font-semibold text-lg">{report.site}</h3>
-                    <Badge variant="outline" className="text-xs">{report.region}</Badge>
-                    <Badge className={roleBadge(report.role)}>{report.role}</Badge>
-                  </div>
-                  <p className="text-sm text-slate-600 mb-3">
-                    Submitted by {report.submittedBy} on {formatDate(report.date)}
-                  </p>
-                  <div className="grid sm:grid-cols-4 gap-2 text-sm mb-3">
-                    <div className="bg-slate-100 rounded p-2">Visibility: {report.visibilityM}m</div>
-                    <div className="bg-slate-100 rounded p-2">Current: {report.current}/5</div>
-                    <div className="bg-slate-100 rounded p-2">Waves: {report.waves}/5</div>
-                    <div className="bg-slate-100 rounded p-2">Temp: {report.temperatureC}C</div>
-                  </div>
-                  {report.sightings.length > 0 && (
-                    <p className="text-sm mb-2">
-                      <span className="font-medium">Sightings:</span> {report.sightings.join(', ')}
-                    </p>
-                  )}
-                  {report.notes && <p className="text-sm text-slate-700">{report.notes}</p>}
-                </article>
-              ))
+                filteredReports.map((report) => {
+                  return (
+                    <article key={report.id} className="rounded-lg border border-slate-200 bg-white p-4">
+                      <div className="flex flex-wrap items-center gap-2 mb-2">
+                        <h3 className="font-semibold text-lg">{report.site}</h3>
+                        <Badge variant="outline" className="text-xs">{report.region}</Badge>
+                        <Badge className={roleBadge(report.role)}>{report.role}</Badge>
+                      </div>
+                      <p className="text-sm text-slate-600 mb-3">
+                        Submitted by {report.submittedBy} on {formatDate(report.date)}
+                      </p>
+                      <div className="grid sm:grid-cols-4 gap-2 text-sm mb-3">
+                        <div className="bg-slate-100 rounded p-2">Visibility: {report.visibilityM}m</div>
+                        <div className="bg-slate-100 rounded p-2">Current: {report.current}/5</div>
+                        <div className="bg-slate-100 rounded p-2">Waves: {report.waves}/5</div>
+                        <div className="bg-slate-100 rounded p-2">Temp: {report.temperatureC}C</div>
+                      </div>
+                      {report.sightings.length > 0 && (
+                        <p className="text-sm mb-2">
+                          <span className="font-medium">Sightings:</span> {report.sightings.join(', ')}
+                        </p>
+                      )}
+                      {report.notes && <p className="text-sm text-slate-700">{report.notes}</p>}
+                    </article>
+                  );
+                })
               )}
             </div>
           </CardContent>
