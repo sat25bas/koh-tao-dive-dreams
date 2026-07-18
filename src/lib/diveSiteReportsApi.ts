@@ -22,8 +22,8 @@ export type DiveSiteReport = {
 
 export type SubmitDiveSiteReportPayload = Omit<DiveSiteReport, 'id'>;
 
-const API_BASE = 'https://api.divinginasia.com';
-const USE_MOCK_DATA = true;
+const API_BASE = 'https://api.divinginasia.com/api';
+const USE_MOCK_DATA = false;
 
 // Mock dive reports for testing
 const MOCK_REPORTS: DiveSiteReport[] = [

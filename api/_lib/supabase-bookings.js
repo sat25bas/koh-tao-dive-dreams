@@ -46,6 +46,10 @@ export function isWordPressProvider() {
   return provider === 'wordpress' || provider === 'wp';
 }
 
+export function isWordPressFallbackEnabled() {
+  return cleanProvider(process.env.ALLOW_WORDPRESS_BOOKINGS) === 'true';
+}
+
 function getSupabaseConfig() {
   const url = (
     process.env.SUPABASE_URL ||

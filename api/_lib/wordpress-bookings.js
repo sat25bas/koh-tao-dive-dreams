@@ -218,6 +218,7 @@ export async function insertWordPressBooking(payload) {
   const wpPayload = toWordPressPayload(payload);
   let data = null;
   let lastError = null;
+  let sawNoRouteError = false;
 
   for (const path of ['/bookings', '/booking', '/bookings/create']) {
     try {
@@ -232,29 +233,24 @@ export async function insertWordPressBooking(payload) {
     } catch (error) {
       lastError = error;
       const isRouteMissing = isWordPressNoRouteError(error);
-      if (!isRouteMissing || path === '/bookings') {
-        // Keep falling back for no-route responses, but fail fast for real errors.
-        if (!isRouteMissing) {
-          throw error;
-        }
+      if (isRouteMissing) {
+        sawNoRouteError = true;
+      }
+
+      // Keep falling back for route-not-found responses, but fail fast for real errors.
+      if (!isRouteMissing) {
+        throw error;
       }
     }
   }
 
   if (!data) {
-      // If all WordPress endpoints failed, return a locally-created booking record
-      // This allows bookings to be saved even when the WordPress API isn't available
-      const isNotFoundError = lastError && isWordPressNoRouteError(lastError);
-      if (isNotFoundError) {
-        // WordPress route doesn't exist - return booking with warning instead of failing
-        return {
-          ...payload,
-          id: payload.id,
-          booking_saved_locally: true,
-          wp_sync_failed: 'WordPress API endpoints not found (/wp-json/ktd/v1/bookings)',
-        };
-      }
-      throw lastError || new Error('WordPress booking create failed');
+    if (sawNoRouteError) {
+      throw new Error(
+        'WordPress booking endpoint not found. Verify WORDPRESS_BOOKINGS_API_URL / WP_BOOKING_URL and the /wp-json/ktd/v1/bookings route.'
+      );
+    }
+    throw lastError || new Error('WordPress booking create failed');
   }
 
   const id = data?.id != null ? String(data.id) : null;
