@@ -18,8 +18,11 @@ async function sendViaResend({ to, subject, html }) {
   });
 
   const json = await res.json().catch(() => ({}));
-  if (!res.ok) throw new Error(`Resend error ${res.status}: ${json.message || JSON.stringify(json)}`);
-  return { ok: true };
+  if (!res.ok) {
+    const message = json?.message || JSON.stringify(json);
+    throw new Error(`Resend error ${res.status}: ${message}`);
+  }
+  return { ok: true, provider: 'resend' };
 }
 
 async function sendViaSMTP({ to, subject, html }) {
@@ -39,15 +42,26 @@ async function sendViaSMTP({ to, subject, html }) {
     subject,
     html,
   });
-  return { ok: true };
+  return { ok: true, provider: 'smtp' };
 }
 
 async function sendEmail({ to, subject, html }) {
   try {
     return await sendViaResend({ to, subject, html });
-  } catch (err) {
-    console.warn('Resend failed, trying SMTP:', err.message);
-    return await sendViaSMTP({ to, subject, html });
+  } catch (resendError) {
+    const resendMessage = resendError instanceof Error ? resendError.message : String(resendError);
+    console.warn('Resend failed, trying SMTP:', resendMessage);
+
+    try {
+      const smtpResult = await sendViaSMTP({ to, subject, html });
+      return {
+        ...smtpResult,
+        warning: `Resend failed, using SMTP fallback: ${resendMessage}`,
+      };
+    } catch (smtpError) {
+      const smtpMessage = smtpError instanceof Error ? smtpError.message : String(smtpError);
+      throw new Error(`Resend failed: ${resendMessage}; SMTP failed: ${smtpMessage}`);
+    }
   }
 }
 
@@ -573,12 +587,19 @@ export default async function handler(req, res) {
         success: false,
         error: errorMessage,
         warning: warnings.length ? warnings.join('; ') : undefined,
+        details: {
+          resend: result.provider === 'resend' ? result : undefined,
+          smtp: result.provider === 'smtp' ? result : undefined,
+        },
       });
     }
 
     return res.status(200).json({
       success: true,
       warning: warnings.length ? warnings.join('; ') : undefined,
+      details: {
+        provider: result.provider,
+      },
     });
   } catch (err) {
     console.error('send-booking-notification error', err);
