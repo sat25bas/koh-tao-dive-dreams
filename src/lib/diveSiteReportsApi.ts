@@ -1,7 +1,7 @@
 /**
  * Dive Site Reports API Client
  * Shared between web and mobile apps
- */
+ *///
 
 export type DiverRole = 'Dive Pro' | 'Fun Diver';
 
