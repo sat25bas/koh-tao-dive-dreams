@@ -1,7 +1,7 @@
 import {
   parseBody,
   normalizeString,
-  normalizeSightings,
+  normalizeSightings,//
   getReportById,
   updateReportById,
   deleteReportById,
