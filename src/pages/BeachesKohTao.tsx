@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-const beaches = [
+const beaches = [//
   {
     name: "Mae Haad Beach",
     subtitle: "Noord & Zuid",
