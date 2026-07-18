@@ -65,6 +65,7 @@ const Navigation = () => {
     bandedSeaKrait: isDutch ? 'Gestreepte zeekrait' : 'Banded sea krait',
     beardedScorpionfish: isDutch ? 'Baardschorpioenvis' : 'Bearded scorpionfish',
     diveSitesTitle: isDutch ? 'Locaties' : 'Sites',
+    locations: isDutch ? 'Locaties' : 'Locations',
     diveSitesOverview: isDutch ? 'Overzicht alle duiklocaties' : 'All dive sites overview',
     diveSiteReports: isDutch ? 'Duiklocatie rapporten' : 'Dive site reports',
     funDiveTrips: isDutch ? 'Fun Duiktrips' : 'Fun Dive Trips',
@@ -172,6 +173,9 @@ const Navigation = () => {
           <div className="hidden md:flex items-center space-x-7 pl-[10px] pt-4 text-[1.05rem]">
             <Link to="/" className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium">
               {t('nav.home')}
+            </Link>
+            <Link to="/koh-tao-dive-sites" className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium">
+              {t('nav.locations')}
             </Link>
             {/* Courses mega dropdown */}
             <div className="relative group">
@@ -541,6 +545,9 @@ const Navigation = () => {
             <div className="px-2 pt-2 pb-3 space-y-1">
               <Link to="/" className="block px-3 py-2 text-gray-700 hover:text-blue-600" onClick={() => setIsOpen(false)}>
                 {t('nav.home')}
+              </Link>
+              <Link to="/koh-tao-dive-sites" className="block px-3 py-2 text-gray-700 hover:text-blue-600" onClick={() => setIsOpen(false)}>
+                {t('nav.locations')}
               </Link>
 
               <div>
