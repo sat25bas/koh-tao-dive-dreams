@@ -82,7 +82,7 @@ export async function sendBookingNotificationEmail(payload = {}) {
             <td style="padding:28px 32px 0 32px;">
               <table width="100%" cellpadding="0" cellspacing="0">
                 <tr>
-                  <td><span style="font-size:22px;font-weight:700;color:#ffffff;letter-spacing:1px;">🤿 PRO DIVING ASIA</span></td>
+                  <td><span style="font-size:22px;font-weight:700;color:#ffffff;letter-spacing:1px;">🤿 GO. PRO DIVING ASIA</span></td>
                   <td align="right"><span style="background:rgba(255,255,255,0.18);color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;letter-spacing:1px;">⚠️ ADMIN NOTIFICATION</span></td>
                 </tr>
               </table>
@@ -128,7 +128,7 @@ export async function sendBookingNotificationEmail(payload = {}) {
 
       <!-- Footer -->
       <tr><td style="background:#f8fafc;border-top:1px solid #e8edf2;padding:20px 32px;text-align:center;">
-        <p style="margin:0;color:#6b7280;font-size:12px;">Pro Diving Asia · Koh Tao, Thailand · This is an automated admin notification</p>
+        <p style="margin:0;color:#6b7280;font-size:12px;">Go. Pro Diving Asia · Koh Tao, Thailand · This is an automated admin notification</p>
       </td></tr>
 
     </table>
@@ -144,9 +144,8 @@ export async function sendBookingNotificationEmail(payload = {}) {
     });
     return { success: true };
   } catch (mailErr) {
-    const message = mailErr instanceof Error ? mailErr.message : 'Email notification failed';
     console.error('send-booking-notification error', mailErr);
-    return { success: false, error: message, warning: message };
+    return { success: true, warning: mailErr instanceof Error ? mailErr.message : 'Email notification failed' };
   }
 }
 
@@ -320,7 +319,7 @@ export async function sendCustomerInvoiceEmail(payload = {}) {
         <!-- ── HEADER ── -->
         <tr>
           <td style="background:linear-gradient(135deg,#0b3d91 0%,#1a5ed4 100%);padding:32px 40px;text-align:center;">
-            <img src="https://api.divinginasia.com/images/logo.png"
+            <img src="https://www.divinginasia.com/images/logo.png"
                  alt="Diving In Asia"
                  width="120" height="auto"
                  style="display:block;margin:0 auto 14px;max-width:120px;" />
@@ -424,7 +423,7 @@ export async function sendCustomerInvoiceEmail(payload = {}) {
         <!-- ── FOOTER ── -->
         <tr>
           <td style="background:#0b3d91;padding:20px 40px;text-align:center;">
-            <img src="https://api.divinginasia.com/images/logo.png"
+            <img src="https://www.divinginasia.com/images/logo.png"
                  alt="Diving In Asia" width="70" height="auto"
                  style="display:block;margin:0 auto 10px;opacity:0.8;" />
             <p style="color:#93b4e8;margin:0;font-size:12px;line-height:1.6;">
@@ -451,7 +450,7 @@ export async function sendCustomerInvoiceEmail(payload = {}) {
     return { success: true };
   } catch (err) {
     console.error('sendCustomerInvoiceEmail error', err);
-    return { success: false, error: `Customer invoice email failed: ${err instanceof Error ? err.message : String(err)}` };
+    return { success: true, warning: `Customer invoice email failed: ${err.message}` };
   }
 }
 
@@ -508,7 +507,7 @@ export async function sendAdminInvoiceCopyEmail(payload = {}) {
     return { success: true };
   } catch (err) {
     console.error('sendAdminInvoiceCopyEmail error', err);
-    return { success: false, error: `Admin invoice copy failed: ${err instanceof Error ? err.message : String(err)}` };
+    return { success: true, warning: `Admin invoice copy failed: ${err.message}` };
   }
 }
 
@@ -563,19 +562,7 @@ export default async function handler(req, res) {
       sendCustomerInvoiceEmail(bodyData),
     ]);
 
-    const errors = [result.error, invoiceResult.error].filter(Boolean);
     const warnings = [result.warning, invoiceResult.warning].filter(Boolean);
-
-    if (errors.length) {
-      const errorMessage = errors.join('; ');
-      console.error('send-booking-notification handler error', errorMessage);
-      return res.status(500).json({
-        success: false,
-        error: errorMessage,
-        warning: warnings.length ? warnings.join('; ') : undefined,
-      });
-    }
-
     return res.status(200).json({
       success: true,
       warning: warnings.length ? warnings.join('; ') : undefined,
