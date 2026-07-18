@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Clock, Trophy, MapPin } from 'lucide-react';
 
 type Currency = 'THB' | 'USD' | 'EUR';
-
+//
 interface Specialty {
   id: string;
   title: string;
