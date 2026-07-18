@@ -179,9 +179,6 @@ const Navigation = () => {
             <Link to="/" className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium">
               {t('nav.home')}
             </Link>
-            <Link to="/koh-tao-dive-sites" className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium">
-              {t('nav.locations')}
-            </Link>
             {/* Courses mega dropdown */}
             <div className="relative group">
               <Link
