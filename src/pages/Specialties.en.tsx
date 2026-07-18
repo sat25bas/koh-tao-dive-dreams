@@ -395,7 +395,7 @@ const SpecialtiesEn: React.FC = () => {
         <div className="absolute inset-0 bg-[url('https://api.divinginasia.com/images/whale.webp')] bg-cover bg-center" />
         <div className="absolute inset-0 bg-black/50" />
         <div className="container mx-auto px-4 text-white z-10">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Specialty Courses</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Book # Specialty Courses</h1>
           <p className="text-lg md:text-xl text-gray-100 max-w-2xl">
             Master specialized diving skills and enhance your underwater experience. Choose from our comprehensive selection of PADI specialty courses.
           </p>
