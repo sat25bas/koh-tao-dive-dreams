@@ -7,7 +7,7 @@ const hasSmtpConfig = () => Boolean(process.env.SMTP_HOST && process.env.SMTP_US
 const getResendFromCandidates = () => {
   const primary = process.env.RESEND_FROM_EMAIL || 'confirmed@divinginasia.com';
   return Array.from(new Set([primary, 'onboarding@resend.dev']));
-};
+};//
 
 export default async function handler(req, res) {
   applyCors(res);
