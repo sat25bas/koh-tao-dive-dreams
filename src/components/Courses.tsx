@@ -16,6 +16,7 @@ import { usePageContent } from '@/hooks/usePageContent';
 import { useCurrency } from '@/hooks/useCurrency';
 import { getCourseImageFallbackUrl, resolveCourseImageUrl } from '@/lib/courseImages';
 import { buildOfferBookingPayload, getOfferBookingDefaults, type SpecialOfferBookingData } from '@/lib/specialOfferBooking';
+import BookNowForm from './BookNowForm';
 
 type SpecialOfferCardProps = {
   title: string;
@@ -731,6 +732,13 @@ const Courses = () => {
 
         <div className="bg-blue-600 rounded-xl p-8 text-white text-center">
           <h3 className="text-2xl font-bold mb-4">{t('courses.specialOffers.title')}</h3>
+          <div className="mb-8 rounded-2xl bg-white p-6 text-left text-slate-900 shadow-lg">
+            <h4 className="mb-3 text-xl font-bold text-slate-900">{isDutch ? 'Boek je cursus hier' : 'Book your course here'}</h4>
+            <p className="mb-4 text-sm text-slate-600">
+              {isDutch ? 'Gebruik dit formulier om je interesse of boeking voor een cursus te delen.' : 'Use this form to share your interest or booking request for a course.'}
+            </p>
+            <BookNowForm />
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 text-left items-stretch">
             <div className="bg-red-600 rounded-lg p-6 h-full min-h-[360px] flex flex-col">
               <h4 className="font-bold text-xl mb-2">{t('courses.specialOffers.combo.title')}</h4>
