@@ -88,23 +88,23 @@ async function sendViaWeb3Forms(payload: Record<string, any>) {
 
 export async function sendBookingNotification({ endpointUrl, payload }: SendBookingNotificationArgs): Promise<SendBookingNotificationResult> {
   try {
-    const backendResult = await sendViaBackend(endpointUrl, payload);
-    if (backendResult.success) {
-      return { ...backendResult, provider: 'backend' };
-    }
-  } catch (error) {
-    console.warn('Primary booking email endpoint failed, using Web3Forms fallback.', error);
-  }
-
-  try {
     const web3Result = await sendViaWeb3Forms(payload);
     if (web3Result.success) {
       return { ...web3Result, provider: 'web3forms' };
     }
+  } catch (error) {
+    console.warn('Web3Forms submission failed; trying backend fallback.', error);
+  }
+
+  try {
+    const backendResult = await sendViaBackend(endpointUrl, payload);
+    if (backendResult.success) {
+      return { ...backendResult, provider: 'backend' };
+    }
     return {
-      ...web3Result,
+      ...backendResult,
       provider: 'none',
-      message: web3Result.message || 'Email service unavailable',
+      message: backendResult.message || 'Email service unavailable',
     };
   } catch (error) {
     return {
