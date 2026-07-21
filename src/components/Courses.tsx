@@ -322,7 +322,7 @@ const Courses = () => {
   const parseCurrencyAmount = (value: string) => {
     const digits = String(value || '').replace(/[^\d.\-]/g, '');
     return digits ? Number(digits) : 0;
-  };
+  };//
 
   const getFallbackForeignPrice = (courseKey: string, currency: 'USD' | 'EUR') => {
     const keyMap: Record<string, { usd: string; eur: string }> = {
