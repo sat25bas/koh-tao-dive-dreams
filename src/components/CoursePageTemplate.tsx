@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useRef, useState } from 'react';
 import { useCurrency } from '@/hooks/useCurrency';
 
 import { Button } from '@/components/ui/button';
@@ -7,11 +6,10 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { usePageContent } from '@/hooks/usePageContent';
 // PageContentEditor import removed
-import InlineCourseBookingForm from './InlineCourseBookingForm';
-import { depositFromTotal } from '@/lib/depositRate';
 import DropboxGallerySection from './DropboxGallerySection';
 import ImageRow from './ImageRow';
 import { resolveCourseImageUrl } from '@/lib/courseImages';
+import Contact from './Contact';
 
 export interface CourseSection {
   title: string;
@@ -76,7 +74,7 @@ const CoursePageTemplate: React.FC<CoursePageProps> = ({
   galleryEmptyMessage,
 }) => {
   // All hooks must be called unconditionally at the top
-  const navigate = useNavigate();
+  const contactSectionRef = useRef<HTMLDivElement | null>(null);
   const { exchangeRates } = useCurrency();
   const { content, isLoading, resolvedSlug } = usePageContent({
     pageSlug,
@@ -152,22 +150,12 @@ const CoursePageTemplate: React.FC<CoursePageProps> = ({
 
   const heroImageUrl = heroImageSrc;
 
-  const openBookNow = () => {
-    const params = new URLSearchParams();
-    if (bookingItemName) params.append('item', bookingItemName);
-    params.append('type', bookingType);
-    if (thbAmount > 0) params.append('price', thbAmount.toString());
-    params.append('currency', 'THB');
-
-    navigate(`/booking?${params.toString()}`);
+  const openBookNow = (event?: React.MouseEvent<HTMLAnchorElement>) => {
+    event?.preventDefault();
+    contactSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
-  const bookNowParams = new URLSearchParams();
-  if (bookingItemName) bookNowParams.append('item', bookingItemName);
-  bookNowParams.append('type', bookingType);
-  if (thbAmount > 0) bookNowParams.append('price', thbAmount.toString());
-  bookNowParams.append('currency', 'THB');
-  const bookingHref = `/booking?${bookNowParams.toString()}`;
+  const bookingHref = '#contact';
 
   return (
     <div className="min-h-screen bg-background">
@@ -196,10 +184,7 @@ const CoursePageTemplate: React.FC<CoursePageProps> = ({
           )}
           <div className="mt-6">
             <Button size="lg" asChild>
-              <a href={bookingHref} onClick={(event) => {
-                event.preventDefault();
-                openBookNow();
-              }}>
+              <a href={bookingHref} onClick={(event) => openBookNow(event)}>
                 {locale === 'nl' ? 'Boek Nu' : 'Book Now'}
               </a>
             </Button>
@@ -299,10 +284,7 @@ const CoursePageTemplate: React.FC<CoursePageProps> = ({
                     : 'Includes all training, materials, PADI certification and equipment'}
                 </p>
                 <Button className="w-full" asChild>
-                  <a href={bookingHref} onClick={(event) => {
-                    event.preventDefault();
-                    openBookNow();
-                  }}>
+                  <a href={bookingHref} onClick={(event) => openBookNow(event)}>
                     {locale === 'nl' ? 'Boek / Informeer' : 'Book / Enquire'}
                   </a>
                 </Button>
@@ -312,25 +294,10 @@ const CoursePageTemplate: React.FC<CoursePageProps> = ({
         </div>
 
         {/* PageContentEditor removed */}
-        
-        <section className="mt-12" id="book-with-us">
-          <div className="max-w-2xl mx-auto">
-            <h2 className="text-2xl font-bold mb-2">
-              {locale === 'nl' ? 'Boek bij ons' : 'Book with Us Now'}
-            </h2>
-            <p className="text-muted-foreground mb-6 text-sm">
-              {locale === 'nl'
-                ? 'Vul het formulier in en we nemen binnen 24 uur contact met je op.'
-                : 'Fill in the form below and we\'ll confirm availability within 24 hours.'}
-            </p>
-            <InlineCourseBookingForm
-              itemType={bookingType}
-              itemTitle={bookingItemName || content.hero_title || ''}
-              depositMajor={thbAmount > 0 ? depositFromTotal(thbAmount) : undefined}
-              depositCurrency="THB"
-            />
-          </div>
-        </section>
+
+        <div ref={contactSectionRef} className="mt-12">
+          <Contact />
+        </div>
       </main>
     </div>
   );
