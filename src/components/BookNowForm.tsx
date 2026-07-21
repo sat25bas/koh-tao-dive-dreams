@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { trackBookingSubmitted } from '@/lib/analytics';
 import { DEPOSIT_PERCENT_LABEL, depositFromTotal, totalPayableNowFromTotal } from '@/lib/depositRate';
+import { sendBookingNotification } from '@/lib/sendBookingNotification';
 
 type CourseOption = {
   label: string;
@@ -15,7 +16,7 @@ const COURSE_OPTIONS: CourseOption[] = [
   { label: 'PADI IDC (Instructor Development Course)', price: 0 },
   { label: 'PADI Scuba Diver Course', price: 8500 },
   { label: 'Discover Scuba Diving', price: 2500 },
-  { label: 'Discover Scuba Diving Deluxe', price: 5000 },
+  { label: 'Discover Scuba Diving Deluxe', price: 5002 },
   { label: 'Emergency First Response (EFR)', price: 4500 },
   { label: 'Scuba Review Course', price: 0 },
   { label: 'PADI Wreck Diver Specialty', price: 8000 },
@@ -133,57 +134,38 @@ const BookNowForm: React.FC<BookNowFormProps> = ({ fullPage = false }) => {
   const sendToBookingApiAndEmail = async (payNow: boolean): Promise<boolean> => {
     const totalAmount = coursePrice > 0 ? coursePrice : null;
     const depositAmount = deposit > 0 ? deposit : null;
-    const totalPayableNow = totalPayableNowFromTotal(coursePrice);
     const dueAmount = totalAmount != null && depositAmount != null
       ? Math.max(totalAmount - depositAmount, 0)
       : null;
 
-    // Submit via API (WordPress/MySQL booking storage)
+    const payload = {
+      name: form.name,
+      course_title: form.course_title,
+      email: form.email,
+      phone: form.phone,
+      accommodation: form.accommodation_type,
+      preferred_date: form.arrival_date,
+      experience_level: form.diving_experience,
+      payment_choice: payNow ? 'deposit_requested' : 'pending',
+      message: form.message,
+      item_title: form.course_title,
+      selected_price: totalAmount,
+      currency: currencyOverride,
+      total_amount: totalAmount,
+      deposit_amount: depositAmount,
+      due_amount: dueAmount,
+      booking_source: 'website-form',
+    };
+
     try {
-      const result = await Promise.race([
-        fetch('/api/bookings', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            name: form.name,
-            course_title: form.course_title,
-            email: form.email,
-            phone: form.phone,
-            accommodation: form.accommodation_type,
-            preferred_date: form.arrival_date,
-            experience_level: form.diving_experience,
-            payment_choice: payNow ? 'deposit_requested' : 'pending',
-            message: form.message,
-            status: 'new',
-            booking_type: 'course',
-            item_title: form.course_title,
-            selected_price: totalAmount,
-            currency: currencyOverride,
-            total_amount: totalAmount,
-            commission_amount: null,
-            deposit_amount: depositAmount,
-            due_amount: dueAmount,
-            booking_source: 'website-form',
-          }),
-        }),
-        new Promise<never>((_, reject) => setTimeout(() => reject(new Error('timeout')), 5000)),
-      ]);
-
-      if (result instanceof Response) {
-        if (!result.ok) {
-          const failureBody = await result.json().catch(() => null);
-          setError(failureBody?.error || 'Booking submission failed. Please try again.');
-          return false;
-        }
-
-        const body = await result.json().catch(() => null);
-        if (body?.wp_mirror_warning) {
-          setError(`Booking saved, but WordPress dashboard sync failed: ${String(body.wp_mirror_warning)}`);
-        }
+      const result = await sendBookingNotification({ endpointUrl: '', payload });
+      if (!result.success) {
+        setError(result.message || 'Booking submission failed. Please try again.');
+        return false;
       }
       return true;
-    } catch {
-      setError('Booking submitted, but sync check timed out. Please verify in admin.');
+    } catch (error) {
+      setError(error instanceof Error ? error.message : 'Booking submission failed. Please try again.');
       return false;
     }
   };
