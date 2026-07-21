@@ -6,8 +6,7 @@ import { sendBookingNotification } from '@/lib/sendBookingNotification';
 type CourseOption = {
   label: string;
   price: number;
-};
-
+//
 const COURSE_OPTIONS: CourseOption[] = [
   { label: 'PADI Open Water Course', price: 11500 },
   { label: 'PADI Advanced Open Water', price: 10500 },
