@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 
 import { Clock, Star, ChevronDown, ChevronUp } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
@@ -15,6 +15,144 @@ import {
 import { usePageContent } from '@/hooks/usePageContent';
 import { useCurrency } from '@/hooks/useCurrency';
 import { getCourseImageFallbackUrl, resolveCourseImageUrl } from '@/lib/courseImages';
+import { buildOfferBookingPayload, getOfferBookingDefaults, type SpecialOfferBookingData } from '@/lib/specialOfferBooking';
+
+type SpecialOfferCardProps = {
+  title: string;
+  description: string;
+  originalPrice: string;
+  price: string;
+  deposit: string;
+  buttonText: string;
+  courseTitle: string;
+  accentClass: string;
+  buttonClass: string;
+  textClass: string;
+  isDutch: boolean;
+  locale: string;
+};
+
+const SpecialOfferCard: React.FC<SpecialOfferCardProps> = ({
+  title,
+  description,
+  originalPrice,
+  price,
+  deposit,
+  buttonText,
+  courseTitle,
+  accentClass,
+  buttonClass,
+  textClass,
+  isDutch,
+  locale,
+}) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [form, setForm] = useState<SpecialOfferBookingData>(() => getOfferBookingDefaults(courseTitle, locale));
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [statusMessage, setStatusMessage] = useState<string | null>(null);
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = event.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setStatusMessage(null);
+
+    try {
+      const payload = buildOfferBookingPayload(form, courseTitle, locale);
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        throw new Error('Unable to submit enquiry');
+      }
+
+      setStatusMessage(isDutch ? 'Thanks! We will reach out shortly about your offer enquiry.' : 'Thanks! We will reach out shortly about your offer enquiry.');
+      setForm(getOfferBookingDefaults(courseTitle, locale));
+    } catch {
+      setStatusMessage(isDutch ? 'We could not send your enquiry right now. Please contact us directly.' : 'We could not send your enquiry right now. Please contact us directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <>
+      <button
+        type="button"
+        onClick={() => {
+          setStatusMessage(null);
+          setForm(getOfferBookingDefaults(courseTitle, locale));
+          setIsOpen(true);
+        }}
+        className={`block w-full rounded-lg bg-white py-3 text-center font-semibold no-underline ${buttonClass}`}
+      >
+        {buttonText}
+      </button>
+
+      {isOpen && (
+        <div className="fixed inset-0 z-[1000] flex items-center justify-center bg-slate-950/70 p-4">
+          <div className="w-full max-w-md rounded-2xl bg-white p-6 text-slate-900 shadow-2xl">
+            <div className="mb-4 flex items-start justify-between gap-3">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-700">{isDutch ? 'Speciale aanvraag' : 'Special offer enquiry'}</p>
+                <h4 className="text-xl font-bold">{title}</h4>
+              </div>
+              <button type="button" onClick={() => setIsOpen(false)} className="text-2xl font-semibold text-slate-500" aria-label="Close">
+                ×
+              </button>
+            </div>
+
+            <form onSubmit={handleSubmit} className="space-y-3">
+              <input type="hidden" name="course_title" value={courseTitle} />
+              <label className="block text-sm font-semibold">
+                <span className="mb-1 block">{isDutch ? 'Naam' : 'Name'}</span>
+                <input type="text" required name="name" value={form.name} onChange={handleChange} className="w-full rounded border border-slate-300 px-3 py-2" />
+              </label>
+              <label className="block text-sm font-semibold">
+                <span className="mb-1 block">Email</span>
+                <input type="email" required name="email" value={form.email} onChange={handleChange} className="w-full rounded border border-slate-300 px-3 py-2" />
+              </label>
+              <label className="block text-sm font-semibold">
+                <span className="mb-1 block">{isDutch ? 'Telefoon' : 'Phone'}</span>
+                <input type="text" name="phone" value={form.phone} onChange={handleChange} className="w-full rounded border border-slate-300 px-3 py-2" />
+              </label>
+              <label className="block text-sm font-semibold">
+                <span className="mb-1 block">{isDutch ? 'Voorkeur datum' : 'Preferred date'}</span>
+                <input type="date" name="preferred_date" value={form.preferred_date || ''} onChange={handleChange} className="w-full rounded border border-slate-300 px-3 py-2" />
+              </label>
+              <label className="block text-sm font-semibold">
+                <span className="mb-1 block">{isDutch ? 'Ervaring' : 'Experience level'}</span>
+                <select name="experience_level" value={form.experience_level || ''} onChange={handleChange} className="w-full rounded border border-slate-300 px-3 py-2">
+                  <option value="">{isDutch ? 'Selecteer...' : 'Select...'}</option>
+                  <option value="beginner">{isDutch ? 'Beginner' : 'Beginner'}</option>
+                  <option value="intermediate">{isDutch ? 'Intermediate' : 'Intermediate'}</option>
+                  <option value="professional">{isDutch ? 'Professional' : 'Professional'}</option>
+                </select>
+              </label>
+              <label className="block text-sm font-semibold">
+                <span className="mb-1 block">{isDutch ? 'Bericht' : 'Message'}</span>
+                <textarea name="message" required value={form.message} onChange={handleChange} rows={4} className="w-full rounded border border-slate-300 px-3 py-2" />
+              </label>
+              <button type="submit" disabled={isSubmitting} className="w-full rounded-lg bg-cyan-700 px-4 py-3 font-semibold text-white transition hover:bg-cyan-800 disabled:opacity-70">
+                {isSubmitting ? (isDutch ? 'Versturen...' : 'Sending...') : buttonText}
+              </button>
+            </form>
+
+            {statusMessage && <p className="mt-3 text-sm text-slate-600">{statusMessage}</p>}
+          </div>
+        </div>
+      )}
+    </>
+  );
+};
+
 const Courses = () => {
 
 
@@ -603,12 +741,20 @@ const Courses = () => {
                   <span className="text-2xl font-bold">{getDisplayedPrice(t('courses.specialOffers.combo.price'))}</span>
                 </div>
                 <p className="text-xs text-blue-100 mb-3">10% deposit: {getDisplayedPrice('฿1,900')}</p>
-                <a
-                  href="/booking?item=Open%20Water%20%2B%20Advanced&type=course&price=19000&currency=THB&deposit=3800"
-                  className="block w-full rounded-lg bg-white py-3 text-center font-semibold text-red-700 no-underline hover:bg-red-50"
-                >
-                  {isDutch ? 'Boek Combo' : 'Book Combo'}
-                </a>
+                <SpecialOfferCard
+                  title={t('courses.specialOffers.combo.title')}
+                  description={t('courses.specialOffers.combo.description')}
+                  originalPrice={t('courses.specialOffers.combo.originalPrice')}
+                  price={getDisplayedPrice(t('courses.specialOffers.combo.price'))}
+                  deposit={getDisplayedPrice('฿1,900')}
+                  buttonText={isDutch ? 'Boek Combo' : 'Book Combo'}
+                  courseTitle="Open Water + Advanced"
+                  accentClass="text-red-700 hover:bg-red-50"
+                  buttonClass="text-red-700 hover:bg-red-50"
+                  textClass="text-red-700"
+                  isDutch={isDutch}
+                  locale={locale}
+                />
               </div>
             </div>
             <div className="bg-white rounded-lg p-6 border-2 border-red-200 text-gray-900 h-full min-h-[360px] flex flex-col">
@@ -625,12 +771,20 @@ const Courses = () => {
                 </div>
                 <p className="text-xs text-gray-500 mb-3">10% deposit: {getDisplayedPrice('฿1,800')}</p>
               </div>
-              <a
-                href="/booking?item=3%20Specialty%20Bundle&type=course&price=18000&currency=THB"
-                className="block w-full rounded-lg bg-red-600 py-3 text-center font-semibold text-white no-underline hover:bg-red-700"
-              >
-                {isDutch ? 'Boek Bundel' : 'Book Bundle'}
-              </a>
+              <SpecialOfferCard
+                title={isDutch ? '3 Specialties Bundel!' : '3 Specialty Bundle!'}
+                description={isDutch ? 'Schrijf in voor drie PADI Specialty duikcursussen en betaal minder. Verken verschillende aspecten van duiken, van zeeleven herkenning tot onderwaterfotografie.' : 'Enroll in three PADI Specialty Dive Courses and pay less. Explore various aspects of scuba diving, from marine life identification to underwater photography.'}
+                originalPrice={getDisplayedPrice('฿24,000')}
+                price={getDisplayedPrice('฿18,000')}
+                deposit={getDisplayedPrice('฿1,800')}
+                buttonText={isDutch ? 'Boek Bundel' : 'Book Bundle'}
+                courseTitle="3 Specialty Bundle"
+                accentClass="text-white hover:bg-red-700"
+                buttonClass="bg-red-600 text-white hover:bg-red-700"
+                textClass="text-white"
+                isDutch={isDutch}
+                locale={locale}
+              />
             </div>
 
             <div className="bg-blue-700 rounded-lg p-6 border-2 border-blue-400 text-white h-full min-h-[360px] flex flex-col">
@@ -647,12 +801,20 @@ const Courses = () => {
                 </div>
                 <p className="text-xs text-blue-100 mb-3">10% deposit: {getDisplayedPrice('฿5,678')}</p>
               </div>
-              <a
-                href="/booking?item=Open%20Water%20to%20Divemaster%20Package&type=course&price=56780&currency=THB&deposit=11356"
-                className="block w-full rounded-lg bg-white py-3 text-center font-semibold text-blue-700 no-underline hover:bg-blue-50"
-              >
-                {isDutch ? 'Boek bij ons' : 'Book with us'}
-              </a>
+              <SpecialOfferCard
+                title={isDutch ? 'Speciale Aanbieding' : 'Special Offer'}
+                description={isDutch ? 'Open Water naar Divemaster pakket met 15% korting.' : 'Open Water to Divemaster package with 15% savings.'}
+                originalPrice={getDisplayedPrice('฿66,800')}
+                price={getDisplayedPrice('฿56,780')}
+                deposit={getDisplayedPrice('฿5,678')}
+                buttonText={isDutch ? 'Boek bij ons' : 'Book with us'}
+                courseTitle="Open Water to Divemaster Package"
+                accentClass="text-blue-700 hover:bg-blue-50"
+                buttonClass="bg-white text-blue-700 hover:bg-blue-50"
+                textClass="text-blue-700"
+                isDutch={isDutch}
+                locale={locale}
+              />
             </div>
           </div>
         </div>
