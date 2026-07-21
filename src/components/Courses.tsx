@@ -275,7 +275,7 @@ const Courses = () => {
       ? ['3 begeleide duiken', 'Alle uitrusting inbegrepen', 'Gecertificeerde instructeur', 'Kleine groepen (max 4)']
       : ['3 guided dives', 'All equipment included', 'Certified instructor', 'Small groups (max 4)']).join('\n'),
     course_discover_scuba_deluxe_images: 'photo-1682687982423-295485af248a.avif',
-  }), [t, locale, isDutch]);
+  }), [t, isDutch]);
 
   const { content: homeContent } = usePageContent({
     pageSlug: 'home',
@@ -320,9 +320,9 @@ const Courses = () => {
   };
 
   const parseCurrencyAmount = (value: string) => {
-    const digits = String(value || '').replace(/[^\d.\-]/g, '');
+    const digits = String(value || '').replace(/[^\d.-]/g, '');
     return digits ? Number(digits) : 0;
-  };//
+  };
 
   const getFallbackForeignPrice = (courseKey: string, currency: 'USD' | 'EUR') => {
     const keyMap: Record<string, { usd: string; eur: string }> = {
