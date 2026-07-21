@@ -291,8 +291,8 @@ const Footer: React.FC = () => {
           {footerContent.footer_line_1 || (
             <>
               <div>
-                © {new Date().getFullYear()} Go Pro Diving Asia — All rights reserved | Powered By{' '}
-                <a
+                © {new Date().getFullYear()}  Pro Diving Asia — All rights reserved | Powered By{' '}
+                
                   href="https://www.onemedia.asia"
                   target="_blank"
                   rel="noopener noreferrer"
