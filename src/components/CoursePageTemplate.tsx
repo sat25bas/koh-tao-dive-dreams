@@ -10,6 +10,7 @@ import DropboxGallerySection from './DropboxGallerySection';
 import ImageRow from './ImageRow';
 import { resolveCourseImageUrl } from '@/lib/courseImages';
 import Contact from './Contact';
+import BookNowForm from './BookNowForm';
 
 export interface CourseSection {
   title: string;
@@ -74,7 +75,7 @@ const CoursePageTemplate: React.FC<CoursePageProps> = ({
   galleryEmptyMessage,
 }) => {
   // All hooks must be called unconditionally at the top
-  const contactSectionRef = useRef<HTMLDivElement | null>(null);
+  const bookingSectionRef = useRef<HTMLDivElement | null>(null);
   const { exchangeRates } = useCurrency();
   const { content, isLoading, resolvedSlug } = usePageContent({
     pageSlug,
@@ -152,10 +153,10 @@ const CoursePageTemplate: React.FC<CoursePageProps> = ({
 
   const openBookNow = (event?: React.MouseEvent<HTMLAnchorElement>) => {
     event?.preventDefault();
-    contactSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    bookingSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
-  const bookingHref = '#contact';
+  const bookingHref = '#booking';
 
   return (
     <div className="min-h-screen bg-background">
@@ -283,11 +284,12 @@ const CoursePageTemplate: React.FC<CoursePageProps> = ({
                     ? 'Inclusief alle training, materialen, PADI certificering en uitrusting' 
                     : 'Includes all training, materials, PADI certification and equipment'}
                 </p>
-                <Button className="w-full" asChild>
-                  <a href={bookingHref} onClick={(event) => openBookNow(event)}>
+                <div id="booking" ref={bookingSectionRef} className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                  <h3 className="mb-2 text-base font-semibold text-slate-900">
                     {locale === 'nl' ? 'Boek / Informeer' : 'Book / Enquire'}
-                  </a>
-                </Button>
+                  </h3>
+                  <BookNowForm />
+                </div>
               </CardContent>
             </Card>
           </aside>
@@ -295,7 +297,7 @@ const CoursePageTemplate: React.FC<CoursePageProps> = ({
 
         {/* PageContentEditor removed */}
 
-        <div ref={contactSectionRef} className="mt-12">
+        <div className="mt-12">
           <Contact />
         </div>
       </main>
