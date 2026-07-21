@@ -9,10 +9,25 @@ import { useTranslation } from 'react-i18next';
 import { Download, Facebook, Instagram, MessageCircle } from 'lucide-react';
 import CookieConsent from './CookieConsent';
 
+type BeforeInstallPromptEvent = Event & {
+  prompt: () => void;
+  userChoice: Promise<{ outcome: 'accepted' | 'dismissed' | 'unknown' }>;
+};
+
+type AnalyticsWindow = Window & {
+  dataLayer?: Array<Record<string, unknown>>;
+  gtag?: (...args: unknown[]) => void;
+};
+
+type FooterRow = {
+  section_key?: string;
+  content_value?: string;
+};
+
 const InstallBanner: React.FC = () => {
   const { i18n } = useTranslation();
   const isDutch = i18n.language.startsWith('nl');
-  const [installPrompt, setInstallPrompt] = React.useState<any>(null);
+  const [installPrompt, setInstallPrompt] = React.useState<BeforeInstallPromptEvent | null>(null);
   const [dismissed, setDismissed] = React.useState(
     () => window.sessionStorage.getItem('pwa-banner-dismissed') === '1'
   );
@@ -22,7 +37,10 @@ const InstallBanner: React.FC = () => {
   React.useEffect(() => {
     setIsStandalone(window.matchMedia('(display-mode: standalone)').matches);
     setIsIos(/iphone|ipad|ipod/i.test(navigator.userAgent));
-    const handler = (e: Event) => { e.preventDefault(); setInstallPrompt(e); };
+    const handler = (e: Event) => {
+      e.preventDefault();
+      setInstallPrompt(e as BeforeInstallPromptEvent);
+    };
     window.addEventListener('beforeinstallprompt', handler);
     return () => window.removeEventListener('beforeinstallprompt', handler);
   }, []);
@@ -79,26 +97,26 @@ const INSTAGRAM_LINK = 'https://www.instagram.com/pro_diving_asia/';
 
 const trackBookingWidgetClick = (source: 'left-widget' | 'mobile-sticky') => {
   try {
+    const analyticsWindow = window as AnalyticsWindow;
     const key = `booking-widget-clicks:${source}`;
-    const current = Number(window.localStorage.getItem(key) || '0');
-    window.localStorage.setItem(key, String(current + 1));
-
+    const current = Number(analyticsWindow.localStorage.getItem(key) || '0');
+    analyticsWindow.localStorage.setItem(key, String(current + 1));
 
     const payload = {
       event: 'booking_widget_click',
       source,
-      path: window.location.pathname,
+      path: analyticsWindow.location.pathname,
       clicked_at: new Date().toISOString(),
     };
 
-    if (Array.isArray((window as any).dataLayer)) {
-      (window as any).dataLayer.push(payload);
+    if (Array.isArray(analyticsWindow.dataLayer)) {
+      analyticsWindow.dataLayer.push(payload);
     }
 
-    if (typeof (window as any).gtag === 'function') {
-      (window as any).gtag('event', 'booking_widget_click', {
+    if (typeof analyticsWindow.gtag === 'function') {
+      analyticsWindow.gtag('event', 'booking_widget_click', {
         source,
-        page_path: window.location.pathname,
+        page_path: analyticsWindow.location.pathname,
       });
     }
   } catch {
@@ -136,8 +154,10 @@ const Footer: React.FC = () => {
         const rows = Array.isArray(payload?.rows) ? payload.rows : [];
 
         const content: { [key: string]: string } = {};
-        rows.forEach((row: any) => {
-          content[row.section_key] = row.content_value;
+        rows.forEach((row: FooterRow) => {
+          if (row.section_key && typeof row.content_value === 'string') {
+            content[row.section_key] = row.content_value;
+          }
         });
         setFooterContent(content);
       } catch {
@@ -291,8 +311,8 @@ const Footer: React.FC = () => {
           {footerContent.footer_line_1 || (
             <>
               <div>
-                © {new Date().getFullYear()}  Pro Diving Asia — All rights reserved | Powered By{' '}
-                
+                © {new Date().getFullYear()} Pro Diving Asia — All rights reserved | Powered By{' '}
+                <a
                   href="https://www.onemedia.asia"
                   target="_blank"
                   rel="noopener noreferrer"
