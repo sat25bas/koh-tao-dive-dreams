@@ -21,7 +21,7 @@ import { trackTripComAnalyticsEvent } from '@/lib/trackTripComAnalyticsEvent';
 const TRIP_ALLIANCE_ID = import.meta.env.VITE_TRIP_ALLIANCE_ID as string | undefined;
 const TRIP_SITE_ID = import.meta.env.VITE_TRIP_SITE_ID as string | undefined;
 const STAY_URL_LABEL = '/stay';
-//
+
 type RoomCard = {
   name: string;
   price: string;
