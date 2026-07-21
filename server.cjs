@@ -151,30 +151,57 @@ app.get('/api/bookings', (req, res) => {
 	}
 });
 
-app.post('/api/bookings', (req, res) => {
+app.post('/api/bookings', async (req, res) => {
+	console.log('POST /api/bookings received, body:', JSON.stringify(req.body, null, 2));
 	const { id, name, email, phone, course_title, preferred_date, experience_level, message, status, created_at } = req.body;
+	
+	if (!id || !name || !email) {
+		console.log('Missing required fields: id=%s, name=%s, email=%s', id, name, email);
+		return res.status(400).json({ error: 'Missing required fields: id, name, email' });
+	}
+	
 	try {
+		const bookingData = {
+			id,
+			name,
+			email,
+			phone,
+			course_title,
+			preferred_date,
+			experience_level,
+			message,
+			status: status || 'pending',
+			created_at,
+		};
+
 		if (useJsonStore) {
 			const rows = readJsonBookings();
-			rows.push({
-				id,
-				name,
-				email,
-				phone,
-				course_title,
-				preferred_date,
-				experience_level,
-				message,
-				status: status || 'pending',
-				created_at,
-			});
+			rows.push(bookingData);
 			writeJsonBookings(rows);
 		} else {
 			db.prepare('INSERT INTO bookings (id, name, email, phone, course_title, preferred_date, experience_level, message, status, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')
 				.run(id, name, email, phone, course_title, preferred_date, experience_level, message, status || 'pending', created_at);
 		}
-		res.json({ id, message: 'Booking created' });
+
+		// Try to sync to WordPress (non-blocking - don't delay response)
+		let wpWarning = null;
+		try {
+			const { insertWordPressBooking } = await import('./api/_lib/wordpress-bookings.js');
+			await insertWordPressBooking(bookingData);
+			console.log('WordPress sync successful for booking:', id);
+		} catch (wpErr) {
+			console.warn('WordPress sync warning:', wpErr.message);
+			wpWarning = wpErr.message;
+		}
+
+		const response = { id, message: 'Booking created' };
+		if (wpWarning) {
+			response.wp_mirror_warning = wpWarning;
+		}
+		console.log('Booking saved successfully:', id);
+		res.json(response);
 	} catch (err) {
+		console.error('Error saving booking:', err.message);
 		res.status(500).json({ error: err.message });
 	}
 });
