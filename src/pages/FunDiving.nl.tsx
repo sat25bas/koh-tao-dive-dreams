@@ -802,7 +802,14 @@ const FunDiving = () => {
                 </div>
                 <Button
                   size="lg"
-                  onClick={() => window.open('/booking', '_blank')}
+                  onClick={() => {
+                    const contactSection = document.getElementById('contact');
+                    if (contactSection) {
+                      contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    } else {
+                      navigate('/#contact');
+                    }
+                  }}
                 >
                   Verstuur boekingsaanvraag
                 </Button>
