@@ -7,14 +7,12 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Fish, Waves, MapPin, Clock, DollarSign, Users } from 'lucide-react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { useEffect, useState, useMemo } from 'react';
-import { useBookNowModal } from '@/components/useBookNowModal';
 import { tryAutoScroll, scrollToWithOffset } from '@/lib/scroll';
 import { usePageContent } from '@/hooks/usePageContent';
 
 const FunDiving = () => {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('overview');
-  const { setShowBookNow, BookNowModalComponent } = useBookNowModal();
   const locale = 'en';
   const fallbackContent = useMemo(() => ({
     fun_diving_hero_title: 'Fun Diving Koh Tao',
@@ -158,13 +156,19 @@ const FunDiving = () => {
             <Button
               size="lg"
               className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg"
-              onClick={() => setShowBookNow(true)}
+              onClick={() => {
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                } else {
+                  navigate('/#contact');
+                }
+              }}
             >
               Book a Fun Dive NOW
             </Button>
             <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 text-lg" onClick={() => { try{ sessionStorage.setItem('scrollTo','course-openWater') }catch(_){ } ; navigate('/courses'); }}>{content.fun_diving_hero_cta2}</Button>
           </div>
-          {BookNowModalComponent}
         </div>
       </section>
 
@@ -291,7 +295,14 @@ const FunDiving = () => {
                       <li>Premium equipment</li>
                       <li>Max 4 divers per guide</li>
                     </ul>
-                          <Button variant="secondary" onClick={() => setShowBookNow(true)}>Inquire / Book</Button>
+                          <Button variant="secondary" onClick={() => {
+                            const contactSection = document.getElementById('contact');
+                            if (contactSection) {
+                              contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            } else {
+                              navigate('/#contact');
+                            }
+                          }}>Inquire / Book</Button>
                   </CardContent>
                 </Card>
 
@@ -314,7 +325,14 @@ const FunDiving = () => {
                       <Button variant="outline" asChild>
                         <Link to="/courses/discover-scuba">View Program</Link>
                       </Button>
-                      <Button variant="secondary" onClick={() => setShowBookNow(true)}>Inquire / Book</Button>
+                      <Button variant="secondary" onClick={() => {
+                        const contactSection = document.getElementById('contact');
+                        if (contactSection) {
+                          contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        } else {
+                          navigate('/#contact');
+                        }
+                      }}>Inquire / Book</Button>
                     </div>
                   </CardContent>
                 </Card>
@@ -334,7 +352,14 @@ const FunDiving = () => {
                       <li>Experienced guides and briefings</li>
                       <li>Pickup & return to Koh Tao</li>
                     </ul>
-                    <Button variant="secondary" onClick={() => setShowBookNow(true)}>Inquire / Book</Button>
+                    <Button variant="secondary" onClick={() => {
+                      const contactSection = document.getElementById('contact');
+                      if (contactSection) {
+                        contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      } else {
+                        navigate('/#contact');
+                      }
+                    }}>Inquire / Book</Button>
                   </CardContent>
                 </Card>
               </div>
@@ -810,10 +835,17 @@ const FunDiving = () => {
                 </div>
                 <Button
                   size="lg"
-                  onClick={() => setShowBookNow(true)}
+                  onClick={() => {
+                    const contactSection = document.getElementById('contact');
+                    if (contactSection) {
+                      contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    } else {
+                      navigate('/#contact');
+                    }
+                  }}
                 >
                   Send Booking Request
-                </Button>#
+                </Button>
             </div>
           </section>
         </TabsContent>
