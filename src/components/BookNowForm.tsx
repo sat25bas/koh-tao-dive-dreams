@@ -6,7 +6,8 @@ import { sendBookingNotification } from '@/lib/sendBookingNotification';
 type CourseOption = {
   label: string;
   price: number;
-//
+};
+
 const COURSE_OPTIONS: CourseOption[] = [
   { label: 'PADI Open Water Course', price: 11500 },
   { label: 'PADI Advanced Open Water', price: 10500 },
@@ -15,7 +16,7 @@ const COURSE_OPTIONS: CourseOption[] = [
   { label: 'PADI IDC (Instructor Development Course)', price: 0 },
   { label: 'PADI Scuba Diver Course', price: 8500 },
   { label: 'Discover Scuba Diving', price: 2500 },
-  { label: 'Discover Scuba Diving Deluxe', price: 5002 },
+  { label: 'Discover Scuba Diving Deluxe', price: 5000 },
   { label: 'Emergency First Response (EFR)', price: 4500 },
   { label: 'Scuba Review Course', price: 0 },
   { label: 'PADI Wreck Diver Specialty', price: 8000 },
@@ -139,10 +140,8 @@ const BookNowForm: React.FC<BookNowFormProps> = ({ fullPage = false }) => {
 
     const payload = {
       name: form.name,
-      course_title: form.course_title,
       email: form.email,
       phone: form.phone,
-      accommodation: form.accommodation_type,
       preferred_date: form.arrival_date,
       experience_level: form.diving_experience,
       payment_choice: payNow ? 'deposit_requested' : 'pending',
