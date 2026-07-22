@@ -50,7 +50,7 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
           <div className="relative">
             <img
-              src="https://api.divinginasia.com/images/mapkohtao.jpg"
+              src="/images/mapkohtao.jpg"
               alt={content.about_map_alt}
               className="rounded-lg shadow-2xl"
             />
