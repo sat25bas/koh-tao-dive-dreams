@@ -20,7 +20,7 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
           <div className="relative">
             <img
-              src="/aamapkohtao.gif"
+              src="/images/mapkohtao.jpg"
               alt="Koh Tao map and dive sites"
               className="rounded-lg shadow-2xl"
             />
