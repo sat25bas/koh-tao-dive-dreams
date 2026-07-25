@@ -90,7 +90,7 @@ const Accommodation = () => {
         viewPictures: 'View Pictures',
         close: 'Close',
         chooseBooking: 'Choose your stay option',
-        chooseBookingBody: 'Choose Stay With Us at Our Resort to fill your room details below.',
+        chooseBookingBody: 'Choose To Stay With Us at Our Resort to fill your room details below.',
         bookOurAccommodation: 'Stay With Us at Our Resort',
         accommodationType: 'Accommodation type',
         people: 'Number of people',
